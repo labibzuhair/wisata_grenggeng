@@ -82,7 +82,7 @@ body {
 /* custom hero */
 .carousel-item {
     position: relative;
-    height: 100vh;
+    height: 630px;
     min-height: 300px;
     background: no-repeat center center scroll;
     background-size: cover;
@@ -122,6 +122,7 @@ body {
 .carousel-caption a:hover {
     text-decoration: underline;
 }
+
 
 
 /* timeline activities */

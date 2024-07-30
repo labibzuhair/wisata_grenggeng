@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beranda;
+use App\Models\Sleeder;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -14,9 +15,9 @@ class BerandaController extends Controller
      */
     public function index()
     {
-        $sleeders = Kegiatan::orderBy('tanggal_kegiatan', 'desc')->take(5)->get();
+        $sleeders = Sleeder::all();
         $kegiatans = Kegiatan::orderBy('tanggal_kegiatan', 'desc')->take(5)->get();
-        return view('layouts/main/beranda/beranda', compact('kegiatans'));
+        return view('layouts/main/beranda/beranda', compact('kegiatans', 'sleeders'));
     }
 
     /**

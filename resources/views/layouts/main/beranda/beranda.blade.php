@@ -6,41 +6,24 @@
 @section('content')
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            @foreach ($sleeders as $index => $sleeder)
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $index }}"
+                    class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : '' }}"
+                    aria-label="Slide {{ $index + 1 }}"></button>
+            @endforeach
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('images/img1.jpg');">
-                <div class="overlay"></div>
-                <div class="carousel-caption d-none d-md-block">
-                    <a href="page1.html">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </a>
+            @foreach ($sleeders as $index => $sleeder)
+                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}"
+                    style="background-image: url('{{ asset($sleeder->img_wisata) }}');">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ $sleeder->nama_wisata }}</h5>
+                        <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
+
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('images/img2.jpg');">
-                <div class="overlay"></div>
-                <div class="carousel-caption d-none d-md-block">
-                    <a href="page2.html">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </a>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('images/img3.jpg');">
-                <div class="overlay"></div>
-                <div class="carousel-caption d-none d-md-block">
-                    <a href="page3.html">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
