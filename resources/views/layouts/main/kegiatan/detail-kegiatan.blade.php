@@ -1,12 +1,16 @@
 @extends('layouts.main.master.master')
 
-
-@section('title', 'Halaman Utama')
+@section('title', 'Detail Kegiatan')
 
 @section('content')
-    <div class="container">
-        <h1>{{ $kegiatan->judul }}</h1>
-        <p>{{ $kegiatan->deskripsi }}</p>
-        <p><strong>Date:</strong> {{ $kegiatan->tanggal_kegiatan }}</p>
+    <header class="mb-4 text-black border-bottom pt-1 text-center">
+        <h3>Semua Kegiatan</h3>
+    </header>
+    <div class="card m-5">
+        <h5 class="card-header">{{ $kegiatan->judul }}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{ $kegiatan->tanggal_kegiatan }}</h5>
+            <p class="card-text">{{ $kegiatan->deskripsi }}</p>
+        </div>
     </div>
 @endsection

@@ -13,6 +13,8 @@ use App\Http\Controllers\PaketWisataController;
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
 Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan');
+Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('detail-kegiatan');
+
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
 Route::get('/paket-wisata', [PaketWisataController::class, 'index'])->name('paket-wisata');

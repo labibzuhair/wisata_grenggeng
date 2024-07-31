@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-black ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo desawisata</a>
+        <a class="navbar-brand" href="#">Logo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -112,10 +112,12 @@
                         target="_blank">Website Desa</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <ul class="icon-list">
+                <li><a href="{{ route('produk') }}"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a></li>
+                <li><a href="wa.me/082136612876"><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></a></li>
+            </ul>
         </div>
     </div>
 </nav>
