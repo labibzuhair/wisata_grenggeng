@@ -37,9 +37,10 @@ class ProdukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Todo $todo)
+    public function show($id)
     {
-        //
+        $produk = Produk::findOrFail($id);
+        return view('layouts/main/produk/detail-produk', compact('produk'));
     }
 
     /**

@@ -15,7 +15,7 @@
             </div>
             <div class="carousel-inner">
                 @foreach ($sleeders as $index => $sleeder)
-                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}"
+                    <div class="carousel-item hero-item {{ $index == 0 ? 'active' : '' }}"
                         style="background-image: url('{{ asset($sleeder->img_wisata) }}');">
                         <div class="overlay"></div>
                         <div class="carousel-caption d-none d-md-block">
@@ -42,14 +42,14 @@
         <section class="intro">
             <div class="container bg-text blur-box">
                 <h1>Timeline Kegiatan &darr;</h1>
-                <p>desa wisata grenggeng,karang anyar, kebumen</a></p>
+                <p>Desa Wisata Grenggeng, Karanganyar, Kebumen, Jawa Tengah</a></p>
             </div>
         </section>
 
         <section class="timeline">
             <ul>
                 <div class="d-grid gap-2 col-2 mx-auto">
-                    <a href="{{ route('kegiatan') }}" class="btn btn-primary" aria-current="page">Semua Kegiatan</a>
+                    <a href="{{ route('kegiatan') }}" class="btn btn-success" aria-current="page">Semua Kegiatan</a>
                 </div>
                 @foreach ($kegiatans as $kegiatan)
                     <li>

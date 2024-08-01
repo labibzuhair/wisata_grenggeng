@@ -15,7 +15,11 @@ class ProdukSeeder extends Seeder
     {
         Produk::create([
             "nama_produk"=> "Anyaman Pandan",
-            "img_produk"=> "images/img1.jpg",
+            "img_produk1"=> "images/img1.jpg",
+            "img_produk2"=> "images/img1.jpg",
+            "img_produk3"=> "images/img1.jpg",
+            "img_produk4"=> "images/img1.jpg",
+            "img_produk5"=> "images/img1.jpg",
             "deskripsi_produk"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -25,7 +29,11 @@ class ProdukSeeder extends Seeder
         ]);
         Produk::create([
             "nama_produk"=> "Anyaman Pandan",
-            "img_produk"=> "images/img2.jpg",
+            "img_produk1"=> "images/img1.jpg",
+            "img_produk2"=> "images/img1.jpg",
+            "img_produk3"=> "images/img1.jpg",
+            "img_produk4"=> "images/img1.jpg",
+            "img_produk5"=> "images/img1.jpg",
             "deskripsi_produk"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -35,7 +43,11 @@ class ProdukSeeder extends Seeder
         ]);
         Produk::create([
             "nama_produk"=> "Anyaman Pandan",
-            "img_produk"=> "images/img3.jpg",
+            "img_produk1"=> "images/img1.jpg",
+            "img_produk2"=> "images/img1.jpg",
+            "img_produk3"=> "images/img1.jpg",
+            "img_produk4"=> "images/img1.jpg",
+            "img_produk5"=> "images/img1.jpg",
             "deskripsi_produk"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -45,7 +57,11 @@ class ProdukSeeder extends Seeder
         ]);
         Produk::create([
             "nama_produk"=> "Anyaman Pandan",
-            "img_produk"=> "images/img1.jpg",
+            "img_produk1"=> "images/img1.jpg",
+            "img_produk2"=> "images/img1.jpg",
+            "img_produk3"=> "images/img1.jpg",
+            "img_produk4"=> "images/img1.jpg",
+            "img_produk5"=> "images/img1.jpg",
             "deskripsi_produk"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -55,7 +71,11 @@ class ProdukSeeder extends Seeder
         ]);
         Produk::create([
             "nama_produk"=> "Anyaman Pandan",
-            "img_produk"=> "images/img1.jpg",
+            "img_produk1"=> "images/img1.jpg",
+            "img_produk2"=> "images/img1.jpg",
+            "img_produk3"=> "images/img1.jpg",
+            "img_produk4"=> "images/img1.jpg",
+            "img_produk5"=> "images/img1.jpg",
             "deskripsi_produk"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,

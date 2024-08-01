@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-primary text-center text-white">
+<footer class=" text-center text-white bg-nav">
     <!-- Grid container -->
     <div class="container p-4">
         <!-- Section: Text -->
@@ -22,8 +22,10 @@
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-left">
                     <h5 class="text-uppercase border-bottom pb-2">Alamat Kami</h5>
                     <div class="address-container">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Jalan Gardu, Srengseng Sawah, Jagakarsa, Jakarta Selatan, Jakarta 12640, Indonesia</p>
+                        <div class="icon-container">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p>Desa Grenggeng, Karanganyar, Kebumen, Jawa Tengah, Indonesia</p>
                     </div>
                 </div>
                 <!--Grid column-->
@@ -32,11 +34,13 @@
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-left">
                     <h5 class="text-uppercase border-bottom pb-2">Hubungi Kami</h5>
                     <div class="address-container">
-                        <i class="fa-solid fa-phone-volume"></i>
+                        <i class="fa-solid fa-phone-volume"
+                            style="position: relative; color: rgb(0, 192, 0); font-size: 15px; top: 5px;"></i>
                         <p>082136612876</p>
                     </div>
                     <div class="address-container">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-envelope"
+                            style="position: relative; color: rgb(255, 230, 0); font-size: 15px; top: 5px;"></i>
                         <p>labiblpc@gmail.com</p>
                     </div>
                 </div>
@@ -58,8 +62,8 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        © 2024 Copyright:
+        <a class="text-green" href="https://grenggeng.kec-karanganyar.kebumenkab.go.id/">Desa Wisata Grenggeng</a>
     </div>
     <!-- Copyright -->
 

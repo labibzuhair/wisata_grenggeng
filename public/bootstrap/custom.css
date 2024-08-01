@@ -6,31 +6,34 @@ body {
     padding-top: 56px; /* Sesuaikan nilai ini dengan tinggi navbar */
 }
 .image-bg {
-    background-image: url('../images/img1.jpg');
+    background-image: url("../images/img1.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
+.black {
+    background-color: #eee;
+}
 
 /* start custom navbar icon */
-        ul.icon-list {
-            list-style-type: none; /* Menghapus bullet points */
-            padding: 0; /* Menghapus padding default */
-            margin: 0; /* Menghapus margin default */
-            display: flex; /* Mengatur list menjadi icon */
-        }
+ul.icon-list {
+    list-style-type: none; /* Menghapus bullet points */
+    padding: 0; /* Menghapus padding default */
+    margin: 0; /* Menghapus margin default */
+    display: flex; /* Mengatur list menjadi icon */
+}
 
-        ul.icon-list li {
-            margin-right: 15px; /* Jarak antar item */
-        }
+ul.icon-list li {
+    margin-right: 15px; /* Jarak antar item */
+}
 
-        ul.icon-list li:last-child {
-            margin-right: 0; /* Menghapus margin dari item terakhir */
-        }
+ul.icon-list li:last-child {
+    margin-right: 0; /* Menghapus margin dari item terakhir */
+}
 
-        ul.icon-list a {
-            text-decoration: none; /* Menghapus underline dari link */
-        }
+ul.icon-list a {
+    text-decoration: none; /* Menghapus underline dari link */
+}
 /* tema bootstrap */
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -49,10 +52,11 @@ body {
 .b-example-divider {
     width: 100%;
     height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid rgba(0, 0, 0, 0.15);
     border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+        inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
 }
 
 .b-example-vr {
@@ -62,7 +66,7 @@ body {
 }
 
 .bi {
-    vertical-align: -.125em;
+    vertical-align: -0.125em;
     fill: currentColor;
 }
 
@@ -110,9 +114,9 @@ body {
 }
 
 /* custom hero */
-.carousel-item {
+.hero-item {
     position: relative;
-    height: 630px;
+    height: 700px;
     min-height: 300px;
     background: no-repeat center center scroll;
     background-size: cover;
@@ -153,15 +157,13 @@ body {
     text-decoration: underline;
 }
 
-
-
 /* timeline activities */
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .timeline a {
@@ -170,16 +172,16 @@ body {
 }
 
 a {
-  color: inherit;
+    color: inherit;
 }
 
-.blur-box{
+.blur-box {
     backdrop-filter: blur(10px) brightness(150%);
 }
 
 .bg-text {
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
 
     color: white;
     font-weight: bold;
@@ -191,8 +193,7 @@ a {
     width: 80%;
     padding: 20px;
     text-align: center;
-  }
-
+}
 
 /* start costom activitys */
 .card-text {
@@ -202,228 +203,222 @@ a {
     overflow: hidden;
 }
 
-
-
 /* INTRO SECTION
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .intro {
-  background: #f45b6800;
-  padding: 100px 0;
+    background: #f45b6800;
+    padding: 100px 0;
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 h1 {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
-
 
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline ul {
-  background: #c3bebe;
-  padding: 50px 0;
-  margin-bottom: 0;
+    background: #00000080;
+    backdrop-filter: blur(5px);
+    padding: 50px 0;
+    margin-bottom: 0;
 }
 
 .timeline ul li {
-  list-style-type: none;
-  position: relative;
-  width: 6px;
-  margin: 0 auto;
-  padding-top: 50px;
-  background: #ffffff;
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: #ffffff;
 }
 
 .timeline ul li::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: inherit;
-  z-index: 1;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
 }
 
 .timeline ul li div {
-  position: relative;
-  border-style:outset;
-  border-color: rgb(253, 253, 253);
-  bottom: 0;
-  width: 400px;
-  padding: 15px;
-  background: #0d0d0d95;
+    position: relative;
+    border-style: outset;
+    border-color: rgb(253, 253, 253);
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #686868;
 }
 
 .timeline ul li div::before {
-  content: "";
-  position: absolute;
-  bottom: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
 }
 
 .timeline ul li:nth-child(odd) div {
-  left: 45px;
+    left: 45px;
 }
 
 .timeline ul li:nth-child(odd) div::before {
-  left: -15px;
-  border-width: 8px 16px 8px 0;
-  border-color: transparent #0d0d0d95 transparent transparent;
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #686868 transparent transparent;
 }
 
 .timeline ul li:nth-child(even) div {
-  left: -439px;
+    left: -439px;
 }
 
 .timeline ul li:nth-child(even) div::before {
-  right: -15px;
-  border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #0d0d0d95;
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #686868;
 }
 
 time {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
-
 
 /* EFFECTS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline ul li::after {
-  transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
 }
 
 .timeline ul li.in-view::after {
-  background: #0d0d0dff;
+    background: #198754;
 }
 
 .timeline ul li div {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 .timeline ul li:nth-child(odd) div {
-  transform: translate3d(200px, 0, 0);
+    transform: translate3d(200px, 0, 0);
 }
 
 .timeline ul li:nth-child(even) div {
-  transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
 }
 
 .timeline ul li.in-view div {
-  transform: none;
-  visibility: visible;
-  opacity: 1;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
 }
-
 
 /* GENERAL MEDIA QUERIES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media screen and (max-width: 900px) {
-  .timeline ul li div {
-    width: 250px;
-  }
-  .timeline ul li:nth-child(even) div {
-    left: -289px;
-    /*250+45-6*/
-  }
+    .timeline ul li div {
+        width: 250px;
+    }
+    .timeline ul li:nth-child(even) div {
+        left: -289px;
+        /*250+45-6*/
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .timeline ul li {
-    margin-left: 20px;
-  }
-  .timeline ul li div {
-    width: calc(100vw - 91px);
-  }
-  .timeline ul li:nth-child(even) div {
-    left: 45px;
-  }
-  .timeline ul li:nth-child(even) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent #f45b69 transparent transparent;
-  }
+    .timeline ul li {
+        margin-left: 20px;
+    }
+    .timeline ul li div {
+        width: calc(100vw - 91px);
+    }
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+    }
+    .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #f45b69 transparent transparent;
+    }
 }
-
 
 /* EXTRA/CLIP PATH STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline-clippy ul li::after {
-  width: 40px;
-  height: 40px;
-  border-radius: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
 }
 
 .timeline-rhombus ul li::after {
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
 .timeline-rhombus ul li div::before {
-  bottom: 12px;
+    bottom: 12px;
 }
 
 .timeline-star ul li::after {
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
 }
 
 .timeline-heptagon ul li::after {
-  clip-path: polygon(
-    50% 0%,
-    90% 20%,
-    100% 60%,
-    75% 100%,
-    25% 100%,
-    0% 60%,
-    10% 20%
-  );
+    clip-path: polygon(
+        50% 0%,
+        90% 20%,
+        100% 60%,
+        75% 100%,
+        25% 100%,
+        0% 60%,
+        10% 20%
+    );
 }
 
 .timeline-infinite ul li::after {
-  animation: scaleAnimation 2s infinite;
+    animation: scaleAnimation 2s infinite;
 }
 
 @keyframes scaleAnimation {
-  0% {
-    transform: translateX(-50%) scale(1);
-  }
-  50% {
-    transform: translateX(-50%) scale(1.25);
-  }
-  100% {
-    transform: translateX(-50%) scale(1);
-  }
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.25);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
 }
-
 
 /* start custom footer */
 .address-container {
@@ -437,18 +432,353 @@ time {
     margin: 0;
     text-align: left;
 }
+.icon-container {
+    position: relative;
+    font-size: 25px; /* Memperbesar ikon */
+    color: #ff3d00; /* Mengatur warna ikon */
+    top: 0;
+}
 
 /* custom view produk */
+/* mini hero */
+#myCarousel .carousel-item .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+}
+#myCarousel h4 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #fff;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+#myCarousel p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #d5d5d5;
+}
+#myCarousel .carousel-item a {
+    background: #f47735;
+    font-size: 14px;
+    color: #fff;
+    padding: 13px 32px;
+    display: inline-block;
+}
+#myCarousel .carousel-item a:hover {
+    background: #394fa2;
+    text-decoration: none;
+}
+
+#myCarousel .carousel-item h4 {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+#myCarousel .carousel-item p {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+}
+#myCarousel .carousel-item a {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+#myCarousel .carousel-item .mask img {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+#myCarousel h4,
+#myCarousel p,
+#myCarousel a,
+#myCarousel .carousel-item .mask img {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+#myCarousel .container {
+    max-width: 1430px;
+}
+#myCarousel .carousel-item {
+    height: 100%;
+    top: -20px;
+    min-height: 550px;
+}
+#myCarousel {
+    position: relative;
+    top: 4px;
+    z-index: 1;
+    background: url(https://i.imgur.com/6axE29k.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+/* .carousel-control-next,
+.carousel-control-prev {
+    height: 40px;
+    width: 40px;
+    padding: 12px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    background-color: #f47735;
+} */
+
+.slide-produk-item {
+    position: relative;
+    display: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    transition: -webkit-transform 0.6s ease;
+    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    height: auto;
+}
+.carousel-fade .carousel-item {
+    opacity: 0;
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+}
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right,
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+.carousel-fade .carousel-item-left.active,
+.carousel-fade .carousel-item-right.active {
+    opacity: 0;
+}
+.carousel-fade .carousel-item-left.active,
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item-prev.active,
+.carousel-fade .carousel-item.active {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+@supports (transform-style: preserve-3d) {
+    .carousel-fade .carousel-item-left.active,
+    .carousel-fade .carousel-item-next,
+    .carousel-fade .carousel-item-prev,
+    .carousel-fade .carousel-item-prev.active,
+    .carousel-fade .carousel-item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.carousel-fade .carousel-item-left.active,
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item-prev.active,
+.carousel-fade .carousel-item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+@-webkit-keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+@-webkit-keyframes slideInRight {
+    from {
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInRight {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+}
+
 .icon-hover:hover {
-  border-color: #3b71ca !important;
-  background-color: white !important;
+    border-color: #3b71ca !important;
+    background-color: white !important;
 }
 
 .icon-hover:hover i {
-  color: #3b71ca !important;
+    color: #3b71ca !important;
 }
+/* custom serach produk */
+.search-produk {
+    position: relative;
+    margin: 0px 100px 0px 100px;
+    padding-top: 20px;
+}
+
+/* custom pop up produk */
+/* Atur tinggi maksimal gambar di dalam modal */
+.modal-carousel img {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* Atur padding dan margin di dalam modal */
+.modal .card {
+    padding: 20px;
+    margin: 0;
+    border: none;
+}
+
+.modal .card-body {
+    padding: 10px 20px;
+}
+
+.modal .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.modal .card-text,
+.modal .text-muted {
+    margin-bottom: 5px;
+}
+
+.modal .d-flex {
+    margin-top: 10px;
+}
+
+.modal .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.modal .carousel {
+    margin-bottom: 20px;
+}
+
+.modal .carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Atur tinggi modal agar tidak terlalu tinggi */
+.modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Tambahkan scrollbar jika konten terlalu panjang */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 /* custom head */
-.fixed_header{
+.fixed_header {
     position: fixed;
     top: 50px;
     width: 100%;
@@ -457,7 +787,7 @@ time {
     display: none;
     border-bottom: black;
 }
-.fixed_header h3{
+.fixed_header h3 {
     margin: 0;
     padding: 10px;
     color: black;
@@ -466,19 +796,22 @@ time {
 /* end custom view produk */
 
 /* navbar multi drop down */
+.bg-nav {
+    background-color: #01752d;
+}
 .dropdown-menu li {
     position: relative;
-    }
-    .dropdown-menu .dropdown-submenu {
+}
+.dropdown-menu .dropdown-submenu {
     display: none;
     position: absolute;
     left: 100%;
     top: -7px;
-    }
-    .dropdown-menu .dropdown-submenu-left {
+}
+.dropdown-menu .dropdown-submenu-left {
     right: 100%;
     left: auto;
-    }
-    .dropdown-menu > li:hover > .dropdown-submenu {
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
     display: block;
-    }
+}

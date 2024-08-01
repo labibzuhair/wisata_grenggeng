@@ -4,6 +4,80 @@
 @section('title', 'Halaman Utama')
 
 @section('content')
+    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="search-produk">
+                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                    placeholder="produk apa yang anda cari?...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
+            </div>
+            <div class="carousel-item slide-produk-item active">
+                @foreach ($produks as $produk)
+                    <div class="mask flex-center">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-md-7 col-12 order-md-1 order-2">
+                                    <h4>Present your <br>
+                                        awesome product</h4>
+                                    <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                        necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                    <a href="#" data-id="{{ $produk->id }}">BUY NOW</a>
+                                </div>
+                                <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png"
+                                        class="mx-auto" alt="slide"></div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="carousel-item">
+                <div class="mask flex-center">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-7 col-12 order-md-1 order-2">
+                                <h4>Present your <br>
+                                    awesome product</h4>
+                                <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                    necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                <a href="#">BUY NOW</a>
+                            </div>
+                            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png"
+                                    class="mx-auto" alt="slide"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="mask flex-center">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-7 col-12 order-md-1 order-2">
+                                <h4>Present your <br>
+                                    awesome product</h4>
+                                <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                    necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                <a href="#">BUY NOW</a>
+                            </div>
+                            <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png"
+                                    class="mx-auto" alt="slide"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span
+                class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span
+                class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+    </div>
+    <!--slide end-->
+
 
     <!-- Fixed Header -->
     <div id="fixed-header" class="fixed_header">
@@ -14,20 +88,18 @@
     <!-- Products -->
     <section>
         <div class="container">
-            <header class="mb-4 text-black border-bottom pt-1" id="new-products">
-                <h3>New products</h3>
+            <header class="mb-4 text-black border-bottom pt-3" id="new-products">
+                <h3>Produk Anyaman Pandan</h3>
             </header>
-
             <div class="row">
                 @foreach ($produks as $produk)
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="card my-2 shadow-0">
-                            <a href="#" class="img-wrap">
-                                <img src="{{ $produk->img_produk }}" class="card-img-top" style="aspect-ratio: 1 / 1">
+                            <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
+                                data-id="{{ $produk->id }}">
+                                <img src="{{ $produk->img_produk1 }}" class="card-img-top" style="aspect-ratio: 1 / 1">
                             </a>
                             <div class="card-body p-0 pt-2">
-                                <a href="#!" class="btn btn-light border px-2 pt-2 float-end icon-hover"><i
-                                        class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
                                 <h5 class="card-title">{{ $produk->harga }}</h5>
                                 <p class="card-text mb-0">{{ $produk->nama_produk }}</p>
                                 <p class="text-muted">
@@ -37,9 +109,118 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
+            <header class="mb-4 text-black border-bottom pt-3" id="new-products">
+                <h3>TTG (Teknologi Tepat Guna)</h3>
+            </header>
+            <div class="row">
+                @foreach ($produks as $produk)
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card my-2 shadow-0">
+                            <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
+                                data-id="{{ $produk->id }}">
+                                <img src="{{ $produk->img_produk1 }}" class="card-img-top" style="aspect-ratio: 1 / 1">
+                            </a>
+                            <div class="card-body p-0 pt-2">
+                                <h5 class="card-title">{{ $produk->harga }}</h5>
+                                <p class="card-text mb-0">{{ $produk->nama_produk }}</p>
+                                <p class="text-muted">
+                                    Kategori: {{ $produk->kategori_produk }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <header class="mb-4 text-black border-bottom pt-3" id="new-products">
+                <h3>Makanan Ringan</h3>
+            </header>
+            <div class="row">
+                @foreach ($produks as $produk)
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card my-2 shadow-0">
+                            <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
+                                data-id="{{ $produk->id }}">
+                                <img src="{{ $produk->img_produk1 }}" class="card-img-top" style="aspect-ratio: 1 / 1">
+                            </a>
+                            <div class="card-body p-0 pt-2">
+                                <h5 class="card-title">{{ $produk->harga }}</h5>
+                                <p class="card-text mb-0">{{ $produk->nama_produk }}</p>
+                                <p class="text-muted">
+                                    Kategori: {{ $produk->kategori_produk }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- pop up detail produk --}}
+            <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="productModalLabel">Detail Produk</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <section class="black">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="card text-black">
+                                            <div id="productModalCarousel" class="carousel slide modal-carousel"
+                                                data-bs-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <!-- Images will be inserted here dynamically -->
+                                                </div>
+                                                <button class="carousel-control-prev" type="button"
+                                                    data-bs-target="#productModalCarousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button"
+                                                    data-bs-target="#productModalCarousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="text-center">
+                                                    <h5 class="card-title" id="productName"></h5>
+                                                    <p class="text-muted mb-4" id="productPrice"></p>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <span>Kategori</span><span id="productCategory"></span>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center">
+                                                        <b>Deskripsi Produk</b>
+                                                    </div>
+                                                    <div class="justify-content-between">
+                                                        <span id="productDescription"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body justify-content-center">
+                                                <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
+                                                    <a class="btn btn-primary" id="buyNowLink" aria-disabled="true"
+                                                        role="button" target="_blank">Beli Sekarang</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
         <div class="d-grid gap-2 col-6 mx-auto pt-4 pb-4">
             <a class="btn btn-light " href="/daily_discover?pageNumber=2">Lihat
                 Lainnya</a>
@@ -106,7 +287,7 @@
     <section class="mt-5 mb-4">
         <div class="container text-dark ">
             <header class="border-bottom " id="recently-viewed">
-                <h3 class="section-title">Recently viewed</h3>
+                <h3 class="section-title">Barusaja Dilihat</h3>
             </header>
 
             <div class="row gy-3 p-4">
@@ -152,92 +333,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row gy-3 p-4">
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/1.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/2.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/3.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/4.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/5.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/6.webp" />
-                    </a>
-                </div>
-            </div>
-            <div class="row gy-3 p-4">
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/1.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/2.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/3.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/4.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/5.webp" />
-                    </a>
-                </div>
-                <!-- col.// -->
-                <div class="col-lg-2 col-md-4 col-4">
-                    <a href="#" class="img-wrap">
-                        <img height="200" width="200" class="img-thumbnail"
-                            src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/6.webp" />
-                    </a>
-                </div>
-            </div>
+
         </div>
     </section>
     <!-- Recently viewed -->

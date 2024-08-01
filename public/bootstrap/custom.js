@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('recentlyViewedTop:', recentlyViewedTop);
 
       if (newProductsTop <= navbarHeight && recentlyViewedTop > navbarHeight) {
-        fixedHeaderText.innerText = 'New products';
+        fixedHeaderText.innerText = 'Produk Terbaru';
         fixedHeader.style.display = 'block';
         console.log('Displaying: New products');
       } else if (recentlyViewedTop <= navbarHeight) {
-        fixedHeaderText.innerText = 'Recently viewed';
+        fixedHeaderText.innerText = 'Barusaja Dilihat';
         fixedHeader.style.display = 'block';
         console.log('Displaying: Recently viewed');
       } else {
@@ -66,3 +66,50 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 // end custom head produk
+
+// start popup detail produk
+document.addEventListener('DOMContentLoaded', function () {
+    var productModal = document.getElementById('productModal');
+    productModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var productId = button.getAttribute('data-id');
+
+        // Lakukan AJAX request untuk mendapatkan detail produk berdasarkan ID
+        fetch(`/api/produk/${productId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update isi modal dengan detail produk
+                var carouselInner = document.querySelector('.modal-carousel .carousel-inner');
+                var productName = document.getElementById('productName');
+                var productPrice = document.getElementById('productPrice');
+                var productCategory = document.getElementById('productCategory');
+                var productDescription = document.getElementById('productDescription');
+                var buyNowLink = document.getElementById('buyNowLink');
+
+                carouselInner.innerHTML = '';
+                data.img_produk.forEach((img, index) => {
+                    if (img) { // Pastikan gambar tidak null atau kosong
+                        var carouselItem = document.createElement('div');
+                        carouselItem.classList.add('carousel-item');
+                        if (index === 0) carouselItem.classList.add('active');
+                        carouselItem.innerHTML = `<img src="${img}" class="d-block w-100" alt="...">`;
+                        carouselInner.appendChild(carouselItem);
+                    }
+                });
+
+                productName.innerText = data.nama_produk;
+                productPrice.innerText = `Rp. ${data.harga}`;
+                productCategory.innerText = data.kategori_produk;
+                productDescription.innerText = data.deskripsi_produk;
+                buyNowLink.href = `https://wa.me/+62895410172288?text=Saya%20ingin%20membeli%20produk%20anda%20yang%20bernama%20${data.nama_produk}`;
+            })
+            .catch(error => console.error('Error fetching product data:', error));
+    });
+});
+
+
+
+// custom slider produk
+$('#myCarousel').carousel({
+    interval: 3000,
+ })
