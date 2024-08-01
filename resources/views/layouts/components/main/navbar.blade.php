@@ -119,7 +119,6 @@
                             style="color: #ffffff;"></i></a></li>
                 <li><a href="wa.me/082136612876"><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i></a></li>
                 <li><a href=""><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></a></li>
             </ul>
         </div>
     </div>

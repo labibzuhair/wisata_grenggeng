@@ -4,7 +4,7 @@
 
 @section('content')
     <header class="mb-4 text-black border-bottom pt-1 text-center">
-        <h3>Semua Kegiatan</h3>
+        <h3>Detail Event</h3>
     </header>
     <div class="card m-5">
         <h5 class="card-header">{{ $kegiatan->judul }}</h5>

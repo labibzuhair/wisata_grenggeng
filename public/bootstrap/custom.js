@@ -34,36 +34,47 @@
 // end timeline activity
 
 // start custom head produk
-
 document.addEventListener('DOMContentLoaded', function () {
     const fixedHeader = document.getElementById('fixed-header');
     const fixedHeaderText = document.getElementById('fixed-header-text');
-    const newProductsHeader = document.getElementById('new-products');
-    const recentlyViewedHeader = document.getElementById('recently-viewed');
+    const anyamanHeader = document.getElementById('anyaman');
+    const ttgHeader = document.getElementById('ttg');
+    const makananHeader = document.getElementById('makanan');
 
-    window.addEventListener('scroll', function () {
-      const newProductsTop = newProductsHeader.getBoundingClientRect().top;
-      const recentlyViewedTop = recentlyViewedHeader.getBoundingClientRect().top;
-      const navbarHeight = 50; // Sesuaikan dengan tinggi navbar Anda
+    if (fixedHeader && fixedHeaderText && anyamanHeader && ttgHeader && makananHeader) {
+        window.addEventListener('scroll', function () {
+            const anyamanTop = anyamanHeader.getBoundingClientRect().top;
+            const ttgTop = ttgHeader.getBoundingClientRect().top;
+            const makananTop = makananHeader.getBoundingClientRect().top;
+            const navbarHeight = 50; // Sesuaikan dengan tinggi navbar Anda
 
-      console.log('Scroll position:', window.scrollY);
-      console.log('newProductsTop:', newProductsTop);
-      console.log('recentlyViewedTop:', recentlyViewedTop);
+            console.log('Scroll position:', window.scrollY);
+            console.log('anyamanTop:', anyamanTop);
+            console.log('ttgTop:', ttgTop);
+            console.log('makananTop:', makananTop);
 
-      if (newProductsTop <= navbarHeight && recentlyViewedTop > navbarHeight) {
-        fixedHeaderText.innerText = 'Produk Terbaru';
-        fixedHeader.style.display = 'block';
-        console.log('Displaying: New products');
-      } else if (recentlyViewedTop <= navbarHeight) {
-        fixedHeaderText.innerText = 'Barusaja Dilihat';
-        fixedHeader.style.display = 'block';
-        console.log('Displaying: Recently viewed');
-      } else {
-        fixedHeader.style.display = 'none';
-        console.log('Hiding fixed header');
-      }
-    });
-  });
+            if (anyamanTop <= navbarHeight && ttgTop > navbarHeight) {
+                fixedHeaderText.innerText = 'Produk Anyaman Pandan';
+                fixedHeader.style.display = 'block';
+                console.log('Displaying: Produk Anyaman Pandan');
+            } else if (ttgTop <= navbarHeight && makananTop > navbarHeight) {
+                fixedHeaderText.innerText = 'TTG (Teknologi Tepat Guna)';
+                fixedHeader.style.display = 'block';
+                console.log('Displaying: TTG (Teknologi Tepat Guna)');
+            } else if (makananTop <= navbarHeight) {
+                fixedHeaderText.innerText = 'Makanan Ringan';
+                fixedHeader.style.display = 'block';
+                console.log('Displaying: Makanan Ringan');
+            } else {
+                fixedHeader.style.display = 'none';
+                console.log('Hiding fixed header');
+            }
+        });
+    } else {
+        console.error('One or more elements are missing');
+    }
+});
+
 
 // end custom head produk
 

@@ -41,7 +41,7 @@
         {{-- start timeline activities --}}
         <section class="intro">
             <div class="container bg-text blur-box">
-                <h1>Timeline Kegiatan &darr;</h1>
+                <h1>Jadwal Event &darr;</h1>
                 <p>Desa Wisata Grenggeng, Karanganyar, Kebumen, Jawa Tengah</a></p>
             </div>
         </section>
@@ -49,7 +49,7 @@
         <section class="timeline">
             <ul>
                 <div class="d-grid gap-2 col-2 mx-auto">
-                    <a href="{{ route('kegiatan') }}" class="btn btn-success" aria-current="page">Semua Kegiatan</a>
+                    <a href="{{ route('kegiatan') }}" class="btn btn-success" aria-current="page">Semua Event</a>
                 </div>
                 @foreach ($kegiatans as $kegiatan)
                     <li>

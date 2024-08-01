@@ -4,7 +4,7 @@
 
 @section('content')
     <header class="mb-4 text-black border-bottom pt-1 text-center">
-        <h3>Semua Kegiatan</h3>
+        <h3>Semua Event</h3>
     </header>
     @foreach ($kegiatans as $kegiatan)
         <div class="card m-5">

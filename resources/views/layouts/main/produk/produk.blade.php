@@ -27,7 +27,7 @@
                                         awesome product</h4>
                                     <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
                                         necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                                    <a href="#" data-id="{{ $produk->id }}">BUY NOW</a>
+                                    <a href="#" data-id="{{ $produk->id }}">Tanyakan Produk</a>
                                 </div>
                                 <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png"
                                         class="mx-auto" alt="slide"></div>
@@ -88,7 +88,7 @@
     <!-- Products -->
     <section>
         <div class="container">
-            <header class="mb-4 text-black border-bottom pt-3" id="new-products">
+            <header class="mb-4 text-black border-bottom pt-3" id="anyaman">
                 <h3>Produk Anyaman Pandan</h3>
             </header>
             <div class="row">
@@ -110,7 +110,7 @@
                     </div>
                 @endforeach
             </div>
-            <header class="mb-4 text-black border-bottom pt-3" id="new-products">
+            <header class="mb-4 text-black border-bottom pt-3" id="ttg">
                 <h3>TTG (Teknologi Tepat Guna)</h3>
             </header>
             <div class="row">
@@ -132,7 +132,7 @@
                     </div>
                 @endforeach
             </div>
-            <header class="mb-4 text-black border-bottom pt-3" id="new-products">
+            <header class="mb-4 text-black border-bottom pt-3" id="makanan">
                 <h3>Makanan Ringan</h3>
             </header>
             <div class="row">
@@ -156,12 +156,14 @@
             </div>
 
             {{-- pop up detail produk --}}
-            <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="productModalLabel">Detail Produk</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <section class="black">
@@ -204,7 +206,7 @@
                                             <div class="card-body justify-content-center">
                                                 <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
                                                     <a class="btn btn-primary" id="buyNowLink" aria-disabled="true"
-                                                        role="button" target="_blank">Beli Sekarang</a>
+                                                        role="button" target="_blank">Tanyakan Produk</a>
                                                 </div>
                                             </div>
                                         </div>
