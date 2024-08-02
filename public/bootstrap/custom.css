@@ -444,6 +444,10 @@ time {
     color: #ff3d00; /* Mengatur warna ikon */
     top: 0;
 }
+.footer-shadow {
+    box-shadow: rgb(10, 10, 10) 20px 20px 60px, rgb(52, 52, 52) -20px -20px 60px;
+}
+
 
 /* custom view produk */
 /* body{

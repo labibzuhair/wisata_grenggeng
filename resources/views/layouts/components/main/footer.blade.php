@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class=" text-center text-white bg-nav">
     <!-- Grid container -->
-    <div class="container p-4">
+    <div class="container p-4 footer-shadow">
         <!-- Section: Text -->
         <section class="mb-4">
             <p>
