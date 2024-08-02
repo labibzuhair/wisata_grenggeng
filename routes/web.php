@@ -19,6 +19,7 @@ Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('detail-
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
+Route::get('/produk/all', [ProdukController::class, 'all'])->name('produk.all');
 Route::get('/api/produk/{id}', function ($id) {
     $produk = Produk::find($id);
     return response()->json([
@@ -38,4 +39,8 @@ Route::get('/api/produk/{id}', function ($id) {
 Route::get('/produk/{id}', [ProdukController::class, 'show'])->name('detail-produk');
 
 Route::get('/paket-wisata', [PaketWisataController::class, 'index'])->name('paket-wisata');
+
+Route::get('/tabs', function () {
+    return view('tabs');
+});
 

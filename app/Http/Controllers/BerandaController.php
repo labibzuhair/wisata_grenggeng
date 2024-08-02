@@ -16,7 +16,7 @@ class BerandaController extends Controller
     public function index()
     {
         $sleeders = Sleeder::all();
-        $kegiatans = Kegiatan::orderBy('tanggal_kegiatan', 'desc')->take(5)->get();
+        $kegiatans = Kegiatan::orderBy('tanggal_event', 'desc')->take(5)->get();
         return view('layouts/main/beranda/beranda', compact('kegiatans', 'sleeders'));
     }
 

@@ -8,9 +8,9 @@
     </header>
     @foreach ($kegiatans as $kegiatan)
         <div class="card m-5">
-            <h5 class="card-header">{{ $kegiatan->judul }}</h5>
+            <h5 class="card-header">{{ $kegiatan->nama_event }}</h5>
             <div class="card-body">
-                <h5 class="card-title">{{ $kegiatan->tanggal_kegiatan }}</h5>
+                <h5 class="card-title">{{ $kegiatan->tanggal_event }}</h5>
                 <p class="card-text">{{ substr($kegiatan->deskripsi, 0, 100) }}...</p>
                 <a href="{{ route('detail-kegiatan', $kegiatan->id) }}" class="btn btn-primary">Lihat Lebih Lengkap</a>
             </div>

@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('kegiatans', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->text('deskripsi');
-            $table->date('tanggal_kegiatan');
+            $table->string('nama_event');
+            $table->string('tanggal_event');
+            $table->string('waktu');
+            $table->string('lokasi');
+            $table->string('pengisi_acara');
+            $table->text('deskripsi'); //termasuk isi cara
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

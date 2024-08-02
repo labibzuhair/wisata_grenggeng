@@ -9,15 +9,12 @@
             <div class="search-produk">
                 <input class="form-control" list="datalistOptions" id="exampleDataList"
                     placeholder="produk apa yang anda cari?...">
-                <datalist id="datalistOptions">
-                    <option value="San Francisco">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago">
-                </datalist>
+                <span class="search-icon">
+                    <i class="fas fa-search"></i>
+                </span>
             </div>
-            <div class="carousel-item slide-produk-item active">
+
+            <div class="carousel-item slide-produk-item active" t>
                 @foreach ($produks as $produk)
                     <div class="mask flex-center">
                         <div class="container">
@@ -27,7 +24,7 @@
                                         awesome product</h4>
                                     <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
                                         necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                                    <a href="#" data-id="{{ $produk->id }}">Tanyakan Produk</a>
+                                    <a href="facebook.com" data-id="{{ $produk->id }}">Tanyakan Produk</a>
                                 </div>
                                 <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png"
                                         class="mx-auto" alt="slide"></div>
@@ -89,29 +86,35 @@
     <section>
         <div class="container">
             <header class="mb-4 text-black border-bottom pt-3" id="anyaman">
-                <h3>Produk Anyaman Pandan</h3>
+                <h3 class="judul">Produk Anyaman Pandan</h3>
             </header>
             <div class="row">
-                @foreach ($produks as $produk)
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="card my-2 shadow-0">
-                            <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
+                <div class="wrapper-p">
+                    @foreach ($produks as $produk)
+                        <div class="card card-p text-center">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
                                 data-id="{{ $produk->id }}">
-                                <img src="{{ $produk->img_produk1 }}" class="card-img-top" style="aspect-ratio: 1 / 1">
+                                <div class="image">
+                                    <img src="{{ $produk->img_produk1 }}" width="300">
+                                </div>
                             </a>
-                            <div class="card-body p-0 pt-2">
-                                <h5 class="card-title">{{ $produk->harga }}</h5>
-                                <p class="card-text mb-0">{{ $produk->nama_produk }}</p>
-                                <p class="text-muted">
-                                    Kategori: {{ $produk->kategori_produk }}
-                                </p>
+                            <div class="about-product-p text-center">
+                                <h3>{{ $produk->nama_produk }}</h3>
+                                <h4>Kategori: <small>{{ $produk->kategori_produk }}</small></h4>
+                                <button class="btn btn-success buy-now-p"><a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
+                                        Produk</a></button>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto pt-4 pb-4">
+                    <a class="btn btn-light " href="{{ route('produk.all') }}">Lihat
+                        Lainnya</a>
+                </div>
             </div>
             <header class="mb-4 text-black border-bottom pt-3" id="ttg">
-                <h3>TTG (Teknologi Tepat Guna)</h3>
+                <h3 class="judul">TTG (Teknologi Tepat Guna)</h3>
             </header>
             <div class="row">
                 @foreach ($produks as $produk)
@@ -133,7 +136,7 @@
                 @endforeach
             </div>
             <header class="mb-4 text-black border-bottom pt-3" id="makanan">
-                <h3>Makanan Ringan</h3>
+                <h3 class="judul">Makanan Ringan</h3>
             </header>
             <div class="row">
                 @foreach ($produks as $produk)

@@ -45,6 +45,9 @@
                                     <a class="dropdown-item" href="#">TTG (Teknologi Tepat Guna)</a>
                                 </li>
                                 <li>
+                                    <a class="dropdown-item" href="#">Wisata Sejarah</a>
+                                </li>
+                                <li>
                                     <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
                                     <ul class="dropdown-menu dropdown-submenu">
                                         <li>

@@ -15,6 +15,12 @@ body {
     background-color: #eee;
 }
 
+.judul {
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+}
 /* start custom navbar icon */
 ul.icon-list {
     list-style-type: none; /* Menghapus bullet points */
@@ -440,6 +446,171 @@ time {
 }
 
 /* custom view produk */
+/* body{
+
+    background-color:#B71C1C;
+} */
+.wrapper-p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Mengatur jarak antar kartu */
+    padding: 20px; /* Opsional, memberikan padding di sekitar kontainer */
+}
+
+.card-p {
+    height: 420px;
+    width: calc(25% - 20px); /* Default 4 kartu per baris */
+    background-color: #c62828;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center !important;
+    flex: 1 1 calc(25% - 20px); /* Memastikan 4 kartu per baris, dengan jarak */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam ukuran */
+    margin-bottom: 20px; /* Opsional, menambah jarak vertikal antar baris */
+}
+
+.card-p::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    top: -50%;
+    background-color: #ef5350;
+    transform: skewY(345deg);
+    transition: 2s ease-in;
+}
+
+.card-p:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.card-p .image {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-p .image img {
+    max-width: 100%;
+    transition: 2s ease-in;
+}
+
+.card-p:hover .image img {
+    width: 80%;
+}
+
+.about-product-p {
+    position: absolute;
+    color: #fff;
+    bottom: -50px !important;
+    text-align: center;
+    padding: 0px 40px 0px 40px;
+    display: flex; /* Menggunakan Flexbox untuk memusatkan konten */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 2s ease-in;
+}
+.about-product-p h3 {
+    font-size: 1.5em; /* Mengatur ukuran teks judul */
+}
+
+.about-product-p h4 {
+    font-size: 1.2em; /* Mengatur ukuran teks kategori */
+}
+.card-p:hover .about-product-p {
+    bottom: 20px !important;
+}
+
+.buy-now-p {
+    color: #fff;
+    background-color: #ef5350 !important;
+    border-color: #ef5350 !important;
+    width: 160px;
+    margin-top: 20px;
+}
+
+.buy-now-p:focus {
+    box-shadow: none;
+}
+
+.buy-now-p:hover {
+    color: #fff;
+    background-color: #e84040 !important;
+    border-color: #e84040 !important;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .card-p {
+        flex: 1 1 calc(33.33% - 20px); /* 3 kartu per baris */
+        width: calc(33.33% - 20px);
+    }
+    .about-product-p {
+        position: absolute;
+        color: #fff;
+        bottom: -50px !important;
+        text-align: center;
+        margin: 0px 26px 0px 26px;
+        display: flex; /* Menggunakan Flexbox untuk memusatkan konten */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 2s ease-in;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-p {
+        flex: 1 1 calc(50% - 20px); /* 2 kartu per baris */
+        width: calc(50% - 20px);
+    }
+    .about-product-p {
+        position: absolute;
+        color: #fff;
+        bottom: -50px !important;
+        text-align: center;
+        margin: 0px 52px 0px 52px;
+        display: flex; /* Menggunakan Flexbox untuk memusatkan konten */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 2s ease-in;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-p {
+        flex: 1 1 calc(100% - 20px); /* 1 kartu per baris */
+        width: calc(100% - 20px);
+    }
+    .about-product-p {
+        position: absolute;
+        color: #fff;
+        bottom: -50px !important;
+        text-align: center;
+        margin: 20px;
+        display: flex; /* Menggunakan Flexbox untuk memusatkan konten */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 2s ease-in;
+    }
+    .about-product-p h3 {
+        font-size: 1.3em; /* Mengatur ukuran teks judul untuk layar kecil */
+    }
+
+    .about-product-p h4 {
+        font-size: 1em; /* Mengatur ukuran teks kategori untuk layar kecil */
+    }
+}
+
 /* mini hero */
 #myCarousel .carousel-item .mask {
     position: absolute;
@@ -772,8 +943,30 @@ time {
 /* custom serach produk */
 .search-produk {
     position: relative;
-    margin: 0px 100px 0px 100px;
+    margin: 0px 100px;
     padding-top: 20px;
+}
+
+.search-produk input {
+    padding-right: 40px; /* Tambahkan padding agar teks input tidak tertutup oleh ikon */
+    height: 50px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 45px;
+    transform: translateY(-50%);
+    background-color: #080808;
+    color: white;
+    border-radius: 40%;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.search-icon:hover {
+    background-color: #32cd32; /* Warna hijau muda */
 }
 
 /* custom pop up produk */
@@ -889,4 +1082,13 @@ time {
 }
 .dropdown-menu > li:hover > .dropdown-submenu {
     display: block;
+}
+
+/* cutom paket wista */
+.switch {
+    color: white !important; /* Warna teks putih untuk tombol tidak aktif */
+}
+
+.switch.active {
+    color: black !important; /* Warna teks hitam untuk tombol aktif */
 }

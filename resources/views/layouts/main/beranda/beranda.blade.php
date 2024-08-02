@@ -55,9 +55,9 @@
                     <li>
                         <a href="{{ route('detail-kegiatan', $kegiatan->id) }}">
                             <div>
-                                <time>{{ $kegiatan->tanggal_kegiatan }}</time>
-                                <h3>{{ $kegiatan->judul }}</h3>
-                                <p>{{ $kegiatan->deskripsi }}</p>
+                                <time>{{ $kegiatan->tanggal_event }}</time>
+                                <h3>{{ $kegiatan->nama_event }}</h3>
+                                <p>{{ Str::limit($kegiatan->deskripsi, 100, '...') }}</p>
                             </div>
                         </a>
                     </li>

@@ -14,8 +14,17 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $produks = Produk::all();
+        $produks = Produk::latest()->take(10)->get();
         return view('layouts/main/produk/produk', compact('produks'));
+    }
+
+    public function all()
+    {
+        // Ambil semua produk
+        $produks = Produk::all();
+
+        // Kirim produk ke view
+        return view('layouts/main/produk/all', compact('produks'));
     }
 
     /**

@@ -7,9 +7,11 @@
         <h3>Detail Event</h3>
     </header>
     <div class="card m-5">
-        <h5 class="card-header">{{ $kegiatan->judul }}</h5>
+        <h5 class="card-header">{{ $kegiatan->nama_event }}</h5>
+        <h5 class="card-header">Yang Akan di Isi Oleh : {{ $kegiatan->pengisi_acara }}</h5>
         <div class="card-body">
-            <h5 class="card-title">{{ $kegiatan->tanggal_kegiatan }}</h5>
+            <h5 class="card-title">{{ $kegiatan->tanggal_event }} Jam : {{ $kegiatan->waktu }}</h5>
+            <h5 class="card-title">{{ $kegiatan->lokasi }} </h5>
             <p class="card-text">{{ $kegiatan->deskripsi }}</p>
         </div>
     </div>
