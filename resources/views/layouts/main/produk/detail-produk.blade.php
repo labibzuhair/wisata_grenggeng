@@ -4,8 +4,8 @@
 
 @section('content')
 
-    <header class="mb-4 text-black border-bottom pt-1 text-center">
-        <h3 class="judul">Produk Ditanyakan</h3>
+    <header class="mb-4 text-black pt-1 text-center">
+        <h3 class="judul text-decoration-none">Produk Ditanyakan</h3>
     </header>
     <img src="/{{ $produk->img_produk }}" class="img-fluid" alt="foto produk">
     <div class="card m-5">

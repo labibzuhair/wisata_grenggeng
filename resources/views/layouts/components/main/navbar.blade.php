@@ -18,34 +18,38 @@
                         href="{{ route('tentang') }}">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('produk') ? 'active' : '' }}"
+                    <a class="nav-link {{ request()->is('produk*') ? 'active' : '' }}"
                         href="{{ route('produk') }}">Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('kegiatan') ? 'active' : '' }}"
+                    <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}"
                         href="{{ route('kegiatan') }}">Kegiatan</a>
                 </li>
 
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle {{ request()->is('wisata*') ? 'active' : '' }}" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Wisata
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item {{ request()->is('wisata/edukasi*') ? 'active' : '' }}"
+                                href="#">
                                 Wisata Edukasi &raquo;
                             </a>
                             <ul class="dropdown-menu dropdown-submenu">
                                 <li>
-                                    <a class="dropdown-item" href="#">ِAnyaman Pandan</a>
+                                    <a class="dropdown-item {{ request()->is('wisata/edukasi/anyaman-pandan') ? 'active' : '' }}"
+                                        href="{{ route('anyaman-pandan') }}">ِAnyaman Pandan</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">TTG (Teknologi Tepat Guna)</a>
+                                    <a class="dropdown-item {{ request()->is('wisata/edukasi/TTG') ? 'active' : '' }}"
+                                        href="{{ route('TTG') }}">TTG (Teknologi Tepat Guna)</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Wisata Sejarah</a>
+                                    <a class="dropdown-item {{ request()->is('wisata/edukasi/wisata-sejarah') ? 'active' : '' }}"
+                                        href="{{ route('wisata-sejarah') }}">Wisata Sejarah</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
@@ -61,12 +65,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item {{ request()->is('wisata/religi*') ? 'active' : '' }}"
+                                href="#">
                                 Wisata Religi &raquo;
                             </a>
                             <ul class="dropdown-menu dropdown-submenu">
                                 <li>
-                                    <a class="dropdown-item" href="#">Makam Syekh Baribin</a>
+                                    <a class="dropdown-item {{ request()->is('wisata/religi/makam') ? 'active' : '' }}"
+                                        href="{{ route('makam') }}">Makam Syekh Baribin</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
@@ -82,15 +88,18 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item {{ request()->is('wisata/kuliner*') ? 'active' : '' }}"
+                                href="#">
                                 Wisata Kuliner &raquo;
                             </a>
                             <ul class="dropdown-menu dropdown-submenu">
                                 <li>
-                                    <a class="dropdown-item" href="#">Lembah Pereng</a>
+                                    <a class="dropdown-item {{ request()->is('wisata/kuliner/lembah-pereng') ? 'active' : '' }}"
+                                        href="{{ route('lembah-pereng') }}">Lembah Pereng</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Pasar Desa (Pasar Kemit)</a>
+                                    <a class="dropdown-item {{ request()->is('wisata/kuliner/pasar') ? 'active' : '' }}"
+                                        href="{{ route('pasar') }}">Pasar Desa (Pasar Kemit)</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>

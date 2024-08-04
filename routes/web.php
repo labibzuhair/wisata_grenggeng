@@ -8,13 +8,28 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\WisataAnyamanPandan;
+use App\Http\Controllers\WisataTTGController;
 use App\Http\Controllers\PaketWisataController;
+use App\Http\Controllers\WisataMakamController;
+use App\Http\Controllers\WisataPasarController;
+use App\Http\Controllers\ProdukAnyamanController;
+use App\Http\Controllers\WisataSejarahController;
+use App\Http\Controllers\WisataLembahPerengController;
+use App\Http\Controllers\WisataAnyamanPandanController;
 
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
 Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan');
 Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('detail-kegiatan');
+
+Route::get('/wisata/edukasi/anyaman-pandan', [WisataAnyamanPandanController::class, 'index'])->name('anyaman-pandan');
+Route::get('/wisata/edukasi/TTG', [WisataTTGController::class, 'index'])->name('TTG');
+Route::get('/wisata/edukasi/wisata-sejarah', [WisataSejarahController::class, 'index'])->name('wisata-sejarah');
+Route::get('/wisata/religi/makam', [WisataMakamController::class, 'index'])->name('makam');
+Route::get('/wisata/kuliner/lembah-pereng', [WisataLembahPerengController::class, 'index'])->name('lembah-pereng');
+Route::get('/wisata/kuliner/pasar', [WisataPasarController::class, 'index'])->name('pasar');
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 

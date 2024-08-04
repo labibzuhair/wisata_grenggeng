@@ -15,12 +15,42 @@ body {
     background-color: #eee;
 }
 
+.bg-green {
+    background-color: #11a487;
+}
 .judul {
     background-color: white;
     padding: 10px;
     margin: 5px;
     border-radius: 20px;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #11a487 !important;
+    border-color: #06d001 !important;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #06b718 !important;
+    border-color: #06b718 !important;
+}
+
+/* custom wisata */
+.content-wisata p {
+    text-align: justify;
+    text-indent: 40px;
+    color: #080808;
+}
+.content-wisata h2 {
+    color: #080808;
+}
+.content-wisata img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* start custom navbar icon */
 ul.icon-list {
     list-style-type: none; /* Menghapus bullet points */
@@ -232,8 +262,7 @@ h1 {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline ul {
-    background: #00000080;
-    backdrop-filter: blur(5px);
+    background: #fff;
     padding: 50px 0;
     margin-bottom: 0;
 }
@@ -244,7 +273,7 @@ h1 {
     width: 6px;
     margin: 0 auto;
     padding-top: 50px;
-    background: #ffffff;
+    background: black;
 }
 
 .timeline ul li::after {
@@ -262,14 +291,20 @@ h1 {
 
 .timeline ul li div {
     position: relative;
-    border-style: outset;
-    border-color: rgb(253, 253, 253);
+    border-color: rgb(0, 0, 0);
     bottom: 0;
     width: 400px;
     padding: 15px;
-    background: #686868;
+    color: #080808;
+    background: #f5f5f5;
+    border-radius: 20px;
+    box-shadow: #080808;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+.timeline ul li div:hover {
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: 10px 15px 10px rgb(0, 0, 0);
+}
 .timeline ul li div::before {
     content: "";
     position: absolute;
@@ -284,9 +319,13 @@ h1 {
 }
 
 .timeline ul li:nth-child(odd) div::before {
-    left: -15px;
+    left: -10px;
     border-width: 8px 16px 8px 0;
-    border-color: transparent #686868 transparent transparent;
+    border-color: transparent #f5f5f5 transparent transparent;
+}
+.timeline ul li:nth-child(odd) div:hover {
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: 10px 15px 10px rgb(0, 0, 0);
 }
 
 .timeline ul li:nth-child(even) div {
@@ -294,9 +333,13 @@ h1 {
 }
 
 .timeline ul li:nth-child(even) div::before {
-    right: -15px;
+    right: -10px;
     border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent #686868;
+    border-color: transparent transparent transparent #f5f5f5;
+}
+.timeline ul li:nth-child(even) div:hover {
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: 10px 15px 10px rgb(0, 0, 0);
 }
 
 time {
@@ -314,7 +357,7 @@ time {
 }
 
 .timeline ul li.in-view::after {
-    background: #198754;
+    background: #11a487;
 }
 
 .timeline ul li div {
@@ -448,7 +491,72 @@ time {
     box-shadow: rgb(10, 10, 10) 20px 20px 60px, rgb(52, 52, 52) -20px -20px 60px;
 }
 
+/* custom news product in branda */
+/* body {
+    background-color: #eee;
+} */
+.my-card-produk {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    box-shadow: 0px 0px 8px;
+    margin-bottom: 28px;
+    border-radius: 35px 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.my-card-produk:hover {
+    box-shadow: 0px 0px 8px #c81a3b;
+}
+.my-card-produk img {
+    max-height: 250px;
+    width: 100%;
+}
+.my-card-body {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.my-card-body h5 {
+    text-transform: capitalize;
+    line-height: 25px;
+    font-size: 25px;
+    color: black;
+}
+.my-card-body p {
+    margin: 10px 0;
+    color: #f7941d;
+}
 
+.my-card-btn {
+    color: rgb(231, 231, 231);
+    background-color: #c81a3b;
+    padding: 10px 28px;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 10px 0;
+    transition: 0.5s;
+}
+.my-card-btn:hover {
+    color: rgb(15, 15, 15);
+}
+
+.swiper-container {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.bg-newproduk {
+    background-color: #00000080;
+    backdrop-filter: blur(2px);
+}
 /* custom view produk */
 /* body{
 
@@ -465,7 +573,7 @@ time {
 .card-p {
     height: 420px;
     width: calc(25% - 20px); /* Default 4 kartu per baris */
-    background-color: #c62828;
+    background-color: #53a683;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -474,6 +582,7 @@ time {
     flex: 1 1 calc(25% - 20px); /* Memastikan 4 kartu per baris, dengan jarak */
     box-sizing: border-box; /* Memastikan padding dan border termasuk dalam ukuran */
     margin-bottom: 20px; /* Opsional, menambah jarak vertikal antar baris */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-p::before {
@@ -482,7 +591,7 @@ time {
     height: 100%;
     content: "";
     top: -50%;
-    background-color: #ef5350;
+    background-color: #bee5dc;
     transform: skewY(345deg);
     transition: 2s ease-in;
 }
@@ -534,8 +643,8 @@ time {
 
 .buy-now-p {
     color: #fff;
-    background-color: #ef5350 !important;
-    border-color: #ef5350 !important;
+    background-color: #11a487 !important;
+    border-color: #15c3a0 !important;
     width: 160px;
     margin-top: 20px;
 }
@@ -546,8 +655,8 @@ time {
 
 .buy-now-p:hover {
     color: #fff;
-    background-color: #e84040 !important;
-    border-color: #e84040 !important;
+    background-color: #06b718 !important;
+    border-color: #07d71c !important;
 }
 
 /* Media Queries for Responsiveness */
@@ -689,7 +798,13 @@ time {
     position: relative;
     top: 4px;
     z-index: 1;
-    background: url(https://i.imgur.com/6axE29k.jpg) center center no-repeat;
+    background: rgb(64, 165, 120);
+    background: radial-gradient(
+        circle,
+        rgba(64, 165, 120, 1) 0%,
+        rgba(0, 103, 105, 1) 73%
+    );
+    /* background: url(https://i.imgur.com/6axE29k.jpg) center center no-repeat; */
     background-size: cover;
 }
 
@@ -961,7 +1076,7 @@ time {
     right: 10px;
     top: 45px;
     transform: translateY(-50%);
-    background-color: #080808;
+    background-color: #11a487;
     color: white;
     border-radius: 40%;
     padding: 5px;
@@ -970,7 +1085,7 @@ time {
 }
 
 .search-icon:hover {
-    background-color: #32cd32; /* Warna hijau muda */
+    background-color: #06d001; /* Warna hijau muda */
 }
 
 /* custom pop up produk */
@@ -1054,14 +1169,12 @@ time {
     position: fixed;
     top: 50px;
     width: 100%;
-    background-color: white;
     z-index: 1000;
     display: none;
     border-bottom: black;
+    padding: 0px 70px 0px 70px;
 }
 .fixed_header h3 {
-    margin: 0;
-    padding: 10px;
     color: black;
     text-align: center;
 }
@@ -1069,7 +1182,7 @@ time {
 
 /* navbar multi drop down */
 .bg-nav {
-    background-color: #01752d;
+    background-color: #11a487;
 }
 .dropdown-menu li {
     position: relative;
@@ -1095,4 +1208,37 @@ time {
 
 .switch.active {
     color: black !important; /* Warna teks hitam untuk tombol aktif */
+}
+
+/* cutom event view */
+.bg-event {
+    text-align: center;
+
+    font-family: "Calibri", sans-serif !important;
+    background-color: #b6dbda;
+}
+
+.card-events {
+    margin-top: 200px;
+}
+
+.neo-card {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #11a487, #abd8aa);
+    box-shadow: 6px 6px 13px #0b8970, -6px -6px 13px #1ff7cc;
+}
+
+.neo-card:hover {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #abd8aa, #11a487);
+    box-shadow: inset 6px 6px 13px #0b8970, inset -6px -6px 13px #1ff7cc;
 }

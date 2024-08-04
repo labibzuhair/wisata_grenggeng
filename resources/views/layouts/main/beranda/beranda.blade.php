@@ -46,10 +46,10 @@
             </div>
         </section>
 
-        <section class="timeline">
+        <section class="timeline ">
             <ul>
                 <div class="d-grid gap-2 col-2 mx-auto">
-                    <a href="{{ route('kegiatan') }}" class="btn btn-success" aria-current="page">Semua Event</a>
+                    <a href="{{ route('kegiatan') }}" class="btn btn-primary" aria-current="page">Semua Event</a>
                 </div>
                 @foreach ($kegiatans as $kegiatan)
                     <li>
@@ -65,6 +65,33 @@
             </ul>
         </section>
         {{-- end timeline activities --}}
+
+        {{-- start new product --}}
+        <div class="bg-newproduk">
+            <div class="container">
+                <header class="mb-4 text-black pt-3" id="anyaman">
+                    <h3 class="judul">Produk Anyaman Terbaru</h3>
+                </header>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach ($produks as $produk)
+                            <div class="swiper-slide">
+                                <div class="my-card-produk"> <img class="my-card-img" src="{{ $produk->img_produk1 }}" />
+                                    <div class="my-card-body trainer-card-body">
+                                        <h5>{{ $produk->nama_produk }}</h5>
+                                        <p>Kategori: <small>{{ $produk->kategori_produk }}</small></p>
+                                        <a href="#" class="my-card-btn" data-bs-toggle="modal"
+                                            data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 @endsection

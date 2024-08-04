@@ -118,9 +118,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
+// slider produk branda
+  var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,  // Jumlah slide yang ditampilkan sekaligus
+        spaceBetween: 30,  // Jarak antara slide
+        loop: true,        // Mengaktifkan looping
+        autoplay: {
+            delay: 2500,   // Waktu delay antara setiap slide (ms)
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            320: {  // untuk ukuran layar kecil
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            640: {  // untuk ukuran layar sedang
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1024: {  // untuk ukuran layar besar
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1280: {  // untuk ukuran layar ekstra besar
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+        }
+    });
 // custom slider produk
 $('#myCarousel').carousel({
     interval: 3000,
  })
+

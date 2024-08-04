@@ -18,6 +18,11 @@
     <!-- Bootstrap JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    {{-- slider produk branda --}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
@@ -114,7 +119,7 @@
     <main class="container-fluid p-0">
         @yield('content')
     </main>
-
+    @include('layouts.components.main.popup-produk')
     @include('layouts.components.main.footer')
 
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"
@@ -122,6 +127,8 @@
     </script>
 
     <script src="{{ asset('bootstrap/custom.js') }}"></script>
+
+    
 </body>
 
 </html>

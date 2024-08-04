@@ -5,7 +5,7 @@
 @section('content')
     <div class="image-bg">
         <div class="container">
-            <header class="mb-4 text-black border-bottom pt-3" id="anyaman">
+            <header class="mb-4 text-black pt-3" id="anyaman">
                 <h3 class="judul">Paket Wisata Desa Grenggeng</h3>
             </header>
             <div class="blur-box text-white">
