@@ -11,7 +11,7 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view('layouts/admin/login/login');
+        return view('layouts.admin.login.login'); // Pastikan view login berada di lokasi yang benar
     }
 
     public function login(Request $request)
@@ -25,10 +25,13 @@ class AuthController extends Controller
         return redirect()->back()->withErrors(['email' => 'Email or password are incorrect.']);
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('layouts/admin/login/login');
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('auth');
     }
 
 }

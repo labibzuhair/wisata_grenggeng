@@ -113,6 +113,9 @@
         </ul>
     </div> --}}
 
+    {{-- @include('layouts.components.main.navbar') --}}
+    @include('layouts.components.admin.navbar')
+
 
     <main class="container-fluid p-0">
         @yield('content')

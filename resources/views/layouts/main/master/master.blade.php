@@ -128,7 +128,7 @@
 
     <script src="{{ asset('bootstrap/custom.js') }}"></script>
 
-    
+
 </body>
 
 </html>

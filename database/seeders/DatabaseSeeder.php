@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\AdminSeeder;
 use Database\Seeders\ProdukSeeder;
 use Database\Seeders\SleederSeeder;
 use Database\Seeders\KegiatanSeeder;
@@ -25,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(KegiatanSeeder::class);
         $this->call(ProdukSeeder::class);
         $this->call(SleederSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }
