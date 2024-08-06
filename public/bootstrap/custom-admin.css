@@ -18,6 +18,18 @@
     );
 }
 
+/* Menambahkan hover untuk link menu */
+.navbar-nav .nav-link:hover {
+    background-color: #28a745; /* Hijau */
+    color: #ffffff; /* Putih untuk teks */
+}
+
+/* Menambahkan hover untuk item dropdown */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #28a745; /* Hijau */
+    color: #ffffff; /* Putih untuk teks */
+}
+
 /* custom dashboard admin */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
