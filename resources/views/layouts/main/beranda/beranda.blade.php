@@ -19,9 +19,10 @@
                         style="background-image: url('{{ asset($sleeder->img_wisata) }}');">
                         <div class="overlay"></div>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ $sleeder->nama_wisata }}</h5>
-                            <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
-
+                            {{-- <a href="{{ route('{{ $sleeder->nama_wisata }}') }}"> --}}
+                                <h5>{{ $sleeder->nama_wisata }}</h5>
+                                <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
+                            {{-- </a> --}}
                         </div>
                     </div>
                 @endforeach

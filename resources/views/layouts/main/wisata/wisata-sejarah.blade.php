@@ -8,7 +8,7 @@
         <h1 class="mb-5 text-center text-black">Informasi Wisata Sejarah</h1>
 
         <div class="content-wisata mb-5">
-            <img src="../images/img1.jpg" class="img-fluid" alt="Gambar Wisata 1">
+            <img src="images/img1.jpg" class="img-fluid" alt="Gambar Wisata 1">
             <p class="text-center text-muted">Sumber gambar: website-1.com</p>
             <h2 class="mt-3 text-center">Judul Wisata 1</h2>
             <p>

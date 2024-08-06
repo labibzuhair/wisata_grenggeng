@@ -2,7 +2,9 @@
 
 use App\Models\Produk;
 use App\Models\Kegiatan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeranaController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BerandaController;
@@ -18,8 +20,18 @@ use App\Http\Controllers\WisataSejarahController;
 use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
 
-
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
+Route::get('/auth', [AuthController::class, 'index'])->name('auth');
+// routes/web.php
+Route::get('admin/login', [AuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin/login', [AuthController::class, 'login']);
+Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    // Rute admin lainnya
+});
+
 
 Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan');
 Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('detail-kegiatan');
