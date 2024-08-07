@@ -11,7 +11,11 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view('layouts.admin.login.login'); // Pastikan view login berada di lokasi yang benar
+        if (Auth::guard('admin')->check()) {
+            return redirect()->route('admin.dashboard');
+        }
+
+        return view('layouts.admin.login.login');
     }
 
     public function login(Request $request)

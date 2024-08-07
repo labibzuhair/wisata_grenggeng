@@ -22,8 +22,6 @@ use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
-Route::get('/auth', [AuthController::class, 'index'])->name('auth');
-
 
 Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan');
 Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('detail-kegiatan');
@@ -65,11 +63,16 @@ Route::get('/tabs', function () {
 
 
 
-// routes/web.php
-Route::get('auth', [AuthController::class, 'showLoginForm'])->name('auth');
-Route::post('auth', [AuthController::class, 'login']);
+// Rute untuk halaman login admin
+Route::middleware('guest:admin')->group(function () {
+    Route::get('auth', [AuthController::class, 'showLoginForm'])->name('auth');
+    Route::post('auth', [AuthController::class, 'login']);
+});
+
+// Rute untuk logout admin
 Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
+// Rute yang dilindungi middleware auth:admin
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     // Rute admin lainnya
