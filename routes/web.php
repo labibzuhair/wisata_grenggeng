@@ -63,16 +63,11 @@ Route::get('/tabs', function () {
 
 
 
-// Rute untuk halaman login admin
-Route::middleware('guest:admin')->group(function () {
-    Route::get('auth', [AuthController::class, 'showLoginForm'])->name('auth');
-    Route::post('auth', [AuthController::class, 'login']);
-});
-
-// Rute untuk logout admin
+// routes/web.php
+Route::get('auth', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('auth', [AuthController::class, 'login']);
 Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
-// Rute yang dilindungi middleware auth:admin
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     // Rute admin lainnya
