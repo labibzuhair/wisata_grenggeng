@@ -9,8 +9,9 @@
                     Dashboard
                 </a>
                 <div class="sb-sidenav-menu-heading">Input Group</div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
-                    aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link collapsed {{ request()->is('admin/produk*') ? 'active' : '' }}" href="#"
+                    data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false"
+                    aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fa-brands fa-product-hunt me-2"></i> </div>
                     Produks
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -18,10 +19,14 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Produk Terbaik</a>
-                        <a class="nav-link" href="layout-static.html">Anyaman Pandan</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Teknologi Tepat Guna</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Oleh-Oleh</a>
+                        <a class="nav-link {{ request()->is('admin/produk/produk-terbaik') ? 'active' : '' }}"
+                            href="{{ route('admin.produk.produk-terbaik') }}">Produk Terbaik</a>
+                        <a class="nav-link {{ request()->is('admin/produk/anyaman-pandan') ? 'active' : '' }}"
+                            href="{{ route('admin.produk.anyaman-pandan') }}">Anyaman Pandan</a>
+                        <a class="nav-link {{ request()->is('admin/produk/ttg') ? 'active' : '' }}"
+                            href="{{ route('admin.produk.ttg') }}">Teknologi Tepat Guna</a>
+                        <a class="nav-link {{ request()->is('admin/produk/oleh-oleh') ? 'active' : '' }}"
+                            href="{{ route('admin.produk.oleh-oleh') }}">Oleh-Oleh</a>
                     </nav>
                 </div>
 
@@ -65,15 +70,18 @@
                 </div> --}}
 
                 <div class="sb-sidenav-menu-heading">lainnya</div>
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link {{ request()->is('admin/sliders') ? 'active' : '' }}"
+                    href="{{ route('admin.sliders') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-sliders me-2"></i></div>
                     Sliders
                 </a>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link {{ request()->is('admin/event') ? 'active' : '' }}"
+                    href="{{ route('admin.event') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days me-2"></i></div>
                     Event
                 </a>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link {{ request()->is('admin/paket-wisata') ? 'active' : '' }}"
+                    href="{{ route('admin.paket-wisata') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-list-check me-2"></i></div>
                     Paket Wisata
                 </a>
@@ -85,4 +93,3 @@
         </div>
     </nav>
 </div>
-

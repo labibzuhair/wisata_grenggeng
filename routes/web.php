@@ -10,14 +10,21 @@ use App\Http\Controllers\BeranaController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\AdminTTGController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\WisataAnyamanPandan;
 use App\Http\Controllers\WisataTTGController;
+use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\PaketWisataController;
 use App\Http\Controllers\WisataMakamController;
 use App\Http\Controllers\WisataPasarController;
+use App\Http\Controllers\AdminSlidersController;
+use App\Http\Controllers\AdminOlehOlehController;
 use App\Http\Controllers\ProdukAnyamanController;
 use App\Http\Controllers\WisataSejarahController;
+use App\Http\Controllers\AdminPaketWisataController;
+use App\Http\Controllers\AdminAnyamanPandanController;
+use App\Http\Controllers\AdminProdukTerbaikController;
 use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
 
@@ -70,5 +77,12 @@ Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logo
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-    // Rute admin lainnya
+    Route::get('admin/produk/produk-terbaik', [AdminProdukTerbaikController::class, 'index'])->name('admin.produk.produk-terbaik');
+    Route::get('admin/produk/anyaman-pandan', [AdminAnyamanPandanController::class, 'index'])->name('admin.produk.anyaman-pandan');
+    Route::get('admin/produk/ttg', [AdminTTGController::class, 'index'])->name('admin.produk.ttg');
+    Route::get('admin/produk/oleh-oleh', [AdminOlehOlehController::class, 'index'])->name('admin.produk.oleh-oleh');
+    Route::get('admin/sliders', [AdminSlidersController::class, 'index'])->name('admin.sliders');
+    Route::get('admin/event', [AdminEventController::class, 'index'])->name('admin.event');
+    Route::get('admin/paket-wisata', [AdminPaketWisataController::class, 'index'])->name('admin.paket-wisata');
+
 });
