@@ -19,7 +19,7 @@ class BerandaController extends Controller
     {
         $sleeders = Sleeder::all();
         $kegiatans = Kegiatan::orderBy('tanggal_event', 'desc')->take(5)->get();
-        $produks = Produk::orderBy('created_at', 'desc')->take(6)->get();
+        $produks = ProdukAnyaman::orderBy('created_at', 'desc')->take(6)->get();
         return view('layouts/main/beranda/beranda', compact('kegiatans', 'sleeders', 'produks'));
     }
 

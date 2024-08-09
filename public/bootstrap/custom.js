@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         var carouselItem = document.createElement('div');
                         carouselItem.classList.add('carousel-item');
                         if (index === 0) carouselItem.classList.add('active');
-                        carouselItem.innerHTML = `<img src="${img}" class="d-block w-100" alt="...">`;
+                        carouselItem.innerHTML = `<img src="http://localhost/storage/${img}" class="d-block rounded mx-auto " alt="...">`;
                         carouselInner.appendChild(carouselItem);
                     }
                 });

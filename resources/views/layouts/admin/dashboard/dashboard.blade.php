@@ -21,7 +21,6 @@
                         <li><a href="#"><span class="fab fa-facebook"></span></a></li>
                         <li><a href="#"><span class="fab fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fab fa-google-plus"></span></a></li>
-                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -40,7 +39,6 @@
                         <li><a href="#"><span class="fab fa-facebook"></span></a></li>
                         <li><a href="#"><span class="fab fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fab fa-google-plus"></span></a></li>
-                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -59,7 +57,6 @@
                         <li><a href="#"><span class="fab fa-facebook"></span></a></li>
                         <li><a href="#"><span class="fab fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fab fa-google-plus"></span></a></li>
-                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
                     </ul>
                 </div>
             </div>

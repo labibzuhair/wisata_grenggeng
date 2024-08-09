@@ -49,7 +49,7 @@ class AdminAnyamanPandanController extends Controller
                 $imageName = "img{$i}";
                 if ($request->hasFile($imageName)) {
                     $file = $request->file($imageName);
-                    $path = $file->store('images/img_produk');
+                    $path = $file->store('images/produk_anyaman');
                     $images[$imageName] = $path;
                 }
             }

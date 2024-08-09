@@ -13,7 +13,7 @@
                                     <div class="card text-black">
                                         <div id="productModalCarousel" class="carousel slide modal-carousel"
                                             data-bs-ride="carousel">
-                                            <div class="carousel-inner">
+                                            <div class="carousel-inner ">
                                                 <!-- Images will be inserted here dynamically -->
                                             </div>
                                             <button class="carousel-control-prev" type="button"

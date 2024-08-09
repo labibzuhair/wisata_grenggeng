@@ -96,7 +96,7 @@
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
                                     data-id="{{ $produk->id }}">
                                     <div class="image">
-                                        <img src="{{ $produk->img_produk1 }}" width="300">
+                                        <img src="{{ Storage::url($produk->img1) }}" width="300">
                                     </div>
                                 </a>
                                 <div class="about-product-p text-center">

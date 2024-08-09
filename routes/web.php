@@ -27,6 +27,7 @@ use App\Http\Controllers\AdminAnyamanPandanController;
 use App\Http\Controllers\AdminProdukTerbaikController;
 use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
+use App\Models\ProdukAnyaman;
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
@@ -42,21 +43,21 @@ Route::get('/wisata/kuliner/pasar', [WisataPasarController::class, 'index'])->na
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 
-Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
-Route::get('/produk/all', [ProdukController::class, 'all'])->name('produk.all');
+Route::get('/produk', [ProdukAnyamanController::class, 'index'])->name('produk');
+Route::get('/produk/all', [ProdukAnyamanController::class, 'all'])->name('produk.all');
 Route::get('/api/produk/{id}', function ($id) {
-    $produk = Produk::find($id);
+    $produk = ProdukAnyaman::find($id);
     return response()->json([
         'nama_produk' => $produk->nama_produk,
         'harga' => $produk->harga,
-        'kategori_produk' => $produk->kategori_produk,
-        'deskripsi_produk' => $produk->deskripsi_produk,
+        'kategori_produk' => $produk->kategori,
+        'deskripsi_produk' => $produk->deskripsi,
         'img_produk' => [
-            $produk->img_produk1,
-            $produk->img_produk2,
-            $produk->img_produk3,
-            $produk->img_produk4,
-            $produk->img_produk5,
+            $produk->img1,
+            $produk->img2,
+            $produk->img3,
+            $produk->img4,
+            $produk->img5,
         ],
     ]);
 });

@@ -20,8 +20,8 @@
                         <div class="overlay"></div>
                         <div class="carousel-caption d-none d-md-block">
                             {{-- <a href="{{ route('{{ $sleeder->nama_wisata }}') }}"> --}}
-                                <h5>{{ $sleeder->nama_wisata }}</h5>
-                                <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
+                            <h5>{{ $sleeder->nama_wisata }}</h5>
+                            <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
                             {{-- </a> --}}
                         </div>
                     </div>
@@ -77,10 +77,11 @@
                     <div class="swiper-wrapper">
                         @foreach ($produks as $produk)
                             <div class="swiper-slide">
-                                <div class="my-card-produk"> <img class="my-card-img" src="{{ $produk->img_produk1 }}" />
+                                <div class="my-card-produk"> <img class="my-card-img"
+                                        src="{{ Storage::url($produk->img1) }}" />
                                     <div class="my-card-body trainer-card-body">
                                         <h5>{{ $produk->nama_produk }}</h5>
-                                        <p>Kategori: <small>{{ $produk->kategori_produk }}</small></p>
+                                        <p>Kategori: <small>{{ $produk->kategori }}</small></p>
                                         <a href="#" class="my-card-btn" data-bs-toggle="modal"
                                             data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan</a>
                                     </div>

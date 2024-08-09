@@ -96,7 +96,7 @@
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
                                     data-id="{{ $produk->id }}">
                                     <div class="image">
-                                        <img src="{{ $produk->img_produk1 }}" width="300">
+                                        <img src="{{ Storage::url($produk->img1) }}" width="300">
                                     </div>
                                 </a>
                                 <div class="about-product-p text-center">
@@ -125,7 +125,8 @@
                             <div class="card my-2 shadow-0">
                                 <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
                                     data-id="{{ $produk->id }}">
-                                    <img src="{{ $produk->img_produk1 }}" class="card-img-top" style="aspect-ratio: 1 / 1">
+                                    <img src="{{ Storage::url($produk->img1) }}" class="card-img-top"
+                                        style="aspect-ratio: 1 / 1">
                                 </a>
                                 <div class="card-body p-0 pt-2">
                                     <h5 class="card-title">{{ $produk->harga }}</h5>
@@ -147,7 +148,7 @@
                             <div class="card my-2 shadow-0">
                                 <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
                                     data-id="{{ $produk->id }}">
-                                    <img src="{{ $produk->img_produk1 }}" class="card-img-top"
+                                    <img src="{{ Storage::url($produk->img1) }}" class="card-img-top"
                                         style="aspect-ratio: 1 / 1">
                                 </a>
                                 <div class="card-body p-0 pt-2">
