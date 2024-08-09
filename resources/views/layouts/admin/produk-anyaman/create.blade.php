@@ -26,18 +26,21 @@
                         @csrf
                         <div class="mb-3">
                             <label for="nama_produk" class="form-label">Nama Produk:</label>
-                            <input type="text" name="nama_produk" id="nama_produk" class="form-control" required>
+                            <input type="text" name="nama_produk" id="nama_produk" class="form-control"
+                                value="{{ old('nama_produk') }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="kategori" class="form-label">Kategori:</label>
-                            <input type="text" name="kategori" id="kategori" class="form-control" required>
+                            <input type="text" name="kategori" id="kategori" class="form-control"
+                                value="{{ old('kategori') }}" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi Produk:</label>
-                            <textarea name="deskripsi" id="deskripsi" class="form-control" rows="3" required></textarea>
+                            <textarea name="deskripsi" id="deskripsi" class="form-control" rows="3" required>{{ old('deskripsi') }}</textarea>
                         </div>
+
                         <div class="mb-3">
                             <label for="img1" class="form-label">Gambar 1:</label>
                             <input type="file" name="img1" id="img1" class="form-control" accept="image/*"
@@ -72,7 +75,6 @@
                                 onchange="previewImage(event, 'preview5')">
                             <img id="preview5" class="img-preview mt-2" style="max-width: 200px;">
                         </div>
-
 
                         <button type="submit" class="btn btn-primary">Simpan Produk</button>
                     </form>

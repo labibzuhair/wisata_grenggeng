@@ -69,7 +69,7 @@ class AdminAnyamanPandanController extends Controller
             return redirect()->route('produk.produk-anyaman.create')->with('success', 'Produk berhasil disimpan!');
         } catch (\Exception $e) {
             // Menangkap error dan mengembalikan pesan error
-            return redirect()->route('produk.produk-anyaman.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            return redirect()->route('produk.produk-anyaman.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
         }
     }
 
@@ -85,7 +85,7 @@ class AdminAnyamanPandanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( $id)
+    public function edit($id)
     {
         $produk = ProdukAnyaman::findOrFail($id);
         return view('layouts.admin.produk-anyaman.edit', compact('produk'));
@@ -96,35 +96,57 @@ class AdminAnyamanPandanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $produk = ProdukAnyaman::find($id);
+        try {
+            $produk = ProdukAnyaman::find($id);
 
-    // Validasi input jika diperlukan
+            if (!$produk) {
+                return redirect()->route('produk.produk-anyaman.edit', $id)
+                    ->with('error', 'Produk tidak ditemukan!');
+            }
 
-    $produk->nama_produk = $request->nama_produk;
-    $produk->kategori = $request->kategori;
-    $produk->deskripsi = $request->deskripsi;
+            // Validasi input jika diperlukan
+            $request->validate([
+                'nama_produk' => 'required|string|max:255',
+                'kategori' => 'required|string|max:255',
+                'deskripsi' => 'required|string',
+                'img1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img3' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img4' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img5' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
 
-    // Update gambar jika diunggah
-    if ($request->hasFile('img1')) {
-        $produk->img1 = $request->file('img1')->store('images');
-    }
-    if ($request->hasFile('img2')) {
-        $produk->img2 = $request->file('img2')->store('images');
-    }
-    if ($request->hasFile('img3')) {
-        $produk->img3 = $request->file('img3')->store('images');
-    }
-    if ($request->hasFile('img4')) {
-        $produk->img4 = $request->file('img4')->store('images');
-    }
-    if ($request->hasFile('img5')) {
-        $produk->img5 = $request->file('img5')->store('images');
+            $produk->nama_produk = $request->nama_produk;
+            $produk->kategori = $request->kategori;
+            $produk->deskripsi = $request->deskripsi;
+
+            // Update gambar jika diunggah
+            if ($request->hasFile('img1')) {
+                $produk->img1 = $request->file('img1')->store('images/img_produk');
+            }
+            if ($request->hasFile('img2')) {
+                $produk->img2 = $request->file('img2')->store('images/img_produk');
+            }
+            if ($request->hasFile('img3')) {
+                $produk->img3 = $request->file('img3')->store('images/img_produk');
+            }
+            if ($request->hasFile('img4')) {
+                $produk->img4 = $request->file('img4')->store('images/img_produk');
+            }
+            if ($request->hasFile('img5')) {
+                $produk->img5 = $request->file('img5')->store('images/img_produk');
+            }
+
+            $produk->save();
+
+            return redirect()->route('admin.produk.anyaman-pandan')->with('success', 'Produk berhasil diperbarui!');
+        } catch (\Exception $e) {
+            return redirect()->route('produk.produk-anyaman.edit', $id)
+                ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
-    $produk->save();
 
-    return redirect()->route('admin.produk.anyaman-pandan')->with('success', 'Produk berhasil diperbarui!');
-    }
 
     /**
      * Remove the specified resource from storage.

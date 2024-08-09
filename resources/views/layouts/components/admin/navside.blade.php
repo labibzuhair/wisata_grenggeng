@@ -19,13 +19,13 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link {{ request()->is('admin/produk/produk-terbaik') ? 'active' : '' }}"
+                        <a class="nav-link {{ request()->is('admin/produk/produk-terbaik*') ? 'active' : '' }}"
                             href="{{ route('admin.produk.produk-terbaik') }}">Produk Terbaik</a>
-                        <a class="nav-link {{ request()->is('admin/produk/anyaman-pandan') ? 'active' : '' }}"
+                        <a class="nav-link {{ request()->is('admin/produk/anyaman-pandan*') ? 'active' : '' }}"
                             href="{{ route('admin.produk.anyaman-pandan') }}">Anyaman Pandan</a>
-                        <a class="nav-link {{ request()->is('admin/produk/ttg') ? 'active' : '' }}"
+                        <a class="nav-link {{ request()->is('admin/produk/ttg*') ? 'active' : '' }}"
                             href="{{ route('admin.produk.ttg') }}">Teknologi Tepat Guna</a>
-                        <a class="nav-link {{ request()->is('admin/produk/oleh-oleh') ? 'active' : '' }}"
+                        <a class="nav-link {{ request()->is('admin/produk/oleh-oleh*') ? 'active' : '' }}"
                             href="{{ route('admin.produk.oleh-oleh') }}">Oleh-Oleh</a>
                     </nav>
                 </div>
