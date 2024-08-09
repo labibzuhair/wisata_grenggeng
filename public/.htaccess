@@ -1,4 +1,4 @@
-<IfModule mod_rewrite.c>
+<IfModule mod_rewrite.c>ngix
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>

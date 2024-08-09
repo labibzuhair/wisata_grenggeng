@@ -77,12 +77,25 @@ Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logo
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
     Route::get('admin/produk/produk-terbaik', [AdminProdukTerbaikController::class, 'index'])->name('admin.produk.produk-terbaik');
+
     Route::get('admin/produk/anyaman-pandan', [AdminAnyamanPandanController::class, 'index'])->name('admin.produk.anyaman-pandan');
+    Route::get('/admin/produk/anyaman-pandan/create', [AdminAnyamanPandanController::class, 'create'])->name('produk.produk-anyaman.create');
+    Route::post('/admin/produk/anyaman-pandan/store', [AdminAnyamanPandanController::class, 'store'])->name('produk.produk-anyaman.store');
+    Route::get('/admin/produk/anyaman-pandan/{id}/edit', [AdminAnyamanPandanController::class, 'edit'])->name('produk.produk-anyaman.edit');
+    Route::put('/admin/produk/anyaman-pandan/{id}', [AdminAnyamanPandanController::class, 'update'])->name('produk.produk-anyaman.update');
+    Route::delete('/admin/produk/anyaman-pandan/{id}', [AdminAnyamanPandanController::class, 'destroy'])->name('produk.produk-anyaman.hapus');
+
+
     Route::get('admin/produk/ttg', [AdminTTGController::class, 'index'])->name('admin.produk.ttg');
+
     Route::get('admin/produk/oleh-oleh', [AdminOlehOlehController::class, 'index'])->name('admin.produk.oleh-oleh');
+
     Route::get('admin/sliders', [AdminSlidersController::class, 'index'])->name('admin.sliders');
+
     Route::get('admin/event', [AdminEventController::class, 'index'])->name('admin.event');
+
     Route::get('admin/paket-wisata', [AdminPaketWisataController::class, 'index'])->name('admin.paket-wisata');
 
 });

@@ -26,3 +26,18 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+// preview gambar in input group
+function previewImage(event, previewId) {
+    var input = event.target;
+    var reader = new FileReader();
+
+    reader.onload = function() {
+        var img = document.getElementById(previewId);
+        img.src = reader.result;
+        img.style.display = 'block';
+    }
+
+    reader.readAsDataURL(input.files[0]);
+}
+

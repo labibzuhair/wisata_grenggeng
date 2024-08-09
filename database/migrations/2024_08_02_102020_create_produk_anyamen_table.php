@@ -14,14 +14,13 @@ return new class extends Migration
         Schema::create('produk_anyamen', function (Blueprint $table) {
             $table->id();
             $table->string('nama_produk');
-            $table->string('img_produk1');
-            $table->string('img_produk2');
-            $table->string('img_produk3');
-            $table->string('img_produk4');
-            $table->string('img_produk5');
-            $table->text('deskripsi_produk');
-            $table->string('kategori_produk');
-            $table->string('harga');
+            $table->string('kategori');
+            $table->text('deskripsi');
+            $table->string('img1')->nullable();
+            $table->string('img2')->nullable();
+            $table->string('img3')->nullable();
+            $table->string('img4')->nullable();
+            $table->string('img5')->nullable();
             $table->timestamps();
         });
     }

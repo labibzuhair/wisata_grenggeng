@@ -32,7 +32,14 @@
     );
 }
 
-
+/* cutom image preview in input group admin */
+.img-preview {
+    display: none;
+    max-height: 150px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-top: 10px;
+}
 
 /* custom dashboard admin */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
