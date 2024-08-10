@@ -1,7 +1,7 @@
 @extends('layouts.main.master.master')
 
 
-@section('title', 'Halaman Utama')
+@section('title', 'Wisata Sejarah')
 
 @section('content')
     <div class="container mt-5">

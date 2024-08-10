@@ -1,6 +1,6 @@
 @extends('layouts.main.master.master')
 
-@section('title', 'Halaman Utama')
+@section('title', 'Paket Wisata')
 
 @section('content')
     <div class="image-bg">

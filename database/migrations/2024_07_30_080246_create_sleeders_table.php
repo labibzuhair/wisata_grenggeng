@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('sleeders', function (Blueprint $table) {
             $table->id();
             $table->string('nama_wisata');
+            $table->string('kategori_wisata');
             $table->text('img_wisata');
             $table->text('deskripsi_wisata');
             $table->timestamps();

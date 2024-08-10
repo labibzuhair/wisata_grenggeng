@@ -1,6 +1,6 @@
 @extends('layouts.main.master.master')
 
-@section('title', 'Halaman Utama')
+@section('title', 'Kegiatan')
 
 @section('content')
     <div class="bg-event">

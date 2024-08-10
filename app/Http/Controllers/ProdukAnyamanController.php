@@ -13,7 +13,7 @@ class ProdukAnyamanController extends Controller
 {
     public function index()
     {
-        $terbaiks = ProdukTerbaik::latest()->take(5)->get();
+        $terbaiks = ProdukTerbaik::all();
         $anyamans = ProdukAnyaman::latest()->take(10)->get();
         $ttgs = ProdukTTG::latest()->take(10)->get();
         $makanans = ProdukMakanan::latest()->take(10)->get();

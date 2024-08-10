@@ -16,7 +16,8 @@ class SleederSeeder extends Seeder
     {
         Sleeder::create([
             "nama_wisata"=> "Anyaman Pandan",
-            "img_wisata"=> "images/img1.jpg",
+            "kategori_wisata"=> "anyaman-pandan",
+            "img_wisata"=> "images/img_wisata/img1.jpg",
             "deskripsi_wisata"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -24,7 +25,8 @@ class SleederSeeder extends Seeder
         ]);
         Sleeder::create([
             "nama_wisata"=> "Anyaman Pandan",
-            "img_wisata"=> "images/img2.jpg",
+            "kategori_wisata"=> "anyaman-pandan",
+            "img_wisata"=> "images/img_wisata/img2.jpg",
             "deskripsi_wisata"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -32,7 +34,8 @@ class SleederSeeder extends Seeder
         ]);
         Sleeder::create([
             "nama_wisata"=> "Anyaman Pandan",
-            "img_wisata"=> "images/img3.jpg",
+            "kategori_wisata"=> "anyaman-pandan",
+            "img_wisata"=> "images/img_wisata/img3.jpg",
             "deskripsi_wisata"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -40,7 +43,8 @@ class SleederSeeder extends Seeder
         ]);
         Sleeder::create([
             "nama_wisata"=> "Anyaman Pandan",
-            "img_wisata"=> "images/img1.jpg",
+            "kategori_wisata"=> "anyaman-pandan",
+            "img_wisata"=> "images/img_wisata/img1.jpg",
             "deskripsi_wisata"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -48,7 +52,8 @@ class SleederSeeder extends Seeder
         ]);
         Sleeder::create([
             "nama_wisata"=> "Anyaman Pandan",
-            "img_wisata"=> "images/img2.jpg",
+            "kategori_wisata"=> "anyaman-pandan",
+            "img_wisata"=> "images/img_wisata/img2.jpg",
             "deskripsi_wisata"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,
@@ -56,7 +61,8 @@ class SleederSeeder extends Seeder
         ]);
         Sleeder::create([
             "nama_wisata"=> "Anyaman Pandan",
-            "img_wisata"=> "images/img3.jpg",
+            "kategori_wisata"=> "anyaman-pandan",
+            "img_wisata"=> "images/img_wisata/img3.jpg",
             "deskripsi_wisata"=> " Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                 distinctio earum repellat quaerat voluptatibus placeat nam,
                 commodi optio pariatur est quia magnam eum harum corrupti dicta,

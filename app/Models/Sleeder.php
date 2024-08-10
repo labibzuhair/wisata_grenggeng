@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sleeder extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'nama_wisata', 'kategori_wisata', 'deskripsi_wisata', 'img_wisata',
+    ];
 }

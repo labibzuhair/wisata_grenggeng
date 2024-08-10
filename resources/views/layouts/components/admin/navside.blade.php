@@ -30,7 +30,7 @@
                     </nav>
                 </div>
 
-                {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
                     aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Pages
@@ -67,7 +67,7 @@
                             </nav>
                         </div>
                     </nav>
-                </div> --}}
+                </div>
 
                 <div class="sb-sidenav-menu-heading">lainnya</div>
                 <a class="nav-link {{ request()->is('admin/sliders') ? 'active' : '' }}"
@@ -75,8 +75,8 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-sliders me-2"></i></div>
                     Sliders
                 </a>
-                <a class="nav-link {{ request()->is('admin/event') ? 'active' : '' }}"
-                    href="{{ route('admin.event') }}">
+                <a class="nav-link {{ request()->is('admin/events*') ? 'active' : '' }}"
+                    href="{{ route('admin.events') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days me-2"></i></div>
                     Event
                 </a>

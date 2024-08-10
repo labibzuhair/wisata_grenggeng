@@ -54,7 +54,7 @@ class ProdukAnyamanSleeders extends Seeder
         ]);
         ProdukAnyaman::create([
             "nama_produk"=> "Anyaman Pandan",
-            "img1"=> "images/produk_anyaman/14.png",
+            "img1"=> "images/produk_anyaman/15.png",
             "img2"=> "images/produk_anyaman/15.png",
             "img3"=> "images/produk_anyaman/16.png",
             "img4"=> "images/produk_anyaman/17.png",

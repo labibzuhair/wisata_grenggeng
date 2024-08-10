@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kegiatan extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'nama_event', 'tanggal_event', 'waktu', 'lokasi', 'pengisi_acara', 'deskripsi',
+    ];
 }

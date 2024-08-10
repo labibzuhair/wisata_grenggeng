@@ -16,13 +16,13 @@
             <div class="carousel-inner">
                 @foreach ($sleeders as $index => $sleeder)
                     <div class="carousel-item hero-item {{ $index == 0 ? 'active' : '' }}"
-                        style="background-image: url('{{ asset($sleeder->img_wisata) }}');">
+                        style="background-image: url('{{ Storage::url($sleeder->img_wisata) }}');">
                         <div class="overlay"></div>
                         <div class="carousel-caption d-none d-md-block">
-                            {{-- <a href="{{ route('{{ $sleeder->nama_wisata }}') }}"> --}}
-                            <h5>{{ $sleeder->nama_wisata }}</h5>
-                            <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
-                            {{-- </a> --}}
+                            <a href="{{ route($sleeder->kategori_wisata) }}">
+                                <h5>{{ $sleeder->nama_wisata }}</h5>
+                                <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
+                            </a>
                         </div>
                     </div>
                 @endforeach

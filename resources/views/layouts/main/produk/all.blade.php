@@ -1,7 +1,7 @@
 @extends('layouts.main.master.master')
 
 
-@section('title', 'Halaman Utama')
+@section('title', 'Semua Produk')
 
 @section('content')
     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">

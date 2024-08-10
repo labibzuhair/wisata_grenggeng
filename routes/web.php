@@ -116,8 +116,18 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::delete('/admin/produk/makanan/{id}', [AdminMakananController::class, 'destroy'])->name('admin.produk.makanan.hapus');
 
     Route::get('admin/sliders', [AdminSlidersController::class, 'index'])->name('admin.sliders');
+    Route::get('/admin/sliders/create', [AdminSlidersController::class, 'create'])->name('admin.sliders.create');
+    Route::post('/admin/sliders/store', [AdminSlidersController::class, 'store'])->name('admin.sliders.store');
+    Route::get('/admin/sliders/{id}/edit', [AdminSlidersController::class, 'edit'])->name('admin.sliders.edit');
+    Route::put('/admin/sliders/{id}', [AdminSlidersController::class, 'update'])->name('admin.sliders.update');
+    Route::delete('/admin/sliders/{id}', [AdminSlidersController::class, 'destroy'])->name('admin.sliders.hapus');
 
-    Route::get('admin/event', [AdminEventController::class, 'index'])->name('admin.event');
+    Route::get('admin/events', [AdminEventController::class, 'index'])->name('admin.events');
+    Route::get('/admin/event/create', [AdminEventController::class, 'create'])->name('admin.event.create');
+    Route::post('/admin/event/store', [AdminEventController::class, 'store'])->name('admin.event.store');
+    Route::get('/admin/event/{id}/edit', [AdminEventController::class, 'edit'])->name('admin.event.edit');
+    Route::put('/admin/event/{id}', [AdminEventController::class, 'update'])->name('admin.event.update');
+    Route::delete('/admin/event/{id}', [AdminEventController::class, 'destroy'])->name('admin.event.hapus');
 
     Route::get('admin/paket-wisata', [AdminPaketWisataController::class, 'index'])->name('admin.paket-wisata');
 
