@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProdukTTG;
-use Illuminate\Http\Request;
 use App\Models\ProdukMakanan;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class AdminTTGController extends Controller
+class AdminMakananController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $produks = ProdukTTG::all();
-        return view('layouts.admin.produk-TTG.produk-ttg', compact('produks'));
+        $produks = ProdukMakanan::all();
+        return view('layouts.admin.produk-makanan.produk-makanan', compact('produks'));
     }
 
     /**
@@ -23,7 +21,7 @@ class AdminTTGController extends Controller
      */
     public function create()
     {
-        return view('layouts.admin.produk-TTG.create');
+        return view('layouts.admin.produk-makanan.create');
     }
 
     /**
@@ -56,7 +54,7 @@ class AdminTTGController extends Controller
             }
 
             // Menyimpan data ke database
-            ProdukTTG::create([
+            ProdukMakanan::create([
                 'nama_produk' => $validated['nama_produk'],
                 'kategori' => $validated['kategori'],
                 'deskripsi' => $validated['deskripsi'],
@@ -67,10 +65,10 @@ class AdminTTGController extends Controller
                 'img5' => $images['img5'] ?? null,
             ]);
 
-            return redirect()->route('admin.produk.ttg.create')->with('success', 'Produk berhasil disimpan!');
+            return redirect()->route('admin.produk.makanan.create')->with('success', 'Produk berhasil disimpan!');
         } catch (\Exception $e) {
             // Menangkap error dan mengembalikan pesan error
-            return redirect()->route('admin.produk.ttg.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
+            return redirect()->route('admin.produk.makanan.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
         }
     }
 
@@ -87,8 +85,8 @@ class AdminTTGController extends Controller
      */
     public function edit($id)
     {
-        $produk = ProdukTTG::findOrFail($id);
-        return view('layouts.admin.produk-TTG.edit', compact('produk'));
+        $produk = ProdukMakanan::findOrFail($id);
+        return view('layouts.admin.produk-makanan.edit', compact('produk'));
     }
 
     /**
@@ -97,10 +95,10 @@ class AdminTTGController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $produk = ProdukTTG::find($id);
+            $produk = ProdukMakanan::find($id);
 
             if (!$produk) {
-                return redirect()->route('admin.produk.ttg.edit', $id)
+                return redirect()->route('admin.produk.makanan.edit', $id)
                     ->with('error', 'Produk tidak ditemukan!');
             }
 
@@ -139,21 +137,20 @@ class AdminTTGController extends Controller
 
             $produk->save();
 
-            return redirect()->route('admin.produk.ttg')->with('success', 'Produk berhasil diperbarui!');
+            return redirect()->route('admin.produk.makanan')->with('success', 'Produk berhasil diperbarui!');
         } catch (\Exception $e) {
-            return redirect()->route('admin.produk.ttg.edit', $id)
+            return redirect()->route('admin.produk.makanan.edit', $id)
                 ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
-
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        $produk = ProdukTTG::findOrFail($id);
+        $produk = ProdukMakanan::findOrFail($id);
         $produk->delete();
 
-        return redirect()->route('admin.produk.ttg')->with('success', 'Produk berhasil dihapus.');
+        return redirect()->route('admin.produk.makanan')->with('success', 'Produk berhasil dihapus.');
     }
 }

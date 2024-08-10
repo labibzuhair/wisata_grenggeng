@@ -86,12 +86,42 @@
         <section>
 
             <div class="container">
-                <header class="mb-4 text-black pt-3" id="anyaman">
+                <header class=" text-black pt-3" id="anyaman">
                     <h3 class="judul">Produk Anyaman Pandan</h3>
                 </header>
                 <div class="row">
                     <div class="wrapper-p ">
-                        @foreach ($produks as $produk)
+                        @foreach ($anyamans as $produk)
+                            <div class="card card-p text-center">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
+                                    data-id="{{ $produk->id }}">
+                                    <div class="image">
+                                        <img src="{{ Storage::url($produk->img1) }}" width="300">
+                                    </div>
+                                </a>
+                                <div class="about-product-p text-center">
+                                    <h3>{{ $produk->nama_produk }}</h3>
+                                    <h4>Kategori: <small>{{ $produk->kategori_produk }}</small></h4>
+                                    <button class="btn btn-success buy-now-p "><a href="#"
+                                            class="text-decoration-none" data-bs-toggle="modal"
+                                            data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
+                                            Produk</a></button>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto pt-4 pb-4">
+                        <a class="btn btn-light " href="{{ route('produk.semua-anyaman') }}">Lihat
+                            Lainnya</a>
+                    </div>
+                </div>
+
+                <header class="mb-4 text-black pt-3" id="anyaman">
+                    <h3 class="judul">TTG (Teknologi Tepat Guna)</h3>
+                </header>
+                <div class="row">
+                    <div class="wrapper-p ">
+                        @foreach ($ttgs as $produk)
                             <div class="card card-p text-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
                                     data-id="{{ $produk->id }}">
@@ -111,69 +141,43 @@
                         @endforeach
                     </div>
 
-                    <div class="d-grid gap-2 col-6 mx-auto pt-4 pb-4">
-                        <a class="btn btn-light " href="{{ route('produk.all') }}">Lihat
-                            Lainnya</a>
+                    <header class="mb-4 text-black pt-3" id="anyaman">
+                        <h3 class="judul">Oleh-Oleh Makanan Ringan</h3>
+                    </header>
+                    <div class="row">
+                        <div class="wrapper-p ">
+                            @foreach ($makanans as $produk)
+                                <div class="card card-p text-center">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
+                                        data-id="{{ $produk->id }}">
+                                        <div class="image">
+                                            <img src="{{ Storage::url($produk->img1) }}" width="300">
+                                        </div>
+                                    </a>
+                                    <div class="about-product-p text-center">
+                                        <h3>{{ $produk->nama_produk }}</h3>
+                                        <h4>Kategori: <small>{{ $produk->kategori_produk }}</small></h4>
+                                        <button class="btn btn-success buy-now-p "><a href="#"
+                                                class="text-decoration-none" data-bs-toggle="modal"
+                                                data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
+                                                Produk</a></button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <div class="d-grid gap-2 col-6 mx-auto pt-4 pb-4">
+                            <a class="btn btn-light " href="{{ route('produk.semua-makanan') }}">Lihat
+                                Lainnya</a>
+                        </div>
                     </div>
-                </div>
-                <header class="mb-4 text-black pt-3" id="ttg">
-                    <h3 class="judul">TTG (Teknologi Tepat Guna)</h3>
-                </header>
-                <div class="row">
-                    @foreach ($produks as $produk)
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card my-2 shadow-0">
-                                <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
-                                    data-id="{{ $produk->id }}">
-                                    <img src="{{ Storage::url($produk->img1) }}" class="card-img-top"
-                                        style="aspect-ratio: 1 / 1">
-                                </a>
-                                <div class="card-body p-0 pt-2">
-                                    <h5 class="card-title">{{ $produk->harga }}</h5>
-                                    <p class="card-text mb-0">{{ $produk->nama_produk }}</p>
-                                    <p class="text-muted">
-                                        Kategori: {{ $produk->kategori_produk }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                <header class="mb-4 text-black pt-3" id="makanan">
-                    <h3 class="judul">Makanan Ringan</h3>
-                </header>
-                <div class="row">
-                    @foreach ($produks as $produk)
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card my-2 shadow-0">
-                                <a href="#" class="img-wrap" data-bs-toggle="modal" data-bs-target="#productModal"
-                                    data-id="{{ $produk->id }}">
-                                    <img src="{{ Storage::url($produk->img1) }}" class="card-img-top"
-                                        style="aspect-ratio: 1 / 1">
-                                </a>
-                                <div class="card-body p-0 pt-2">
-                                    <h5 class="card-title">{{ $produk->harga }}</h5>
-                                    <p class="card-text mb-0">{{ $produk->nama_produk }}</p>
-                                    <p class="text-muted">
-                                        Kategori: {{ $produk->kategori_produk }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+
                 </div>
 
-
-            </div>
-
-            <div class="d-grid gap-2 col-6 mx-auto pt-4 pb-4">
-                <a class="btn btn-light " href="/daily_discover?pageNumber=2">Lihat
-                    Lainnya</a>
-            </div>
         </section>
         <!-- Products -->
 
-        <!-- Feature -->
+        {{-- <!-- Feature -->
         <section class="p-4">
             <div class="container">
                 <div class="row gy-4">
@@ -282,7 +286,7 @@
             </div>
 
         </section>
-        <!-- Recently viewed -->
+        <!-- Recently viewed --> --}}
     </div>
 
 

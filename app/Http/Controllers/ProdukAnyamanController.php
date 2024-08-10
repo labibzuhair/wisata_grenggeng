@@ -5,13 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProdukAnyaman;
 use App\Http\Controllers\Controller;
+use App\Models\ProdukMakanan;
+use App\Models\ProdukTerbaik;
+use App\Models\ProdukTTG;
 
 class ProdukAnyamanController extends Controller
 {
     public function index()
     {
-        $produks = ProdukAnyaman::latest()->take(10)->get();
-        return view('layouts/main/produk/produk', compact('produks'));
+        $terbaiks = ProdukTerbaik::latest()->take(5)->get();
+        $anyamans = ProdukAnyaman::latest()->take(10)->get();
+        $ttgs = ProdukTTG::latest()->take(10)->get();
+        $makanans = ProdukMakanan::latest()->take(10)->get();
+        return view('layouts/main/produk/produk', compact('terbaiks','anyamans', 'ttgs', 'makanans'));
     }
     public function all()
     {

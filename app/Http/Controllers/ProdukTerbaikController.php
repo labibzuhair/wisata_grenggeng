@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ProdukTerbaik;
+use App\Http\Controllers\Controller;
 
 class ProdukTerbaikController extends Controller
 {
@@ -33,9 +35,10 @@ class ProdukTerbaikController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
-        //
+        $produk = ProdukTerbaik::findOrFail($id);
+        return view('layouts/main/produk/detail-produk', compact('produk'));
     }
 
     /**

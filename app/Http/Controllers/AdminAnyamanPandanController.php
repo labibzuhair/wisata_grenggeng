@@ -66,10 +66,10 @@ class AdminAnyamanPandanController extends Controller
                 'img5' => $images['img5'] ?? null,
             ]);
 
-            return redirect()->route('produk.produk-anyaman.create')->with('success', 'Produk berhasil disimpan!');
+            return redirect()->route('admin.produk.produk-anyaman.create')->with('success', 'Produk berhasil disimpan!');
         } catch (\Exception $e) {
             // Menangkap error dan mengembalikan pesan error
-            return redirect()->route('produk.produk-anyaman.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
+            return redirect()->route('admin.produk.produk-anyaman.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
         }
     }
 
@@ -100,7 +100,7 @@ class AdminAnyamanPandanController extends Controller
             $produk = ProdukAnyaman::find($id);
 
             if (!$produk) {
-                return redirect()->route('produk.produk-anyaman.edit', $id)
+                return redirect()->route('admin.produk.produk-anyaman.edit', $id)
                     ->with('error', 'Produk tidak ditemukan!');
             }
 
@@ -141,7 +141,7 @@ class AdminAnyamanPandanController extends Controller
 
             return redirect()->route('admin.produk.anyaman-pandan')->with('success', 'Produk berhasil diperbarui!');
         } catch (\Exception $e) {
-            return redirect()->route('produk.produk-anyaman.edit', $id)
+            return redirect()->route('admin.produk.produk-anyaman.edit', $id)
                 ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }

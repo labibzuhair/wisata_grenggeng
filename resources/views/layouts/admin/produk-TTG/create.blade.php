@@ -22,7 +22,7 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="p-4 bg-light border rounded">
-                    <form action="{{ route('admin.produk.produk-anyaman.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.produk.ttg.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="nama_produk" class="form-label">Nama Produk:</label>

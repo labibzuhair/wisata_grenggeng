@@ -9,6 +9,10 @@ use Database\Seeders\AdminSeeder;
 use Database\Seeders\ProdukSeeder;
 use Database\Seeders\SleederSeeder;
 use Database\Seeders\KegiatanSeeder;
+use Database\Seeders\ProdukTTGSeeders;
+use Database\Seeders\ProdukMakananSeeders;
+use Database\Seeders\ProdukTerbaikSeeders;
+use Database\Seeders\ProdukAnyamanSleeders;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,5 +32,8 @@ class DatabaseSeeder extends Seeder
         $this->call(SleederSeeder::class);
         $this->call(AdminSeeder::class);
         $this->call(ProdukAnyamanSleeders::class);
+        $this->call(ProdukTTGSeeders::class);
+        $this->call(ProdukMakananSeeders::class);
+        $this->call(ProdukTerbaikSeeders::class);
     }
 }

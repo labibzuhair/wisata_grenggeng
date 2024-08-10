@@ -8,7 +8,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Produk Anyaman</h1>
         <ol class="breadcrumb mb-4">
-            <a class="btn btn-primary " href="{{ route('produk.produk-anyaman.create') }}">
+            <a class="btn btn-primary " href="{{ route('admin.produk.produk-anyaman.create') }}">
                 <li class="text-white">Tambah Data</li>
             </a>
         </ol>
@@ -84,12 +84,12 @@
                                 <td>{{ $produk->deskripsi }}</td>
                                 <td>
                                     <!-- Tombol Edit -->
-                                    <a href="{{ route('produk.produk-anyaman.edit', $produk->id) }}"
+                                    <a href="{{ route('admin.produk.produk-anyaman.edit', $produk->id) }}"
                                         class="btn btn-sm btn-warning">Edit</a>
 
                                     <!-- Tombol Hapus -->
-                                    <form action="{{ route('produk.produk-anyaman.hapus', $produk->id) }}" method="POST"
-                                        style="display:inline-block;">
+                                    <form action="{{ route('admin.produk.produk-anyaman.hapus', $produk->id) }}"
+                                        method="POST" style="display:inline-block;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger"

@@ -21,7 +21,7 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="p-4 bg-light border rounded">
-                    <form action="{{ route('produk.produk-anyaman.update', $produk->id) }}" method="POST"
+                    <form action="{{ route('admin.produk.produk-anyaman.update', $produk->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
