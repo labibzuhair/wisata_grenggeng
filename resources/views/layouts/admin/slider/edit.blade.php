@@ -34,7 +34,7 @@
                             <label for="kategori_wisata" class="form-label">Kategori Wisata:</label>
                             <select class="form-select form-select-lg mb-3" name="kategori_wisata" id="kategori_wisata"
                                 aria-label="Large select example">
-                                <option selected>pilih salah satu kategori</option>
+                                <option selected value="">pilih salah satu kategori</option>
                                 <option value="anyaman-pandan">anyaman-pandan</option>
                                 <option value="wisata-sejarah">wisata-sejarah</option>
                                 <option value="lembah-pereng">lembah-pereng</option>
