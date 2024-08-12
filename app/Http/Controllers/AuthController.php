@@ -23,6 +23,12 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
+            $admin = Auth::guard('admin')->user();
+
+            $request->session()->put(
+                'admin_name',
+                $admin->name
+            );
             return redirect()->intended('admin/dashboard');
         }
 

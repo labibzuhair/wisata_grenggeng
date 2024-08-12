@@ -40,14 +40,16 @@
         </div>
 
         {{-- start timeline activities --}}
-        <section class="intro">
-            <div class="container bg-text blur-box">
-                <h1>Jadwal Event &darr;</h1>
-                <p>Desa Wisata Grenggeng, Karanganyar, Kebumen, Jawa Tengah</a></p>
-            </div>
+        <section class="intro ">
+            <button>
+                <div class="container bg-text blur-box event-head" id="event-head">
+                    <h1>Jadwal Event &darr;</h1>
+                    <p>Desa Wisata Grenggeng, Karanganyar, Kebumen, Jawa Tengah</a></p>
+                </div>
+            </button>
         </section>
 
-        <section class="timeline ">
+        <section class="timeline timeline-event" id="timeline-event">
             <ul>
                 <div class="d-grid gap-2 col-2 mx-auto">
                     <a href="{{ route('kegiatan') }}" class="btn btn-primary" aria-current="page">Semua Event</a>
@@ -67,12 +69,12 @@
         </section>
         {{-- end timeline activities --}}
 
-        {{-- start new product --}}
         <div class="bg-newproduk">
             <div class="container">
                 <header class="mb-4 text-black pt-3" id="anyaman">
                     <h3 class="judul">Produk Anyaman Terbaru</h3>
                 </header>
+                <!-- Tambahkan tombol navigasi -->
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         @foreach ($produks as $produk)
@@ -89,9 +91,13 @@
                             </div>
                         @endforeach
                     </div>
+                    <!-- Tambahkan tombol di sini -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
+
 
 
     </div>

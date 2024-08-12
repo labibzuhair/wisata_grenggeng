@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="sb-sidenav-menu-heading">lainnya</div>
-                <a class="nav-link {{ request()->is('admin/sliders') ? 'active' : '' }}"
+                <a class="nav-link {{ request()->is('admin/sliders*') ? 'active' : '' }}"
                     href="{{ route('admin.sliders') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-sliders me-2"></i></div>
                     Sliders
@@ -80,7 +80,7 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-calendar-days me-2"></i></div>
                     Event
                 </a>
-                <a class="nav-link {{ request()->is('admin/paket-wisata') ? 'active' : '' }}"
+                <a class="nav-link {{ request()->is('admin/paket-wisata*') ? 'active' : '' }}"
                     href="{{ route('admin.paket-wisata') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-list-check me-2"></i></div>
                     Paket Wisata
@@ -89,7 +89,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Masuk Sebagai:</div>
-            Admin Desa
+            {{ session('admin_name') }}
         </div>
     </nav>
 </div>

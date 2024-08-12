@@ -4,11 +4,11 @@
 @section('title', 'Login Admin')
 
 @section('content')
-    <div class="p-2 m-5 text-white" style="background-color: rgb(118, 118, 118);">
+    <div class="p-2 m-4 text-white" style="background-color: rgb(118, 118, 118); border-radius: 10px;">
         <h1 class="m-2">Dashboard</h1>
     </div>
     <div class="container-ad">
-        <div class="row p-5 m-5" style="background-color: rgb(197, 197, 197);">
+        <div class="row p-5 m-5" style="background-color: rgb(240 240 240);">
             <div class="col-md-4 mb-md-0 pb-4">
                 <div class="card d-flex flex-column align-items-center justify-content-center">
                     <div class="inner-content d-flex flex-column align-items-center justify-content-center">

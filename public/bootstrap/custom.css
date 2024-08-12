@@ -495,6 +495,10 @@ time {
 /* body {
     background-color: #eee;
 } */
+ .bg-newproduk {
+    background-color: #00000080;
+    backdrop-filter: blur(2px);
+}
 .my-card-produk {
     display: flex;
     -ms-flex-direction: column;
@@ -502,14 +506,14 @@ time {
     min-width: 0;
     background-color: #fff;
     background-clip: border-box;
-    box-shadow: 0px 0px 8px;
+    box-shadow: 0px 0px 20px;
     margin-bottom: 28px;
     border-radius: 35px 0;
     overflow: hidden;
     transition: 0.5s;
 }
 .my-card-produk:hover {
-    box-shadow: 0px 0px 8px #c81a3b;
+    box-shadow: 0px 0px 50px #11a487;
 }
 .my-card-produk img {
     max-height: 250px;
@@ -532,7 +536,7 @@ time {
 
 .my-card-btn {
     color: rgb(231, 231, 231);
-    background-color: #c81a3b;
+    background-color: #11a487;
     padding: 10px 28px;
     text-decoration: none;
     text-transform: capitalize;
@@ -553,10 +557,16 @@ time {
     justify-content: center;
     padding: 10px;
 }
-.bg-newproduk {
-    background-color: #00000080;
-    backdrop-filter: blur(2px);
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000; /* Warna tombol */
+    background-color: rgba(116, 115, 115, 0.8); /* Background tombol */
+    border-radius: 50%; /* Membuat tombol bulat */
+    width: 60px;
+    height: 60px;
 }
+
 /* custom view produk */
 /* body{
 

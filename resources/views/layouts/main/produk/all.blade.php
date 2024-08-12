@@ -87,8 +87,19 @@
         <div class="bg-event">
             <div class="container">
                 <header class="mb-4 text-black pt-3" id="anyaman">
-                    <h3 class="judul">Produk Anyaman Pandan</h3>
+                    <h3 class="judul">
+                        @if (request()->routeIs('produk.semua-anyaman'))
+                            Produk Anyaman Pandan
+                        @elseif (request()->routeIs('produk.semua-ttg'))
+                            Produk Teknologi Tepat Guna
+                        @elseif (request()->routeIs('produk.semua-makanan'))
+                            Produk Makanan Ringan
+                        @else
+                            Semua Produk
+                        @endif
+                    </h3>
                 </header>
+
                 <div class="row">
                     <div class="wrapper-p">
                         @foreach ($produks as $produk)
@@ -101,7 +112,7 @@
                                 </a>
                                 <div class="about-product-p text-center">
                                     <h3>{{ $produk->nama_produk }}</h3>
-                                    <h4>Kategori: <small>{{ $produk->kategori_produk }}</small></h4>
+                                    <h4>Kategori: <small>{{ $produk->kategori }}</small></h4>
                                     <button class="btn btn-success buy-now-p"><a href="#" class="text-decoration-none"
                                             data-bs-toggle="modal" data-bs-target="#productModal"
                                             data-id="{{ $produk->id }}">Tanyakan

@@ -13,7 +13,9 @@
                     <h3 class="card-header"><b>{{ $kegiatan->nama_event }}</b></h3>
                     <h5 class="card-header">Yang Akan di Isi Oleh : {{ $kegiatan->pengisi_acara }}</h5>
                     <div class="card-body">
-                        <h5 class="card-title">{{ $kegiatan->tanggal_event }} Jam : {{ $kegiatan->waktu }}</h5>
+                        <h5 class="card-title">Tanggal dan Waktu : Tanggal {{ $kegiatan->tanggal_event }} Jam
+                            {{ $kegiatan->waktu }}
+                        </h5>
                         <h5 class="card-title">{{ $kegiatan->lokasi }} </h5>
                         <p class="text-start p-3">{{ $kegiatan->deskripsi }}</p>
                     </div>
