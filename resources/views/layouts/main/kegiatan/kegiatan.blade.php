@@ -1,12 +1,12 @@
 @extends('layouts.main.master.master')
 
-@section('title', 'Kegiatan')
+@section('title', 'Event')
 
 @section('content')
-    <div class="bg-event">
-        <div class="container p-4">
+    <div class="">
+        <div class="container-event p-4 bg-event">
             <header class="mb-4 text-black pt-3" id="anyaman">
-                <h3 class="judul">Detail Event</h3>
+                <h3 class="judul">Semua Event</h3>
             </header>
             @foreach ($kegiatans as $kegiatan)
                 <div class="card m-5 card-events">

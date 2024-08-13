@@ -495,7 +495,7 @@ time {
 /* body {
     background-color: #eee;
 } */
- .bg-newproduk {
+.bg-newproduk {
     background-color: #00000080;
     backdrop-filter: blur(2px);
 }
@@ -1221,6 +1221,12 @@ time {
 }
 
 /* cutom event view */
+.container-event {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 30px auto;
+    text-align: center;
+}
 .bg-event {
     text-align: center;
 

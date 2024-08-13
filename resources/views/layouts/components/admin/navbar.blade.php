@@ -1,4 +1,4 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-nav">
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-nav">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index.html">Admin Desa Wisata</a>
     <!-- Sidebar Toggle-->

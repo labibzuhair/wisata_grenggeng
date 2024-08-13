@@ -23,7 +23,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}"
-                        href="{{ route('kegiatan') }}">Kegiatan</a>
+                        href="{{ route('kegiatan') }}">Event</a>
                 </li>
 
                 <!-- Dropdown -->
