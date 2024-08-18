@@ -11,6 +11,9 @@
     <link href="{{ asset('bootstrap/admin-custom/style.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('bootstrap/admin-custom/custom-admin.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
+    <script src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
+
+
 </head>
 
 <body class="sb-nav-fixed">
@@ -26,7 +29,7 @@
             @include('layouts.components.admin.footer')
         </div>
     </div>
-    
+
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

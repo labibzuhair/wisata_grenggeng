@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_wisata');
             $table->string('kategori_wisata');
             $table->text('img_wisata');
-            $table->text('deskripsi_wisata');
+            $table->longText('deskripsi_wisata');
             $table->timestamps();
         });
     }

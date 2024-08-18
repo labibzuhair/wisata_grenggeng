@@ -29,40 +29,38 @@ class AdminSlidersController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        try {
-            // Validasi input
-            $validated = $request->validate([
-                'nama_wisata' => 'required|string|max:255',
-                'kategori_wisata' => 'required|string|max:255',
-                'deskripsi_wisata' => 'required|string',
-                'img_wisata' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
+{
+    try {
+        // Validasi input
+        $validated = $request->validate([
+            'nama_wisata' => 'required|string|max:255',
+            'kategori_wisata' => 'required|string|max:255',
+            'deskripsi_wisata' => 'required|string',
+            'img_wisata' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
 
-            // Menyimpan gambar dan menyimpan link ke database
-            $images = [];
-
-                $imageName = "img_wisata";
-                if ($request->hasFile($imageName)) {
-                    $file = $request->file($imageName);
-                    $path = $file->store('images/img_wisata');
-                    $images[$imageName] = $path;
-                }
-
-            // Menyimpan data ke database
-            Sleeder::create([
-                'nama_wisata' => $validated['nama_wisata'],
-                'kategori_wisata' => $validated['kategori_wisata'],
-                'deskripsi_wisata' => $validated['deskripsi_wisata'],
-                'img_wisata' => $images['img_wisata'] ?? null,
-            ]);
-
-            return redirect()->route('admin.sliders.create')->with('success', 'slider berhasil disimpan!');
-        } catch (\Exception $e) {
-            // Menangkap error dan mengembalikan pesan error
-            return redirect()->route('admin.sliders.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
+        // Menyimpan gambar dan menyimpan link ke database
+        $images = [];
+        if ($request->hasFile('img_wisata')) {
+            $file = $request->file('img_wisata');
+            $path = $file->store('images/img_wisata', 'public');
+            $images['img_wisata'] = $path;
         }
+
+        // Menyimpan data ke database
+        Sleeder::create([
+            'nama_wisata' => $validated['nama_wisata'],
+            'kategori_wisata' => $validated['kategori_wisata'],
+            'deskripsi_wisata' => $validated['deskripsi_wisata'],
+            'img_wisata' => $images['img_wisata'] ?? null,
+        ]);
+
+        return redirect()->route('admin.sliders.create')->with('success', 'Slider berhasil disimpan!');
+    } catch (\Exception $e) {
+        return redirect()->route('admin.sliders.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
     }
+}
+
 
     /**
      * Display the specified resource.

@@ -30,6 +30,12 @@
                                 value="{{ old('nama_wisata') }}" required>
                         </div>
                         <div class="mb-3">
+                            <label for="img_wisata" class="form-label">Gambar Utama:</label>
+                            <input type="file" name="img_wisata" id="img_wisata" class="form-control" accept="image/*"
+                                onchange="previewImage(event, 'preview1')">
+                            <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
+                        </div>
+                        <div class="mb-3">
                             <label for="kategori_wisata" class="form-label">Kategori Wisata:</label>
                             <select class="form-select form-select-lg mb-3" name="kategori_wisata" id="kategori_wisata"
                                 aria-label="Large select example">
@@ -45,16 +51,13 @@
 
                         <div class="mb-3">
                             <label for="deskripsi_wisata" class="form-label">Deskripsi Wisata:</label>
-                            <textarea id="myeditorinstance" name="deskripsi_wisata" class="form-control">{{ old('deskripsi_wisata') }}</textarea>
-                            {{-- <textarea name="deskripsi_wisata" id="deskripsi_wisata" class="form-control" rows="3" required></textarea> --}}
+                            <textarea id="open-source-plugins" id="open-source-plugins" name="deskripsi_wisata">
+                                {{ old('deskripsi_wisata') }}
+                              </textarea>
+
                         </div>
 
-                        <div class="mb-3">
-                            <label for="img_wisata" class="form-label">Gambar Wisata:</label>
-                            <input type="file" name="img_wisata" id="img_wisata" class="form-control" accept="image/*"
-                                onchange="previewImage(event, 'preview1')">
-                            <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
-                        </div>
+
 
                         <button type="submit" class="btn btn-primary">Simpan Produk</button>
                     </form>

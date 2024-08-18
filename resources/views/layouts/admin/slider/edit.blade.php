@@ -30,6 +30,18 @@
                             <input type="text" name="nama_wisata" id="nama_wisata" class="form-control"
                                 value="{{ $sliders->nama_wisata }}" required>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="img_wisata" class="form-label">Gambar Utama:</label>
+                            <input type="file" name="img_wisata" id="img_wisata" class="form-control" accept="image/*"
+                                onchange="previewImage(event, 'preview1')">
+                            @if ($sliders->img_wisata)
+                                <img id="preview1" class="mt-2" src="{{ Storage::url($sliders->img_wisata) }}"
+                                    style="max-width: 200px;">
+                            @else
+                                <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
+                            @endif
+                        </div>
                         <div class="mb-3">
                             <label for="kategori_wisata" class="form-label">Kategori Wisata:</label>
                             <select class="form-select form-select-lg mb-3" name="kategori_wisata" id="kategori_wisata"
@@ -46,20 +58,11 @@
 
                         <div class="mb-3">
                             <label for="deskripsi_wisata" class="form-label">Deskripsi Wisata:</label>
-                            <textarea name="deskripsi_wisata" id="deskripsi_wisata" class="form-control" rows="3" required>{{ $sliders->deskripsi_wisata }}</textarea>
+                            <textarea id="open-source-plugins" id="open-source-plugins" name="deskripsi_wisata">
+                                {!! old('deskripsi_wisata', $sliders->deskripsi_wisata ?? '') !!}
+                              </textarea>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="img_wisata" class="form-label">Gambar Wisata:</label>
-                            <input type="file" name="img_wisata" id="img_wisata" class="form-control" accept="image/*"
-                                onchange="previewImage(event, 'preview1')">
-                            @if ($sliders->img_wisata)
-                                <img id="preview1" class="mt-2" src="{{ Storage::url($sliders->img_wisata) }}"
-                                    style="max-width: 200px;">
-                            @else
-                                <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
-                            @endif
-                        </div>
 
 
                         <button type="submit" class="btn btn-primary">Update Produk</button>

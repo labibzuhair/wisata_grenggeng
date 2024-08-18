@@ -118,6 +118,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/sliders', [AdminSlidersController::class, 'index'])->name('admin.sliders');
     Route::get('/admin/sliders/create', [AdminSlidersController::class, 'create'])->name('admin.sliders.create');
     Route::post('/admin/sliders/store', [AdminSlidersController::class, 'store'])->name('admin.sliders.store');
+    Route::post('/admin/sliders/uploadImage', [AdminSlidersController::class, 'uploadImage'])->name('admin.sliders.uploadImage');
     Route::get('/admin/sliders/{id}/edit', [AdminSlidersController::class, 'edit'])->name('admin.sliders.edit');
     Route::put('/admin/sliders/{id}', [AdminSlidersController::class, 'update'])->name('admin.sliders.update');
     Route::delete('/admin/sliders/{id}', [AdminSlidersController::class, 'destroy'])->name('admin.sliders.hapus');

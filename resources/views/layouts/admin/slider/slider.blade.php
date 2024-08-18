@@ -43,7 +43,7 @@
                             <tr>
                                 <td>{{ $slider->nama_wisata }}</td>
                                 <td>{{ $slider->kategori_wisata }}</td>
-                                <td>{{ $slider->deskripsi_wisata }}</td>
+                                <td>{{ Str::limit(strip_tags($slider->deskripsi_wisata), 50, '...') }}</td>
                                 <td>
                                     @if ($slider->img_wisata)
                                         <img src="{{ Storage::url($slider->img_wisata) }}" alt="Img 1"
