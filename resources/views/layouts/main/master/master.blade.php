@@ -11,6 +11,9 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>@yield('title')</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-fixed/">
 
     <!-- jQuery -->
@@ -115,6 +118,7 @@
     </main>
     @include('layouts.components.main.popup-produk')
     @include('layouts.components.main.footer')
+
 
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

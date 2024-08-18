@@ -3,24 +3,67 @@
 @section('title', 'Detail Event')
 
 @section('content')
-    <div class="bg-event">
-        <div class="container p-4">
-            <header class="mb-4 text-black pt-3" id="anyaman">
-                <h3 class="judul">Detail Event</h3>
-            </header>
-            <div class="card ">
-                <div class="neo-card">
-                    <h3 class="card-header"><b>{{ $kegiatan->nama_event }}</b></h3>
-                    <h5 class="card-header">Yang Akan di Isi Oleh : {{ $kegiatan->pengisi_acara }}</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Tanggal dan Waktu : Tanggal {{ $kegiatan->tanggal_event }} Jam
-                            {{ $kegiatan->waktu }}
-                        </h5>
-                        <h5 class="card-title">{{ $kegiatan->lokasi }} </h5>
-                        <p class="text-start p-3">{{ $kegiatan->deskripsi }}</p>
-                    </div>
+    <div class="container-fluid py-5">
+        <div class="container">
+            @if (isset($kegiatan->id))
+                <h1 class="mb-3 text-center fs-2 text-black">{{ $kegiatan->nama_event }}</h1>
+
+                <div class="mb-5 w-100 text-center">
+
+                    <img style="height: 400px;" src="{{ Storage::url($kegiatan->img_event) }}"
+                        alt="{{ $kegiatan->nama_event }}">
                 </div>
-            </div>
+
+                <table class="table table-striped table-bordered border-secondary text-align-justify">
+                    <thead></thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="col-3">
+                                <span class="fw-semibold">
+                                    Pengisi Acara
+                                </span>
+                            </td>
+                            <td class="col-9">{{ $kegiatan->pengisi_acara }}</td>
+                        </tr>
+                        <tr>
+                            <td class="col-3">
+                                <span class="fw-semibold">
+                                    Tanggal Event
+                                </span>
+                            </td>
+                            <td class="col-9">{{ $kegiatan->tanggal_event }}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-3">
+                                <span class="fw-semibold">
+                                    Lokasi Event
+                                </span>
+                            </td>
+                            <td class="col-9">{{ $kegiatan->lokasi }}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="col-3">
+                                <span class="fw-semibold">
+                                    Deskripsi
+                                </span>
+                            </td>
+                            <td class="col-9">
+                                <div>{!! $kegiatan->deskripsi !!}</div>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            @else
+                <h1 class="mb-4 text-center fs-2">
+                    {{ __('kegiatan.tidak_ditemukan') }}
+                </h1>
+            @endif
         </div>
     </div>
 @endsection

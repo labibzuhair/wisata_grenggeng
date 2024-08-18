@@ -38,21 +38,11 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-
-        {{-- start timeline activities --}}
-        <section class="intro ">
-            <button>
-                <div class="container bg-text blur-box event-head" id="event-head">
-                    <h1>Jadwal Event &darr;</h1>
-                    <p>Desa Wisata Grenggeng, Karanganyar, Kebumen, Jawa Tengah</a></p>
-                </div>
-            </button>
-        </section>
-
+      
         <section class="timeline timeline-event" id="timeline-event">
             <ul>
                 <div class="d-grid gap-2 col-2 mx-auto">
-                    <a href="{{ route('kegiatan') }}" class="btn btn-primary" aria-current="page">Semua Event</a>
+                    <a href="#" id="scrollButton" class="btn btn-primary">Event Desa Grenggeng</a>
                 </div>
                 @foreach ($kegiatans as $kegiatan)
                     <li>
@@ -65,8 +55,13 @@
                         </a>
                     </li>
                 @endforeach
+                <div class="d-grid semua gap-2 col-2 mx-auto" id="targetButton">
+                    <a href="{{ route('kegiatan') }}" class="btn btn-primary" aria-current="page">Semua
+                        Event</a>
+                </div>
             </ul>
         </section>
+
         {{-- end timeline activities --}}
 
         <div class="bg-newproduk">

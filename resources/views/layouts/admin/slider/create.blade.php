@@ -34,15 +34,19 @@
                             <select class="form-select form-select-lg mb-3" name="kategori_wisata" id="kategori_wisata"
                                 aria-label="Large select example">
                                 <option selected value="">pilih salah satu kategori</option>
-                                <option value="anyaman-pandan">anyaman-pandan</option>
-                                <option value="wisata-sejarah">wisata-sejarah</option>
-                                <option value="lembah-pereng">lembah-pereng</option>
+                                <option value="anyaman-pandan">Anyaman Pandan</option>
+                                {{-- <option value="TTG">TTG</option> --}}
+                                <option value="wisata-sejarah">Wisata Sejarah</option>
+                                <option value="makam">Makam</option>
+                                <option value="lembah-pereng">Lembah Pereng</option>
+                                <option value="pasar">Pasar</option>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label for="deskripsi_wisata" class="form-label">Deskripsi Wisata:</label>
-                            <textarea name="deskripsi_wisata" id="deskripsi_wisata" class="form-control" rows="3" required>{{ old('deskripsi_wisata') }}</textarea>
+                            <textarea id="myeditorinstance" name="deskripsi_wisata" class="form-control">{{ old('deskripsi_wisata') }}</textarea>
+                            {{-- <textarea name="deskripsi_wisata" id="deskripsi_wisata" class="form-control" rows="3" required></textarea> --}}
                         </div>
 
                         <div class="mb-3">

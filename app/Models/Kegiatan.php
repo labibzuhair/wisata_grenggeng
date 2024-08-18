@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Kegiatan extends Model
 {
     protected $fillable = [
-        'nama_event', 'tanggal_event', 'waktu', 'lokasi', 'pengisi_acara', 'deskripsi',
+        'nama_event','img_event', 'tanggal_event', 'waktu', 'lokasi', 'pengisi_acara', 'deskripsi',
     ];
 }

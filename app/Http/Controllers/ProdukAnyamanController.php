@@ -51,4 +51,9 @@ class ProdukAnyamanController extends Controller
         $produk = ProdukAnyaman::findOrFail($id);
         return view('layouts/main/produk/detail-produk', compact('produk'));
     }
+    public function popup($id)
+{
+    $produk = ProdukAnyaman::find($id);
+    return response()->json($produk);
+}
 }

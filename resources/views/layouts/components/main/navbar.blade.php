@@ -36,23 +36,20 @@
                         <li>
                             <a class="dropdown-item {{ request()->is('wisata/edukasi*') ? 'active' : '' }}"
                                 href="#">
-                                Wisata Edukasi &raquo;
+                                Wisata Edukasi <i class="fa-solid fa-caret-right"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-submenu">
                                 <li>
                                     <a class="dropdown-item {{ request()->is('wisata/edukasi/anyaman-pandan') ? 'active' : '' }}"
                                         href="{{ route('anyaman-pandan') }}">ِAnyaman Pandan</a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item {{ request()->is('wisata/edukasi/TTG') ? 'active' : '' }}"
-                                        href="{{ route('TTG') }}">TTG (Teknologi Tepat Guna)</a>
-                                </li>
+
                                 <li>
                                     <a class="dropdown-item {{ request()->is('wisata/edukasi/wisata-sejarah') ? 'active' : '' }}"
                                         href="{{ route('wisata-sejarah') }}">Wisata Sejarah</a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+                                {{-- <li>
+                                    <a class="dropdown-item" href="#">Submenu item 3 <i class="fa-solid fa-caret-right"></i> </a>
                                     <ul class="dropdown-menu dropdown-submenu">
                                         <li>
                                             <a class="dropdown-item" href="#">Multi level 1</a>
@@ -61,21 +58,21 @@
                                             <a class="dropdown-item" href="#">Multi level 2</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <li>
                             <a class="dropdown-item {{ request()->is('wisata/religi*') ? 'active' : '' }}"
                                 href="#">
-                                Wisata Religi &raquo;
+                                Wisata Religi <i class="fa-solid fa-caret-right"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-submenu">
                                 <li>
                                     <a class="dropdown-item {{ request()->is('wisata/religi/makam') ? 'active' : '' }}"
                                         href="{{ route('makam') }}">Makam Syekh Baribin</a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+                                {{-- <li>
+                                    <a class="dropdown-item" href="#">Submenu item 3 <i class="fa-solid fa-caret-right"></i> </a>
                                     <ul class="dropdown-menu dropdown-submenu">
                                         <li>
                                             <a class="dropdown-item" href="#">Multi level 1</a>
@@ -84,13 +81,13 @@
                                             <a class="dropdown-item" href="#">Multi level 2</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <li>
                             <a class="dropdown-item {{ request()->is('wisata/kuliner*') ? 'active' : '' }}"
                                 href="#">
-                                Wisata Kuliner &raquo;
+                                Wisata Kuliner <i class="fa-solid fa-caret-right"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-submenu">
                                 <li>
@@ -101,8 +98,8 @@
                                     <a class="dropdown-item {{ request()->is('wisata/kuliner/pasar') ? 'active' : '' }}"
                                         href="{{ route('pasar') }}">Pasar Desa (Pasar Kemit)</a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+                                {{-- <li>
+                                    <a class="dropdown-item" href="#">Submenu item 3 <i class="fa-solid fa-caret-right"></i> </a>
                                     <ul class="dropdown-menu dropdown-submenu">
                                         <li>
                                             <a class="dropdown-item" href="#">Multi level 1</a>
@@ -111,7 +108,7 @@
                                             <a class="dropdown-item" href="#">Multi level 2</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>

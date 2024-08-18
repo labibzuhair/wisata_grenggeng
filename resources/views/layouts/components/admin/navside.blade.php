@@ -8,7 +8,7 @@
                     <div class="sb-nav-link-icon "><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <div class="sb-sidenav-menu-heading">Input Group</div>
+                <div class="sb-sidenav-menu-heading">ecomarce</div>
                 <a class="nav-link collapsed {{ request()->is('admin/produk*') ? 'active' : '' }}" href="#"
                     data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false"
                     aria-controls="collapseLayouts">
@@ -30,7 +30,7 @@
                     </nav>
                 </div>
 
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
                     aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Pages
@@ -67,13 +67,13 @@
                             </nav>
                         </div>
                     </nav>
-                </div>
+                </div> --}}
 
                 <div class="sb-sidenav-menu-heading">lainnya</div>
                 <a class="nav-link {{ request()->is('admin/sliders*') ? 'active' : '' }}"
                     href="{{ route('admin.sliders') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-sliders me-2"></i></div>
-                    Sliders
+                    Wisata
                 </a>
                 <a class="nav-link {{ request()->is('admin/events*') ? 'active' : '' }}"
                     href="{{ route('admin.events') }}">

@@ -15,6 +15,7 @@ class KegiatanSeeder extends Seeder
     {
         Kegiatan::create([
             'nama_event' => 'Activity 1',
+            'img_event' => 'images/img_wisata/img1.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -25,6 +26,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 2',
+            'img_event' => 'images/img_wisata/img2.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -35,6 +37,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 3',
+            'img_event' => 'images/img_wisata/img3.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -45,6 +48,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 4',
+            'img_event' => 'images/img_wisata/img1.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -55,6 +59,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 5',
+            'img_event' => 'images/img_wisata/img2.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -65,6 +70,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 6',
+            'img_event' => 'images/img_wisata/img1.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -75,6 +81,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 7',
+            'img_event' => 'images/img_wisata/img1.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -85,6 +92,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 8',
+            'img_event' => 'images/img_wisata/img1.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -95,6 +103,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 9',
+            'img_event' => 'images/img_wisata/img1.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',
@@ -105,6 +114,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
         ]);
         Kegiatan::create([
             'nama_event' => 'Activity 10',
+            'img_event' => 'images/img_wisata/img1.jpg',
             'tanggal_event' => '20-05-2024',
             'waktu' => '06.00 - 12.00 WIB.',
             'lokasi' => 'Lapangan Desa Grenggeng',

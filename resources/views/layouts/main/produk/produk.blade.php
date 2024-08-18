@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="bg-green">
-        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner bg-innerproduk">
                 <div class="search-produk">
                     <input class="form-control" list="datalistOptions" id="exampleDataList"
@@ -27,35 +27,34 @@
                                             data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
                                             Produk</a>
                                     </div>
-                                    <div class="col-md-5 col-12 order-md-2 order-1"><img
-                                            src="{{ Storage::url($produk->img1) }}" class="mx-auto" alt="slide"></div>
+                                    <div class="col-md-5 col-12 order-md-2 order-1">
+                                        <img src="{{ Storage::url($produk->img1) }}" class="mx-auto" alt="slide">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
             </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span
-                    class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span
-                    class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
         </div>
         <!--slide end-->
 
-
-        <!-- Fixed Header -->
-        <div id="fixed-header" class="fixed_header mb-4 text-black pt-3">
-            <h3 id="fixed-header-text" class="judul"></h3>
-        </div>
 
 
         <!-- Products -->
         <section>
 
             <div class="container">
-                <header class=" text-black pt-3" id="anyaman">
-                    <h3 class="judul">Produk Anyaman Pandan</h3>
+                <header class="text-black pt-3" id="produk-anyaman-pandan">
+                    <h3 class="judul sticky-header">Produk Anyaman Pandan</h3>
                 </header>
                 <div class="row">
                     <div class="wrapper-p ">
@@ -70,13 +69,14 @@
                                 <div class="about-product-p text-center">
                                     <h3>{{ $produk->nama_produk }}</h3>
                                     <h4>Kategori: <small>{{ $produk->kategori }}</small></h4>
-                                    <button class="btn btn-success buy-now-p "><a href="#"
-                                            class="text-decoration-none" data-bs-toggle="modal"
-                                            data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
-                                            Produk</a></button>
+                                    <button type="button" class="btn btn-success buy-now-p" data-bs-toggle="modal"
+                                        data-bs-target="#productModal" data-id="{{ $produk->id }}">
+                                        <a href="#" class="text-decoration-none">Tanyakan Produk</a>
+                                    </button>
                                 </div>
                             </div>
                         @endforeach
+
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto pt-4 pb-4">
                         <a class="btn btn-light " href="{{ route('produk.semua-anyaman') }}">Lihat
@@ -84,8 +84,8 @@
                     </div>
                 </div>
 
-                <header class="mb-4 text-black pt-3" id="anyaman">
-                    <h3 class="judul">TTG (Teknologi Tepat Guna)</h3>
+                <header class="text-black pt-3" id="produk-teknologi-tepat-guna">
+                    <h3 class="judul sticky-header">Produk Teknologi Tepat Guna</h3>
                 </header>
                 <div class="row">
                     <div class="wrapper-p ">
@@ -114,8 +114,8 @@
                     </div>
                 </div>
 
-                <header class="mb-4 text-black pt-3" id="anyaman">
-                    <h3 class="judul">Oleh-Oleh Makanan Ringan</h3>
+                <header class="text-black pt-3" id="produk-makanan-ringan">
+                    <h3 class="judul sticky-header">Produk Makanan</h3>
                 </header>
                 <div class="row">
                     <div class="wrapper-p ">
@@ -148,6 +148,10 @@
             </div>
 
         </section>
+
+        <div id="fixed-header" class="fixed-header" style="display: none;">
+            <h2>Header Fixed</h2>
+        </div>
         <!-- Products -->
 
         {{-- <!-- Feature -->

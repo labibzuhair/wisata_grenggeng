@@ -41,3 +41,6 @@ function previewImage(event, previewId) {
     reader.readAsDataURL(input.files[0]);
 }
 
+
+//input berita
+
