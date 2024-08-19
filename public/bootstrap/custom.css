@@ -1127,78 +1127,64 @@ time {
 
 /* custom pop up produk */
 /* Atur tinggi maksimal gambar di dalam modal */
-.modal-carousel img {
-    max-height: 300px;
-    object-fit: cover;
+/* Gambar utama besar */
+
+.main-image img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 8px;
 }
 
-/* Atur padding dan margin di dalam modal */
-.modal .card {
-    padding: 20px;
-    margin: 0;
-    border: none;
+/* Gambar-gambar kecil berjajar */
+.thumbnail-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#mainProductImage {
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-.modal .card-body {
-    padding: 10px 20px;
+#thumbnailContainer img {
+    width: 80px;
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.thumbnail-images .thumbnail-img {
+    max-width: 40px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.modal .card-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.thumbnail-images .thumbnail-img:hover {
+    transform: scale(1.1);
 }
 
-.modal .card-text,
-.modal .text-muted {
-    margin-bottom: 5px;
+.thumbnail-img.active {
+    border: 2px solid #007bff; /* Contoh border biru */
+    opacity: 0.7; /* Efek transparansi sedikit */
 }
-
-.modal .d-flex {
-    margin-top: 10px;
-}
-
-.modal .btn-primary {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-}
-
-.modal .carousel {
-    margin-bottom: 20px;
-}
-
-.modal .carousel-inner {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-/* Atur tinggi modal agar tidak terlalu tinggi */
-.modal-dialog {
-    max-width: 800px;
-    margin: 30px auto;
-}
-
 .modal-content {
-    max-height: 90vh;
-    overflow-y: auto;
+    max-height: 90vh; /* Atur tinggi maksimum modal */
+    overflow: hidden; /* Pastikan modal tidak bisa di-scroll */
 }
 
-/* Tambahkan scrollbar jika konten terlalu panjang */
-.modal-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.modal-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.modal-body {
+    max-height: 70vh; /* Atur tinggi maksimum konten modal */
+    overflow-y: auto; /* Scroll vertikal hanya untuk konten modal */
+    overflow-x: hidden; /* Disable scroll horizontal */
 }
 
 /* custom head */
