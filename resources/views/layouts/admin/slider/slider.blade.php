@@ -6,17 +6,17 @@
 @section('content')
 
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Slider item</h1>
-        <ol class="breadcrumb mb-4">
+        <h1 class="mt-4">Wisata Item</h1>
+        {{-- <ol class="breadcrumb mb-4">
             <a class="btn btn-primary " href="{{ route('admin.sliders.create') }}">
                 <li class="text-white">Tambah Data</li>
             </a>
-        </ol>
+        </ol> --}}
 
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Data Sliders
+                Data Wisata
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">

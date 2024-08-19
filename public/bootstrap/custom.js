@@ -158,7 +158,3 @@ breakpoints: {
 }
 });
 
-// custom slider produk
-$('#myCarousel').carousel({
-interval: 3000,
-})
