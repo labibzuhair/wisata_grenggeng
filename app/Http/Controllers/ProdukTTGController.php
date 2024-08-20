@@ -18,9 +18,10 @@ class ProdukTTGController extends Controller
     {
         // Ambil semua produk
         $produks = ProdukTTG::all();
+        $ttg = ProdukTTG::latest()->take(5)->get();
 
         // Kirim produk ke view
-        return view('layouts/main/produk/all', compact('produks'));
+        return view('layouts/main/produk/all', compact('produks', 'ttg'));
     }
        /**
      * Show the form for creating a new resource.

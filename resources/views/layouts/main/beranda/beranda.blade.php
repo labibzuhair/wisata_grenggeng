@@ -80,7 +80,8 @@
                                         <h5>{{ $produk->nama_produk }}</h5>
                                         <p>Kategori: <small>{{ $produk->kategori }}</small></p>
                                         <a href="#" class="my-card-btn" data-bs-toggle="modal"
-                                            data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan</a>
+                                            data-bs-target="#productModal" data-id="{{ $produk->id }}"
+                                            data-type="anyaman">Tanyakan</a>
                                     </div>
                                 </div>
                             </div>

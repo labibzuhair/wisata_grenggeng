@@ -24,7 +24,8 @@
                                             {{ $produk->kategori }}</h4>
                                         <p>{{ $produk->deskripsi }}</p>
                                         <a href="#" class="text-decoration-none" data-bs-toggle="modal"
-                                            data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
+                                            data-bs-target="#productModal" data-id="{{ $produk->id }}"
+                                            data-type="terbaik">Tanyakan
                                             Produk</a>
                                     </div>
                                     <div class="col-md-5 col-12 order-md-2 order-1">
@@ -61,7 +62,7 @@
                         @foreach ($anyamans as $produk)
                             <div class="card card-p text-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
-                                    data-id="{{ $produk->id }}">
+                                    data-id="{{ $produk->id }}" data-type="anyaman">
                                     <div class="image">
                                         <img src="{{ Storage::url($produk->img1) }}" width="300">
                                     </div>
@@ -70,8 +71,8 @@
                                     <h3>{{ $produk->nama_produk }}</h3>
                                     <h4>Kategori: <small>{{ $produk->kategori }}</small></h4>
                                     <button type="button" class="btn btn-success buy-now-p" data-bs-toggle="modal"
-                                        data-bs-target="#productModal" data-id="{{ $produk->id }}">
-                                        <a href="#" class="text-decoration-none">Tanyakan Produk</a>
+                                        data-bs-target="#productModal" data-id="{{ $produk->id }}" data-type="anyaman">
+                                        Tanyakan Produk
                                     </button>
                                 </div>
                             </div>
@@ -92,7 +93,7 @@
                         @foreach ($ttgs as $produk)
                             <div class="card card-p text-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
-                                    data-id="{{ $produk->id }}">
+                                    data-id="{{ $produk->id }}" data-type="ttg">
                                     <div class="image">
                                         <img src="{{ Storage::url($produk->img1) }}" width="300">
                                     </div>
@@ -102,7 +103,8 @@
                                     <h4>Kategori: <small>{{ $produk->kategori }}</small></h4>
                                     <button class="btn btn-success buy-now-p "><a href="#"
                                             class="text-decoration-none" data-bs-toggle="modal"
-                                            data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
+                                            data-bs-target="#productModal" data-id="{{ $produk->id }}"
+                                            data-type="ttg">Tanyakan
                                             Produk</a></button>
                                 </div>
                             </div>
@@ -122,7 +124,7 @@
                         @foreach ($makanans as $produk)
                             <div class="card card-p text-center">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal"
-                                    data-id="{{ $produk->id }}">
+                                    data-id="{{ $produk->id }}" data-type="makanan">
                                     <div class="image">
                                         <img src="{{ Storage::url($produk->img1) }}" width="300">
                                     </div>
@@ -132,7 +134,8 @@
                                     <h4>Kategori: <small>{{ $produk->kategori }}</small></h4>
                                     <button class="btn btn-success buy-now-p "><a href="#"
                                             class="text-decoration-none" data-bs-toggle="modal"
-                                            data-bs-target="#productModal" data-id="{{ $produk->id }}">Tanyakan
+                                            data-bs-target="#productModal" data-id="{{ $produk->id }}"
+                                            data-type="makanan">Tanyakan
                                             Produk</a></button>
                                 </div>
                             </div>

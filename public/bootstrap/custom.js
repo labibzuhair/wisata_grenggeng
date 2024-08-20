@@ -97,62 +97,79 @@ document.addEventListener("DOMContentLoaded", function () {
 // start popup detail produk
 document.addEventListener('DOMContentLoaded', function () {
     var productModal = document.getElementById('productModal');
+
     productModal.addEventListener('show.bs.modal', function (event) {
         var button = event.relatedTarget;
         var productId = button.getAttribute('data-id');
+        var productType = button.getAttribute('data-type');
 
-        // Lakukan AJAX request untuk mendapatkan detail produk berdasarkan ID
-        fetch(`/api/produk/${productId}`)
+        // URL API
+        var apiUrl = `/api/produk/${productType}/${productId}`;
+
+        // Elemen-elemen di dalam modal
+        var mainProductImage = document.getElementById('mainProductImage');
+        var thumbnailContainer = document.querySelector('.thumbnail-images');
+        var productName = document.getElementById('productName');
+        var productCategory = document.getElementById('productCategory');
+        var productDescription = document.getElementById('productDescription');
+        var buyNowLink = document.getElementById('buyNowLink');
+
+        // Membersihkan konten modal sebelum mengisi dengan data baru
+        mainProductImage.src = '';
+        thumbnailContainer.innerHTML = '';
+        productName.innerText = 'Loading...';
+        productCategory.innerText = '';
+        productDescription.innerText = '';
+        buyNowLink.href = '#';
+
+        // Fetch data dari API
+        fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                // Update isi modal dengan detail produk
-                var mainProductImage = document.getElementById('mainProductImage');
-                var thumbnailContainer = document.querySelector('.thumbnail-images');
-                var productName = document.getElementById('productName');
-                var productCategory = document.getElementById('productCategory');
-                var productDescription = document.getElementById('productDescription');
-                var buyNowLink = document.getElementById('buyNowLink');
-
-                // Gambar utama
-                mainProductImage.src = `http://localhost/storage/${data.img_produk[0]}`;
-
-                // Gambar kecil di bawah, termasuk gambar utama
-                thumbnailContainer.innerHTML = '';
-                data.img_produk.forEach((img, index) => {
-                    if (img) {
-                        var thumbnail = document.createElement('img');
-                        thumbnail.src = `http://localhost/storage/${img}`;
-                        thumbnail.classList.add('thumbnail-img', 'mx-2');
-
-                        // Tambahkan class 'active' ke gambar pertama secara default
-                        if (index === 0) {
-                            thumbnail.classList.add('active');
-                        }
-
-                        // Tambahkan event listener untuk mengganti gambar utama saat gambar kecil diklik
-                        thumbnail.addEventListener('click', function() {
-                            // Ganti gambar utama
-                            mainProductImage.src = `http://localhost/storage/${img}`;
-
-                            // Hapus class 'active' dari semua thumbnail
-                            document.querySelectorAll('.thumbnail-img').forEach(img => img.classList.remove('active'));
-
-                            // Tambahkan class 'active' pada thumbnail yang diklik
-                            this.classList.add('active');
-                        });
-
-                        thumbnailContainer.appendChild(thumbnail);
-                    }
-                });
+                if (data.error) {
+                    productName.innerText = 'Produk tidak ditemukan';
+                    productDescription.innerText = data.error;
+                    return;
+                }
 
                 productName.innerText = data.nama_produk;
                 productCategory.innerText = data.kategori_produk;
                 productDescription.innerText = data.deskripsi_produk;
-                buyNowLink.href = `https://wa.me/+62895410172288?text=Saya%20ingin%20membeli%20produk%20anda%20yang%20bernama%20${data.nama_produk}`;
+                buyNowLink.href = `https://wa.me/+62895410172288?text=Saya%20ingin%20menanyakan%20produk%20${data.nama_produk}`;
+
+                // Set gambar utama
+                if (data.img_produk.length > 0) {
+                    mainProductImage.src = `/storage/${data.img_produk[0]}`;
+                } else {
+                    mainProductImage.src = 'https://via.placeholder.com/300';
+                }
+
+                // Set thumbnail images
+                data.img_produk.forEach((img, index) => {
+                    var thumbnail = document.createElement('img');
+                    thumbnail.src = `/storage/${img}`;
+                    thumbnail.classList.add('thumbnail-img', 'mx-2', 'img-thumbnail');
+                    thumbnail.style.width = '80px';
+                    thumbnail.style.cursor = 'pointer';
+
+                    thumbnail.addEventListener('click', function () {
+                        mainProductImage.src = `/storage/${img}`;
+                        document.querySelectorAll('.thumbnail-img').forEach(img => img.classList.remove('active'));
+                        thumbnail.classList.add('active');
+                    });
+
+                    thumbnailContainer.appendChild(thumbnail);
+                });
             })
-            .catch(error => console.error('Error fetching product data:', error));
+            .catch(error => {
+                console.error('Error fetching product data:', error);
+                productName.innerText = 'Terjadi kesalahan';
+                productDescription.innerText = 'Tidak dapat mengambil data produk.';
+            });
     });
 });
+
+
 
 
 

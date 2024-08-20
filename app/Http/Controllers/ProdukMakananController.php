@@ -17,9 +17,9 @@ class ProdukMakananController extends Controller
     {
         // Ambil semua produk
         $produks = ProdukMakanan::all();
-
+        $makanan = ProdukMakanan::latest()->take(5)->get();
         // Kirim produk ke view
-        return view('layouts/main/produk/all', compact('produks'));
+        return view('layouts/main/produk/all', compact('produks', 'makanan'));
     }
        /**
      * Show the form for creating a new resource.

@@ -31,6 +31,9 @@ use App\Http\Controllers\AdminAnyamanPandanController;
 use App\Http\Controllers\AdminProdukTerbaikController;
 use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
+use App\Models\ProdukMakanan;
+use App\Models\ProdukTerbaik;
+use App\Models\ProdukTTG;
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
@@ -53,22 +56,43 @@ Route::get('/produk/semua-ttg', [ProdukTTGController::class, 'all'])->name('prod
 Route::get('/produk/{id}/detail-ttg', [ProdukTTGController::class, 'show'])->name('detail-ttg');
 Route::get('/produk/semua-makanan', [ProdukMakananController::class, 'all'])->name('produk.semua-makanan');
 Route::get('/produk/{id}/detail-makanan', [ProdukMakananController::class, 'show'])->name('detail-makanan');
-Route::get('/api/produk/{id}', function ($id) {
-    $produk = ProdukAnyaman::find($id);
-    return response()->json([
-        'nama_produk' => $produk->nama_produk,
-        'harga' => $produk->harga,
-        'kategori_produk' => $produk->kategori,
-        'deskripsi_produk' => $produk->deskripsi,
-        'img_produk' => [
-            $produk->img1,
-            $produk->img2,
-            $produk->img3,
-            $produk->img4,
-            $produk->img5,
-        ],
-    ]);
+Route::get('/api/produk/{type}/{id}', function ($type, $id) {
+    switch ($type) {
+        case 'terbaik':
+            $produk = ProdukTerbaik::find($id);
+            break;
+        case 'anyaman':
+            $produk = ProdukAnyaman::find($id);
+            break;
+        case 'ttg':
+            $produk = ProdukTTG::find($id);
+            break;
+        case 'makanan':
+            $produk = ProdukMakanan::find($id);
+            break;
+        default:
+            return response()->json(['error' => 'Invalid product type'], 400);
+    }
+
+    if ($produk) {
+        return response()->json([
+            'nama_produk' => $produk->nama_produk,
+            'harga' => $produk->harga,
+            'kategori_produk' => $produk->kategori,
+            'deskripsi_produk' => $produk->deskripsi,
+            'img_produk' => array_filter([
+                $produk->img1,
+                $produk->img2,
+                $produk->img3,
+                $produk->img4,
+                $produk->img5,
+            ]),
+        ]);
+    } else {
+        return response()->json(['error' => 'Product not found'], 404);
+    }
 });
+
 
 Route::get('/paket-wisata', [PaketWisataController::class, 'index'])->name('paket-wisata');
 

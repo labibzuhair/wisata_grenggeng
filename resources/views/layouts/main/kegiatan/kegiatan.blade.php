@@ -4,8 +4,11 @@
 
 @section('content')
 
-    <div class="container-fluid py-5">
-        <div class="container">
+    <div class="container-fluid ">
+        <header class="mb-4 text-black pt-3" id="anyaman">
+            <h3 class="judul">Event Desa Grenggeng</h3>
+        </header>
+        <div class="container py-5">
             @if (isset($kegiatans[0]->id))
                 @foreach ($kegiatans as $kegiatan)
                     <div class="d-flex flex-wrap text-black ">

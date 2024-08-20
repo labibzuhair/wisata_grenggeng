@@ -1186,6 +1186,14 @@ time {
     overflow-y: auto; /* Scroll vertikal hanya untuk konten modal */
     overflow-x: hidden; /* Disable scroll horizontal */
 }
+.modal-content {
+    padding: 0; /* Hapus padding default pada modal content */
+}
+
+.modal-body {
+    padding: 1rem; /* Atur padding sesuai kebutuhan */
+}
+
 
 /* custom head */
 .fixed_header {
@@ -1225,6 +1233,21 @@ time {
 }
 
 /* cutom paket wista */
+.table {
+    margin-bottom: -1rem;
+}
+.table td,
+.table th {
+    padding: 1rem; /* Sesuaikan nilai padding sesuai kebutuhan */
+}
+.table.text-center {
+    text-align: center;
+    vertical-align: middle;
+}
+.table-responsive {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
 .switch {
     color: white !important; /* Warna teks putih untuk tombol tidak aktif */
 }
