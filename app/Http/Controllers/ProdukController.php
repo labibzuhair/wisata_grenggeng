@@ -21,7 +21,7 @@ class ProdukController extends Controller
     public function all()
     {
         // Ambil semua produk
-        $produks = Produk::all();
+        $produks = Produk::orderBy('updated_at', 'desc')->get();
 
         // Kirim produk ke view
         return view('layouts/main/produk/all', compact('produks'));

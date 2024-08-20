@@ -17,7 +17,7 @@ class ProdukTTGController extends Controller
     public function all()
     {
         // Ambil semua produk
-        $produks = ProdukTTG::all();
+        $produks = ProdukTTG::orderBy('updated_at', 'desc')->get();
         $ttg = ProdukTTG::latest()->take(5)->get();
 
         // Kirim produk ke view

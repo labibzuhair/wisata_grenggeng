@@ -22,7 +22,7 @@ class ProdukAnyamanController extends Controller
     public function all()
     {
         // Ambil semua produk
-        $produks = ProdukAnyaman::all();
+        $produks = ProdukAnyaman::orderBy('updated_at', 'desc')->get();
         $anyaman = ProdukAnyaman::latest()->take(5)->get();
 
 

@@ -13,6 +13,7 @@ use Database\Seeders\ProdukTTGSeeders;
 use Database\Seeders\ProdukMakananSeeders;
 use Database\Seeders\ProdukTerbaikSeeders;
 use Database\Seeders\ProdukAnyamanSleeders;
+use Database\Seeders\PaketWisataEdukasiSeeders;
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,5 +36,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProdukTTGSeeders::class);
         $this->call(ProdukMakananSeeders::class);
         $this->call(ProdukTerbaikSeeders::class);
+        $this->call(PaketWisataEdukasiSeeders::class);
     }
 }

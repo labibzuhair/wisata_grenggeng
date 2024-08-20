@@ -12,7 +12,7 @@ class AdminMakananController extends Controller
      */
     public function index()
     {
-        $produks = ProdukMakanan::all();
+        $produks = ProdukMakanan::orderBy('updated_at', 'desc')->get();
         return view('layouts.admin.produk-makanan.produk-makanan', compact('produks'));
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PaketWisata;
+use App\Models\PaketWisataEdukasi;
 use Illuminate\Http\Request;
 
 class PaketWisataController extends Controller
@@ -12,7 +13,8 @@ class PaketWisataController extends Controller
      */
     public function index()
     {
-        return view('layouts/main/paket-wisata/paket-wisata');
+        $edukasis = PaketWisataEdukasi::orderBy('updated_at', 'desc')->get();
+        return view('layouts/main/paket-wisata/paket-wisata', compact('edukasis'));
     }
 
     /**

@@ -12,7 +12,7 @@ class AdminEventController extends Controller
 {
     public function index()
     {
-        $events = Kegiatan::all();
+        $events = Kegiatan::orderBy('updated_at', 'desc')->get();
         return view('layouts.admin.event.event', compact('events'));
     }
     public function create()

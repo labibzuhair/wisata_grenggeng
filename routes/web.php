@@ -155,5 +155,9 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::delete('/admin/event/{id}', [AdminEventController::class, 'destroy'])->name('admin.event.hapus');
 
     Route::get('admin/paket-wisata', [AdminPaketWisataController::class, 'index'])->name('admin.paket-wisata');
-
+    Route::get('/admin/paket-wisata/create', [AdminPaketWisataController::class, 'create'])->name('admin.paket-wisata.create');
+    Route::post('/admin/paket-wisata/store', [AdminPaketWisataController::class, 'store'])->name('admin.paket-wisata.store');
+    Route::get('/admin/paket-wisata/{id}/edit', [AdminPaketWisataController::class, 'edit'])->name('admin.paket-wisata.edit');
+    Route::put('/admin/paket-wisata/{id}', [AdminPaketWisataController::class, 'update'])->name('admin.paket-wisata.update');
+    Route::delete('/admin/paket-wisata/{id}', [AdminPaketWisataController::class, 'destroy'])->name('admin.paket-wisata.hapus');
 });

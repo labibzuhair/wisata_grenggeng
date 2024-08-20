@@ -13,7 +13,7 @@ class AdminProdukTerbaikController extends Controller
      */
     public function index()
     {
-        $produks = ProdukTerbaik::all();
+        $produks = ProdukTerbaik::orderBy('updated_at', 'desc')->get();
         return view('layouts.admin.produk-terbaik.produk-terbaik', compact('produks'));
     }
 

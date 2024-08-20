@@ -14,7 +14,7 @@ class AdminTTGController extends Controller
      */
     public function index()
     {
-        $produks = ProdukTTG::all();
+        $produks = ProdukTTG::orderBy('updated_at', 'desc')->get();
         return view('layouts.admin.produk-TTG.produk-ttg', compact('produks'));
     }
 

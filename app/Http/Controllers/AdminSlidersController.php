@@ -13,7 +13,7 @@ class AdminSlidersController extends Controller
      */
     public function index()
     {
-        $sliders = Sleeder::all();
+        $sliders = Sleeder::orderBy('updated_at', 'desc')->get();
         return view('layouts.admin.slider.slider', compact('sliders'));
     }
 

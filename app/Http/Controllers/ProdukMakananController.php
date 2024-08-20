@@ -16,7 +16,7 @@ class ProdukMakananController extends Controller
     public function all()
     {
         // Ambil semua produk
-        $produks = ProdukMakanan::all();
+        $produks = ProdukMakanan::orderBy('updated_at', 'desc')->get();
         $makanan = ProdukMakanan::latest()->take(5)->get();
         // Kirim produk ke view
         return view('layouts/main/produk/all', compact('produks', 'makanan'));

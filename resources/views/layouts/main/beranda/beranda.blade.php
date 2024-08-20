@@ -21,7 +21,7 @@
                         <div class="carousel-caption d-none d-md-block">
                             <a href="{{ route($sleeder->kategori_wisata) }}">
                                 <h5>{{ $sleeder->nama_wisata }}</h5>
-                                <p>{{ Str::limit($sleeder->deskripsi_wisata, 100, '...') }}</p>
+                                <p>{!! Str::limit($sleeder->deskripsi_wisata, 100, '...') !!}</p>
                             </a>
                         </div>
                     </div>

@@ -13,7 +13,7 @@ class AdminAnyamanPandanController extends Controller
      */
     public function index()
     {
-        $produks = ProdukAnyaman::all();
+        $produks = ProdukAnyaman::orderBy('updated_at', 'desc')->get();
         return view('layouts.admin.produk-anyaman.produk-anyaman', compact('produks'));
     }
 

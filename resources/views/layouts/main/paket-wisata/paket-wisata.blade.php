@@ -36,131 +36,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">Paket Little Star</th>
-                                        <td>PAUD & TK</td>
-                                        <td>Rp. 20.000/peserta</td>
-                                        <td>
-                                            <ol>
-                                                <li>Aula Pelatihan</li>
-                                                <li>Bunda Tutor Interaktif</li>
-                                                <li>Snack & Air Mineral</li>
-                                                <li>Bahan Materi Ajar</li>
-                                                <li>Souvenir Little Star & Foto (@ 1pcs)</li>
-                                            </ol>
-                                        </td>
-                                        <td>3 Jam</td>
-                                        <td>Sekertariat KTH Margo Rahayu</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Paket Now I Know</th>
-                                        <td>SEKOLAH DASAR</td>
-                                        <td>Rp. 30.000/peserta</td>
-                                        <td>
-                                            <ol>
-                                                <li>Aula Pelatihan</li>
-                                                <li>Rumah Pelatihan</li>
-                                                <li>Explore Kebun Pandan</li>
-                                                <li>Tutor Interaktif</li>
-                                                <li>Safety Gloves </li>
-                                                <li>Snack & Air Mineral</li>
-                                                <li>Bahan Materi Ajar</li>
-                                                <li>Souvenir Little Star & Foto (@ 1pcs)</li>
-                                            </ol>
-                                        </td>
-                                        <td>3 Jam</td>
-                                        <td>
-                                            <ol>
-                                                <li>Sekertariat KTH Margo Rahayu</li>
-                                                <li>Rumah Pelatihan</li>
-                                                <li>Kebun Pandan</li>
+                                    @foreach ($edukasis as $edukasi)
+                                        <tr>
+                                            <th scope="row">{{ $edukasi->nama }}</th>
+                                            <td>{{ $edukasi->target }}</td>
+                                            <td>{{ $edukasi->harga }}</td>
+                                            <td>
+                                                {!! $edukasi->benefit !!}
+                                            </td>
+                                            <td>{{ $edukasi->durasi }}</td>
+                                            <td>{!! $edukasi->lokasi !!}</td>
+                                        </tr>
+                                    @endforeach
 
-                                            </ol>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Paket Young Star</th>
-                                        <td>SLTP & SLTA</td>
-                                        <td>Rp. 20.000/peserta</td>
-                                        <td>
-                                            <ol>
-                                                <li>Aula Pelatihan</li>
-                                                <li>Tutor Interaktif</li>
-                                                <li>Snack & Air Mineral</li>
-                                                <li>Bahan Materi Ajar</li>
-                                                <li>Souvenir Little Star & Foto (@ 1pcs)</li>
-                                            </ol>
-                                        </td>
-                                        <td>3 Jam</td>
-                                        <td>Sekertariat KTH Margo Rahayu</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Paket Explorrer</th>
-                                        <td>PELAJAR & UMUM</td>
-                                        <td>Rp. 45.000/peserta</td>
-                                        <td>
-                                            <ol>
-                                                <li>Aula Pelatihan</li>
-                                                <li>Rumah Pelatihan</li>
-                                                <li>Explore Kebun Pandan</li>
-                                                <li>Tutor Interaktif</li>
-                                                <li>Safety Gloves </li>
-                                                <li>Snack & Air Mineral</li>
-                                                <li>Bahan Materi Ajar</li>
-                                                <li>Souvenir Little Star & Foto (@ 1pcs)</li>
-                                            </ol>
-                                        </td>
-                                        <td>Max 6 Jam (Termasuk Ishoma)</td>
-                                        <td>
-                                            <ol>
-                                                <li>Sekertariat KTH Margo Rahayu</li>
-                                                <li>Rumah Pelatihan</li>
-                                                <li>Kebun Pandan</li>
-                                            </ol>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Paket Interviewer</th>
-                                        <td>PELAJAR MAHASISWA UMUM</td>
-                                        <td>Rp. 20.000/peserta</td>
-                                        <td>
-                                            <ol>
-                                                <li>Aula Pelatihan</li>
-                                                <li>Tutor Interaktif</li>
-                                                <li>Snack & Air Mineral</li>
-                                                <li>Bahan Materi Ajar</li>
-                                                <li>Souvenir Little Star & Foto (@ 1pcs)</li>
-                                            </ol>
-                                        </td>
-                                        <td>3 Jam</td>
-                                        <td>Sekertariat KTH Margo Rahayu</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">International Tour Packages</th>
-                                        <td>FOREIGN TOURISTS</td>
-                                        <td>Rp. 85.000/participant</td>
-                                        <td>
-                                            <ol>
-                                                <li>Hall</li>
-                                                <li>Educational Tourism House</li>
-                                                <li>Pandanus Garden Exploration</li>
-                                                <li>Interactive Tutors</li>
-                                                <li>Interactive Guides </li>
-                                                <li>Safety Gloves</li>
-                                                <li>Lunch & Snack (Local Menu)</li>
-                                                <li>Training Materials</li>
-                                                <li>Souvenir & Photo (1 pcs / tourist)</li>
-                                            </ol>
-                                        </td>
-                                        <td>3 hours educational tourism</td>
-                                        <td>
-                                            <ol>
-                                                <li>KTH Margo Rahayu Secretariat</li>
-                                                <li>Educational Tourism House</li>
-                                                <li>Pandanus Garden</li>
-                                            </ol>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
