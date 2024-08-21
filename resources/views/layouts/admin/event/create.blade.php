@@ -30,6 +30,14 @@
                                 value="{{ old('nama_event') }}" required>
                         </div>
 
+
+                        <div class="mb-3">
+                            <label for="img_event" class="form-label">Foto/Banner Event:</label>
+                            <input type="file" name="img_event" id="img_event" class="form-control" accept="image/*"
+                                onchange="previewImage(event, 'preview1')">
+                            <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
+                        </div>
+
                         <div class="mb-3">
                             <label for="tanggal_event" class="form-label">Tanggal Event:</label>
                             <input type="text" name="tanggal_event" id="tanggal_event" class="form-control"

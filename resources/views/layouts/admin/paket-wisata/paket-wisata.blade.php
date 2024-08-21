@@ -56,7 +56,7 @@
                                 <td>
                                     <!-- Tombol Edit -->
                                     <a href="{{ route('admin.paket-wisata.edit', $edukasi->id) }}"
-                                        class="btn btn-sm btn-warning">Edit</a>
+                                        class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
 
                                     <!-- Tombol Hapus -->
                                     <form action="{{ route('admin.paket-wisata.hapus', $edukasi->id) }}" method="POST"
@@ -64,7 +64,8 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">Hapus</button>
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')"><i
+                                                class="fa-solid fa-trash-can"></i></button>
                                     </form>
                                 </td>
                             </tr>

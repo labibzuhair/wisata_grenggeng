@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kegiatans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_event');
-            $table->string('img_event');
+            $table->text('img_event');
             $table->string('tanggal_event');
             $table->string('waktu');
             $table->string('lokasi');

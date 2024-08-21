@@ -23,6 +23,7 @@
                     <thead>
                         <tr>
                             <th>Nama Event</th>
+                            <th>Image Event</th>
                             <th>Tanggal Event</th>
                             <th>Waktu</th>
                             <th>Lokasi</th>
@@ -34,6 +35,7 @@
                     <tfoot>
                         <tr>
                             <th>Nama Event</th>
+                            <th>Image Event</th>
                             <th>Tanggal Event</th>
                             <th>Waktu</th>
                             <th>Lokasi</th>
@@ -46,6 +48,9 @@
                         @foreach ($events as $event)
                             <tr>
                                 <td>{{ $event->nama_event }}</td>
+                                <td> <img src="{{ Storage::url($event->img_event) }}" alt="{{ $event->nama_event }}"
+                                        style="max-width: 100px;">
+                                </td>
                                 <td>{{ $event->tanggal_event }}</td>
                                 <td>{{ $event->waktu }}</td>
                                 <td>{{ $event->lokasi }}</td>
@@ -53,8 +58,8 @@
                                 <td>{{ $event->deskripsi }}</td>
                                 <td>
                                     <!-- Tombol Edit -->
-                                    <a href="{{ route('admin.event.edit', $event->id) }}"
-                                        class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="{{ route('admin.event.edit', $event->id) }}" class="btn btn-sm btn-warning"><i
+                                            class="fa-solid fa-pen-to-square"></i></a>
 
                                     <!-- Tombol Hapus -->
                                     <form action="{{ route('admin.event.hapus', $event->id) }}" method="POST"
@@ -62,7 +67,8 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">Hapus</button>
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')"><i
+                                                class="fa-solid fa-trash-can"></i></button>
                                     </form>
                                 </td>
                             </tr>

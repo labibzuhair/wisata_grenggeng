@@ -57,6 +57,10 @@ class AdminPaketWisataController extends Controller
 
             return redirect()->route('admin.paket-wisata.create')->with('success', 'paket wisata berhasil disimpan!');
         } catch (\Exception $e) {
+            // Hapus file yang sudah diupload jika terjadi error
+            // if (isset($path)) {
+            //     Storage::disk('public')->delete($path);
+            // }
             // Menangkap error dan mengembalikan pesan error
             return redirect()->route('admin.paket-wisata.create')->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
         }

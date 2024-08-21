@@ -85,6 +85,11 @@
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-list-check me-2"></i></div>
                     Paket Wisata
                 </a>
+                <a class="nav-link {{ request()->is('admin/gallery*') ? 'active' : '' }}"
+                    href="{{ route('admin.gallery') }}">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-list-check me-2"></i></div>
+                    Gallery
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

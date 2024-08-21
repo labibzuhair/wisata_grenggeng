@@ -85,7 +85,7 @@
                         <div class="img-container-ad rounded-circle">
                             <img src="{{ Storage::url($lastSlider->img_wisata) }}" alt="" class="rounded-circle">
                         </div>
-                        <div class="h3">Sliders</div>
+                        <div class="h3">Wisata</div>
                         <p class="designation text-muted text-uppercase">Jumlah Data : {{ $jumlahSlider }}</p>
                     </div>
                     <ul
@@ -100,19 +100,42 @@
                 <div class="card d-flex flex-column align-items-center justify-content-center">
                     <div class="inner-content d-flex flex-column align-items-center justify-content-center">
                         <div class="img-container-ad rounded-circle">
-                            <img src="" alt="" class="rounded-circle">
+                            <img src="{{ Storage::url($lastEvent->img_event) }}" alt="" class="rounded-circle">
                         </div>
                         <div class="h3">Event</div>
-                        <p class="designation text-muted text-uppercase">Jumlah Data : </p>
+                        <p class="designation text-muted text-uppercase">Jumlah Data : {{ $jumlahEvent }}</p>
                     </div>
                     <ul
                         class="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
                         <li><a href="{{ route('admin.events') }}"><span class="fa-solid fa-eye"></span></a></li>
-                        {{-- <li><a href="{{ route('admin.event.create') }}"><span class="fa-solid fa-square-plus"></span></a> --}}
+                        <li><a href="{{ route('admin.event.create') }}"><span class="fa-solid fa-square-plus"></span></a>
                         </li>
                     </ul>
                 </div>
             </div>
+            <div class="col-md-4 mb-md-0 pb-4">
+                <div class="card d-flex flex-column align-items-center justify-content-center">
+                    <div class="inner-content d-flex flex-column align-items-center justify-content-center">
+                        <div class="img-container-ad rounded-circle">
+                            @if ($lastGallery && $lastGallery->mainPhoto)
+                                <img src="{{ Storage::url($lastGallery->mainPhoto->image) }}" alt=""
+                                    class="rounded-circle">
+                            @else
+                                <img src="{{ asset('images/default-image.jpg') }}" alt="" class="rounded-circle">
+                            @endif
+                        </div>
+                        <div class="h3">Gallery</div>
+                        <p class="designation text-muted text-uppercase">Jumlah Data : {{ $jumlahGallery }}</p>
+                    </div>
+                    <ul
+                        class="social-links d-flex align-items-center justify-content-around list-unstyled w-100 fs-5 m-0 p-0">
+                        <li><a href="{{ route('admin.gallery') }}"><span class="fa-solid fa-eye"></span></a></li>
+                        <li><a href="{{ route('admin.gallery.create') }}"><span
+                                    class="fa-solid fa-square-plus"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 @endsection

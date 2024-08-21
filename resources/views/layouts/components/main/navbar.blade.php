@@ -18,6 +18,10 @@
                         href="{{ route('tentang') }}">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link {{ request()->is('gallery') ? 'active' : '' }}"
+                        href="{{ route('gallery') }}">Galery</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link {{ request()->is('produk*') ? 'active' : '' }}"
                         href="{{ route('produk') }}">Produk</a>
                 </li>

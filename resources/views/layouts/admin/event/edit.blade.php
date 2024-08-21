@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.master')
 
-@section('title', 'Edit Produk')
+@section('title', 'Edit event')
 
 @section('content')
     @if (session('success'))
@@ -30,6 +30,18 @@
                             <label for="nama_event" class="form-label">Nama Event:</label>
                             <input type="text" name="nama_event" id="nama_event" class="form-control"
                                 value="{{ $event->nama_event }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="img_event" class="form-label">Gambar 1:</label>
+                            <input type="file" name="img_event" id="img_event" class="form-control" accept="image/*"
+                                onchange="previewImage(event, 'preview1')">
+                            @if ($event->img_event)
+                                <img id="preview1" class="mt-2" src="{{ Storage::url($event->img_event) }}"
+                                    style="max-width: 200px;">
+                            @else
+                                <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
+                            @endif
                         </div>
 
                         <div class="mb-3">
@@ -63,7 +75,7 @@
                         </div>
 
 
-                        <button type="submit" class="btn btn-primary">Update Produk</button>
+                        <button type="submit" class="btn btn-primary">Update event</button>
                     </form>
                 </div>
             </div>

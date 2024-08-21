@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     <script src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
 
-
+    <!-- Favicons -->
+    <link rel="icon" href="{{ asset('images/logo.jpg') }}" sizes="32x32" type="image/png">
 </head>
 
 <body class="sb-nav-fixed">

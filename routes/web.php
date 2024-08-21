@@ -2,14 +2,19 @@
 
 use App\Models\Produk;
 use App\Models\Kegiatan;
+use App\Models\ProdukTTG;
 use App\Models\ProdukAnyaman;
+use App\Models\ProdukMakanan;
+use App\Models\ProdukTerbaik;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeranaController;
+use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\AdminTTGController;
 use App\Http\Controllers\KegiatanController;
@@ -20,6 +25,7 @@ use App\Http\Controllers\AdminEventController;
 use App\Http\Controllers\PaketWisataController;
 use App\Http\Controllers\WisataMakamController;
 use App\Http\Controllers\WisataPasarController;
+use App\Http\Controllers\AdminGalleryController;
 use App\Http\Controllers\AdminMakananController;
 use App\Http\Controllers\AdminSlidersController;
 use App\Http\Controllers\AdminOlehOlehController;
@@ -31,9 +37,6 @@ use App\Http\Controllers\AdminAnyamanPandanController;
 use App\Http\Controllers\AdminProdukTerbaikController;
 use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
-use App\Models\ProdukMakanan;
-use App\Models\ProdukTerbaik;
-use App\Models\ProdukTTG;
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
@@ -48,6 +51,9 @@ Route::get('/wisata/kuliner/lembah-pereng', [WisataLembahPerengController::class
 Route::get('/wisata/kuliner/pasar', [WisataPasarController::class, 'index'])->name('pasar');
 
 Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery/{id}', [GalleryController::class, 'show'])->name('gallery.show');
 
 Route::get('/produk', [ProdukAnyamanController::class, 'index'])->name('produk');
 Route::get('/produk/semua-anyaman', [ProdukAnyamanController::class, 'all'])->name('produk.semua-anyaman');
@@ -160,4 +166,13 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/paket-wisata/{id}/edit', [AdminPaketWisataController::class, 'edit'])->name('admin.paket-wisata.edit');
     Route::put('/admin/paket-wisata/{id}', [AdminPaketWisataController::class, 'update'])->name('admin.paket-wisata.update');
     Route::delete('/admin/paket-wisata/{id}', [AdminPaketWisataController::class, 'destroy'])->name('admin.paket-wisata.hapus');
+
+    Route::get('admin/gallery', [AdminGalleryController::class, 'index'])->name('admin.gallery');
+    Route::get('/admin/gallery/create', [AdminGalleryController::class, 'create'])->name('admin.gallery.create');
+    Route::post('/admin/gallery/store', [AdminGalleryController::class, 'store'])->name('admin.gallery.store');
+    Route::get('/admin/gallery/{id}/edit', [AdminGalleryController::class, 'edit'])->name('admin.gallery.edit');
+    Route::put('/admin/gallery/{id}', [AdminGalleryController::class, 'update'])->name('admin.gallery.update');
+    Route::delete('/admin/gallery/{id}', [AdminGalleryController::class, 'destroy'])->name('admin.gallery.hapus');
+
+
 });

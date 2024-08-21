@@ -25,6 +25,7 @@ class AdminEventController extends Controller
             // Validasi input
             $validated = $request->validate([
                 'nama_event' => 'required|string|max:255',
+                'img_event' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'tanggal_event' => 'required|string|max:255',
                 'waktu' => 'required|string|max:255',
                 'lokasi' => 'required|string|max:255',
@@ -32,10 +33,18 @@ class AdminEventController extends Controller
                 'deskripsi' => 'required|string',
             ]);
 
+              // Menyimpan gambar dan menyimpan link ke database
+        $images = [];
+        if ($request->hasFile('img_event')) {
+            $file = $request->file('img_event');
+            $path = $file->store('images/img_event', 'public');
+            $images['img_event'] = $path;
+        }
 
             // Menyimpan data ke database
             Kegiatan::create([
                 'nama_event' => $validated['nama_event'],
+                'img_event' => $images['img_event'],
                 'tanggal_event' => $validated['tanggal_event'],
                 'waktu' => $validated['waktu'],
                 'lokasi' => $validated['lokasi'],
@@ -71,6 +80,7 @@ class AdminEventController extends Controller
             // Validasi input jika diperlukan
             $request->validate([
                 'nama_event' => 'required|string|max:255',
+                'img_event' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'tanggal_event' => 'required|string|max:255',
                 'waktu' => 'required|string|max:255',
                 'lokasi' => 'required|string|max:255',
@@ -86,11 +96,15 @@ class AdminEventController extends Controller
             $events->pengisi_acara = $request->pengisi_acara;
             $events->deskripsi = $request->deskripsi;
 
+            if ($request->hasFile('img_event')) {
+                $events->img_event = $request->file('img_event')->store('images/img_event');
+            }
+
             $events->save();
 
             return redirect()->route('admin.events')->with('success', 'event berhasil diperbarui!');
         } catch (\Exception $e) {
-            return redirect()->route('admin.events.edit', $id)
+            return redirect()->route('admin.event.edit', $id)
                 ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }

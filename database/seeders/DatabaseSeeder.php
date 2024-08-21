@@ -6,7 +6,10 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\AdminSeeder;
+use Database\Seeders\PhotoSeeder;
 use Database\Seeders\ProdukSeeder;
+use Database\Seeders\GalerySeeders;
+use Database\Seeders\GallerySeeder;
 use Database\Seeders\SleederSeeder;
 use Database\Seeders\KegiatanSeeder;
 use Database\Seeders\ProdukTTGSeeders;
@@ -37,5 +40,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProdukMakananSeeders::class);
         $this->call(ProdukTerbaikSeeders::class);
         $this->call(PaketWisataEdukasiSeeders::class);
+        $this->call(GallerySeeder::class);
+        $this->call(PhotoSeeder::class);
     }
 }
