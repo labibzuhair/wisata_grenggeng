@@ -55,11 +55,15 @@ Route::get('/tentang', [TentangController::class, 'index'])->name('tentang');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/gallery/{id}', [GalleryController::class, 'show'])->name('gallery.show');
 
+// Route::get('/produk/{id}/detail-terbaik', [ProdukTerbaikController::class, 'show'])->name('detail-terbaik');
+
 Route::get('/produk', [ProdukAnyamanController::class, 'index'])->name('produk');
 Route::get('/produk/semua-anyaman', [ProdukAnyamanController::class, 'all'])->name('produk.semua-anyaman');
 Route::get('/produk/{id}/detail-anyaman', [ProdukAnyamanController::class, 'show'])->name('detail-anyaman');
+
 Route::get('/produk/semua-ttg', [ProdukTTGController::class, 'all'])->name('produk.semua-ttg');
 Route::get('/produk/{id}/detail-ttg', [ProdukTTGController::class, 'show'])->name('detail-ttg');
+
 Route::get('/produk/semua-makanan', [ProdukMakananController::class, 'all'])->name('produk.semua-makanan');
 Route::get('/produk/{id}/detail-makanan', [ProdukMakananController::class, 'show'])->name('detail-makanan');
 Route::get('/api/produk/{type}/{id}', function ($type, $id) {

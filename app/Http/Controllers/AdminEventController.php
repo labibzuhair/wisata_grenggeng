@@ -25,12 +25,13 @@ class AdminEventController extends Controller
             // Validasi input
             $validated = $request->validate([
                 'nama_event' => 'required|string|max:255',
-                'img_event' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img_event' => 'image|mimes:jpeg,png,jpg,gif,svg',
                 'tanggal_event' => 'required|string|max:255',
                 'waktu' => 'required|string|max:255',
                 'lokasi' => 'required|string|max:255',
                 'pengisi_acara' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
+                // |max:2048
             ]);
 
               // Menyimpan gambar dan menyimpan link ke database
@@ -80,12 +81,13 @@ class AdminEventController extends Controller
             // Validasi input jika diperlukan
             $request->validate([
                 'nama_event' => 'required|string|max:255',
-                'img_event' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img_event' => 'image|mimes:jpeg,png,jpg,gif,svg',
                 'tanggal_event' => 'required|string|max:255',
                 'waktu' => 'required|string|max:255',
                 'lokasi' => 'required|string|max:255',
                 'pengisi_acara' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
+                // |max:2048
 
             ]);
 

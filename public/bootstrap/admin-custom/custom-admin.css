@@ -11538,6 +11538,7 @@ body {
 }
 .sb-nav-fixed .sb-topnav {
     z-index: 1039;
+    background-color: #f8f9fa;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
     width: 225px;

@@ -135,7 +135,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 productName.innerText = data.nama_produk;
                 productCategory.innerText = data.kategori_produk;
                 productDescription.innerText = data.deskripsi_produk;
-                buyNowLink.href = `https://wa.me/+62895410172288?text=Saya%20ingin%20menanyakan%20produk%20${data.nama_produk}`;
+
+                // Tentukan URL produk berdasarkan jenis produk
+                let productUrl;
+
+                switch(productType) {
+                    case 'terbaik':
+                        productUrl = `localhost/produk/${productId}/detail-terbaik`;
+                        break;
+                    case 'anyaman':
+                        productUrl = `localhost/produk/${productId}/detail-anyaman`;
+                        break;
+                    case 'ttg':
+                        productUrl = `localhost/produk/${productId}/detail-ttg`;
+                        break;
+                    case 'makanan':
+                        productUrl = `localhost/produk/${productId}/detail-makanan`;
+                        break;
+                    default:
+                        productUrl = `localhost/produk/${productId}`;
+                        break;
+                }
+
+                // Buat link WhatsApp dengan nama produk dan link produk
+                buyNowLink.href = `https://wa.me/+62895410172288?text=Saya%20ingin%20menanyakan%20produk%20${encodeURIComponent(data.nama_produk)}%20yang%20ada%20pada%20link%20:%20${encodeURIComponent(productUrl)}`;
 
                 // Set gambar utama
                 if (data.img_produk.length > 0) {
@@ -168,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 });
+
 
 
 

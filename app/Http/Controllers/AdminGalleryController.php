@@ -28,8 +28,10 @@ class AdminGalleryController extends Controller
     {
         $validatedData = $request->validate([
             'nama_kegiatan' => 'required|string|max:255',
-            'img1' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'additional_images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'img1' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'additional_images.*' => 'image|mimes:jpeg,png,jpg,gif'
+//             |max:2048
+// |max:2048
         ]);
 
         try {

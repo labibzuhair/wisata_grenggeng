@@ -661,6 +661,7 @@ time {
     justify-content: center;
     align-items: center;
     transition: 2s ease-in;
+    z-index: 100;
 }
 .about-product-p h3 {
     font-size: 1.5em; /* Mengatur ukuran teks judul */

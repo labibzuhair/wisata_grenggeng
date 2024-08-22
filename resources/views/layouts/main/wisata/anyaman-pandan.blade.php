@@ -16,7 +16,7 @@
                 <img src="{{ Storage::url($berita->img_wisata) }}" class="img-fluid" alt="Gambar Wisata 1">
                 <p class="text-center text-muted">Sumber gambar: website-1.com</p>
 
-                <div>
+                <div class="text-black text-center">
                     {!! $berita->deskripsi_wisata !!}
                 </div>
 
@@ -26,4 +26,3 @@
         @endif
     </div>
 @endsection
-

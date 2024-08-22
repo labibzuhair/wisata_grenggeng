@@ -36,12 +36,12 @@
                     <div class="address-container">
                         <i class="fa-solid fa-phone-volume"
                             style="position: relative; color: rgb(0, 192, 0); font-size: 15px; top: 5px;"></i>
-                        <p>082136612876</p>
+                        <p>+6282136612876</p>
                     </div>
                     <div class="address-container">
                         <i class="fa-solid fa-envelope"
                             style="position: relative; color: rgb(255, 230, 0); font-size: 15px; top: 5px;"></i>
-                        <p>labiblpc@gmail.com</p>
+                        <p>Grenggeng@gmail.com</p>
                     </div>
                 </div>
                 <!--Grid column-->

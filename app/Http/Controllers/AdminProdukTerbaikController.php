@@ -36,11 +36,16 @@ class AdminProdukTerbaikController extends Controller
                 'nama_produk' => 'required|string|max:255',
                 'kategori' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
-                'img1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'img2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'img3' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'img4' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'img5' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img1' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                'img2' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                'img3' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                'img4' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                'img5' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                // |max:2048
+                // |max:2048
+                // |max:2048
+                // |max:2048
+                // |max:2048
             ]);
 
             // Menyimpan gambar dan menyimpan link ke database
