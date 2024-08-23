@@ -1,4 +1,3 @@
-<!-- resources/views/admin/edit.blade.php -->
 @extends('layouts.admin.master.master')
 
 @section('title', 'Edit Gallery')
@@ -22,7 +21,7 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="p-4 bg-light border rounded">
-                    <form action="{{ route('admin.gallery.update', $gallery->id) }}" method="POST"
+                    <form id="gallery-form" action="{{ route('admin.gallery.update', $gallery->id) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -52,11 +51,11 @@
                             <label for="additional_images" class="form-label">Gambar Tambahan:</label>
                             <div id="additional_images_container">
                                 @foreach ($gallery->photos->where('is_main', false) as $photo)
-                                    <div class="mb-2 d-flex align-items-center">
+                                    <div class="mb-2 d-flex align-items-center" id="image-container-{{ $photo->id }}">
                                         <input type="file" name="additional_images[{{ $photo->id }}]"
                                             class="form-control" accept="image/*"
                                             onchange="previewImage(event, 'preview_{{ $photo->id }}')">
-                                        <img id="preview_{{ $photo->id }}" class=" ms-2"
+                                        <img id="preview_{{ $photo->id }}" class="ms-2"
                                             src="{{ Storage::url($photo->image) }}" style="max-width: 100px;">
                                         <button type="button" class="btn btn-danger ms-2"
                                             onclick="removeImage({{ $photo->id }})">Hapus</button>
@@ -78,37 +77,74 @@
         </div>
     </div>
 
+    <!-- JavaScript -->
     <script>
-        function previewImage(event, previewId) {
-            var reader = new FileReader();
-            reader.onload = function() {
-                var output = document.getElementById(previewId);
-                output.src = reader.result;
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preview Image Function
+            window.previewImage = function(event, previewId) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var output = document.getElementById(previewId);
+                    if (output) {
+                        output.src = reader.result;
+                    }
+                };
+                if (event.target.files[0]) {
+                    reader.readAsDataURL(event.target.files[0]);
+                }
+            }
 
-        function addImageInput() {
-            var container = document.getElementById('additional_images_container');
-            var index = container.children.length;
-            var div = document.createElement('div');
-            div.className = 'mb-2 d-flex align-items-center';
-            div.innerHTML = `
-                <input type="file" name="additional_images[new_${index}]" class="form-control" accept="image/*" onchange="previewImage(event, 'new_preview_${index}')">
-                <img id="new_preview_${index}" class="img-preview ms-2" style="max-width: 100px;">
-            `;
-            container.appendChild(div);
-        }
+            // Add New Image Input
+            window.addImageInput = function() {
+                var container = document.getElementById('additional_images_container');
+                var index = Date.now(); // Use timestamp to ensure unique keys
+                var div = document.createElement('div');
+                div.className = 'mb-2 d-flex align-items-center';
+                div.innerHTML = `
+                    <input type="file" name="additional_images[new_${index}]" class="form-control" accept="image/*" onchange="previewImage(event, 'new_preview_${index}')">
+                    <img id="new_preview_${index}" class="img-preview ms-2" style="max-width: 100px;">
+                    <button type="button" class="btn btn-danger ms-2" onclick="removeNewImage(this)">Hapus</button>
+                `;
+                container.appendChild(div);
+            }
 
-        function removeImage(photoId) {
-            var input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'deleted_images[]';
-            input.value = photoId;
-            document.querySelector('form').appendChild(input);
+            // Remove Existing Image
+            window.removeImage = function(photoId) {
+                if (confirm('Apakah Anda yakin ingin menghapus gambar ini?')) {
+                    console.log("Menghapus gambar dengan ID:", photoId);
+                    var form = document.getElementById('gallery-form');
 
-            var imageContainer = document.querySelector(`input[name="additional_images[${photoId}]"]`).closest('.mb-2');
-            imageContainer.remove();
-        }
+                    // Cek apakah form ditemukan
+                    if (form) {
+                        // Buat elemen input hidden
+                        var input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = 'deleted_images[]';
+                        input.value = photoId;
+                        form.appendChild(input);
+
+                        // Hapus elemen gambar dari DOM
+                        var imageContainer = document.getElementById(`image-container-${photoId}`);
+                        if (imageContainer) {
+                            imageContainer.remove();
+                        } else {
+                            console.error(`Container untuk image ID ${photoId} tidak ditemukan.`);
+                        }
+                    } else {
+                        console.error('Form dengan ID "gallery-form" tidak ditemukan.');
+                    }
+                }
+            }
+
+            // Remove New Image Before Upload
+            window.removeNewImage = function(button) {
+                if (confirm('Apakah Anda yakin ingin menghapus gambar ini?')) {
+                    var div = button.parentElement;
+                    if (div) {
+                        div.remove();
+                    }
+                }
+            }
+        });
     </script>
 @endsection

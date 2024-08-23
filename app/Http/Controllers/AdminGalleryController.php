@@ -88,6 +88,7 @@ class AdminGalleryController extends Controller
         $gallery = Gallery::findOrFail($id);
 
         try {
+
             // Update nama kegiatan
             $gallery->name = $request->input('nama_kegiatan');
             $gallery->save();
@@ -109,21 +110,32 @@ class AdminGalleryController extends Controller
                 }
             }
 
-            // Hapus gambar yang dipilih untuk dihapus
-            if ($request->filled('deleted_images')) {
-                foreach ($request->deleted_images as $photoId) {
-                    $photo = Photo::findOrFail($photoId);
-                    Storage::delete($photo->image); // Hapus file fisik dari storage
-                    $photo->delete(); // Hapus data dari database
+            // Debugging: Cek apakah ada gambar yang ditandai untuk dihapus
+            if ($request->has('deleted_images')) {
+                $deletedImages = $request->input('deleted_images');
+
+                foreach ($deletedImages as $photoId) {
+                    $photo = Photo::where('id', $photoId)->where('gallery_id', $gallery->id)->first();
+
+                    if ($photo) {
+                        // Hapus file fisik dari storage jika ada
+                        if (Storage::exists($photo->image)) {
+                            Storage::delete($photo->image);
+                        }
+
+                        // Hapus data dari database
+                        $photo->delete();
+                    }
                 }
             }
 
-            // Update gambar tambahan
+            // Update atau Tambah gambar tambahan
             if ($request->hasFile('additional_images')) {
                 foreach ($request->file('additional_images') as $key => $image) {
+                    $photoPath = $image->store('photos');
+
                     if (strpos($key, 'new_') === 0) {
                         // Gambar baru
-                        $photoPath = $image->store('photos');
                         Photo::create([
                             'gallery_id' => $gallery->id,
                             'image' => $photoPath,
@@ -131,19 +143,30 @@ class AdminGalleryController extends Controller
                         ]);
                     } else {
                         // Update gambar yang sudah ada
-                        $photo = Photo::findOrFail($key);
-                        Storage::delete($photo->image); // Hapus gambar lama
-                        $photoPath = $image->store('photos');
-                        $photo->update(['image' => $photoPath]);
+                        $photo = Photo::where('id', $key)->where('gallery_id', $gallery->id)->first();
+
+                        if ($photo) {
+                            // Hapus gambar lama jika ada
+                            if (Storage::exists($photo->image)) {
+                                Storage::delete($photo->image);
+                                Log::info("Old photo {$photo->image} deleted from storage.");
+                            }
+                            $photo->update(['image' => $photoPath]);
+                        }
                     }
                 }
             }
 
+
             return redirect()->route('admin.gallery')->with('success', 'Gallery berhasil diupdate.');
         } catch (\Exception $e) {
+            // Log error jika terjadi exception
             return redirect()->back()->with('error', 'Gagal mengupdate gallery: ' . $e->getMessage());
         }
     }
+
+
+
 
 
     public function destroy(string $id)
