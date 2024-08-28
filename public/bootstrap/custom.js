@@ -229,3 +229,33 @@ var swiper = new Swiper(".swiper-container", {
         },
     },
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Welcome text animation (typewriter effect)
+    const welcomeText = document.getElementById('welcomeText');
+    const text = welcomeText.textContent;
+    welcomeText.innerHTML = ''; // Clear the text
+
+    for (let i = 0; i < text.length; i++) {
+        let span = document.createElement('span');
+        span.textContent = text[i];
+        span.style.animationDelay = `${i * 0.1}s`; // Delay for each character
+        welcomeText.appendChild(span);
+    }
+
+    // Setelah teks selesai muncul, tunggu beberapa detik sebelum menghilangkan welcome screen
+    setTimeout(function () {
+        // Tambahkan waktu standby sebelum menghilang
+        setTimeout(function () {
+            document.getElementById('welcomeScreen').style.opacity = '0';
+            setTimeout(function () {
+                document.getElementById('welcomeScreen').style.display = 'none'; // Hide after fading out
+            }, 1000); // 1 second fade-out effect
+        }, 2000); // Tambahkan standby selama 2 detik
+    }, text.length * 100 + 500); // Adjust based on text length
+});
+
+window.onload = function () {
+    document.body.classList.add('loaded');
+};
