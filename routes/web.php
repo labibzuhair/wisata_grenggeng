@@ -37,6 +37,13 @@ use App\Http\Controllers\AdminAnyamanPandanController;
 use App\Http\Controllers\AdminProdukTerbaikController;
 use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
+use Illuminate\Support\Facades\Artisan;
+
+// storege link
+Route::get('/storage-link', function(){
+    Artisan::call('storage:link');
+    return 'Storage Link Berhasil';
+});
 
 Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
