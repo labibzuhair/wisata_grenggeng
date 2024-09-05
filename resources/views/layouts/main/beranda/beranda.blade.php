@@ -6,10 +6,12 @@
 @section('content')
     <div id="welcomeScreen" class="welcome-screen">
         <div class="content">
-            <img src=" /images/logo.png " alt="Logo" class="logo">
+            <img src="/images/logo.png" alt="Logo" class="logo">
             <h1 id="welcomeText">Selamat Datang di Website Desa Wisata Grenggeng</h1>
         </div>
     </div>
+
+
     <div class="image-bg">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">

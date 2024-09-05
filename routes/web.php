@@ -8,6 +8,7 @@ use App\Models\ProdukMakanan;
 use App\Models\ProdukTerbaik;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeranaController;
@@ -31,13 +32,13 @@ use App\Http\Controllers\AdminSlidersController;
 use App\Http\Controllers\AdminOlehOlehController;
 use App\Http\Controllers\ProdukAnyamanController;
 use App\Http\Controllers\ProdukMakananController;
+use App\Http\Controllers\ProdukTerbaikController;
 use App\Http\Controllers\WisataSejarahController;
 use App\Http\Controllers\AdminPaketWisataController;
 use App\Http\Controllers\AdminAnyamanPandanController;
 use App\Http\Controllers\AdminProdukTerbaikController;
 use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
-use Illuminate\Support\Facades\Artisan;
 
 // storege link
 Route::get('/storage-link', function(){

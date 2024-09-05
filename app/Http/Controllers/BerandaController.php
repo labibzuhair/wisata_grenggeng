@@ -12,9 +12,10 @@ use Illuminate\Routing\Controller;
 
 class BerandaController extends Controller
 {
-        /**
+    /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $sleeders = Sleeder::orderBy('updated_at', 'desc')->get();

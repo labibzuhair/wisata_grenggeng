@@ -256,6 +256,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }, text.length * 100 + 500); // Adjust based on text length
 });
 
-window.onload = function () {
-    document.body.classList.add('loaded');
+// welcome screen
+window.onload = function() {
+    console.log('Page loaded'); // Debugging
+    document.body.classList.add('loaded'); // Tambahkan class loaded ke body untuk menampilkan konten halaman
+
+    if (!sessionStorage.getItem('firstVisit')) {
+        console.log('First visit, showing welcome screen');
+        // Tetap tampilkan welcome screen pertama kali
+        var welcomeScreen = document.getElementById('welcomeScreen');
+        welcomeScreen.style.display = 'flex';
+
+        document.addEventListener('click', function() {
+            welcomeScreen.style.display = 'none'; // Hilangkan welcome screen setelah klik
+            sessionStorage.setItem('firstVisit', 'true');
+        });
+    } else {
+        console.log('Welcome screen already seen, skipping');
+        var welcomeScreen = document.getElementById('welcomeScreen');
+        welcomeScreen.style.display = 'none'; // Jangan tampilkan welcome screen jika sudah pernah dilihat
+    }
 };
