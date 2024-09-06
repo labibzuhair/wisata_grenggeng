@@ -1,7 +1,7 @@
 <!-- resources/views/admin/login.blade.php -->
 @extends('layouts.admin.master.master')
 
-@section('title', 'Login Admin')
+@section('title', 'Edit Paket Wisata')
 
 @section('content')
     @if (session('success'))

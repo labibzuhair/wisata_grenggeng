@@ -36,8 +36,8 @@ class AdminSlidersController extends Controller
             'nama_wisata' => 'required|string|max:255',
             'kategori_wisata' => 'required|string|max:255',
             'deskripsi_wisata' => 'required|string',
-            'img_wisata' => 'image|mimes:jpeg,png,jpg,gif,svg',
-            // |max:2048
+            'img_wisata' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
         // Menyimpan gambar dan menyimpan link ke database
@@ -98,8 +98,7 @@ class AdminSlidersController extends Controller
                 'nama_wisata' => 'required|string|max:255',
                 'kategori_wisata' => 'required|string|max:255',
                 'deskripsi_wisata' => 'required|string',
-                'img_wisata' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-                // |max:2048
+                'img_wisata' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
 
             ]);
 

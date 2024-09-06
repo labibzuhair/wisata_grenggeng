@@ -28,10 +28,9 @@ class AdminGalleryController extends Controller
     {
         $validatedData = $request->validate([
             'nama_kegiatan' => 'required|string|max:255',
-            'img1' => 'required|image|mimes:jpeg,png,jpg,gif',
-            'additional_images.*' => 'image|mimes:jpeg,png,jpg,gif'
-//             |max:2048
-// |max:2048
+            'img1' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'additional_images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+
         ]);
 
         try {
@@ -87,8 +86,13 @@ class AdminGalleryController extends Controller
     {
         $gallery = Gallery::findOrFail($id);
 
-        try {
+        // Tambahkan validasi
+        $request->validate([
+            'img1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // validasi untuk gambar utama
+            'additional_images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // validasi untuk gambar tambahan
+        ]);
 
+        try {
             // Update nama kegiatan
             $gallery->name = $request->input('nama_kegiatan');
             $gallery->save();
@@ -149,7 +153,6 @@ class AdminGalleryController extends Controller
                             // Hapus gambar lama jika ada
                             if (Storage::exists($photo->image)) {
                                 Storage::delete($photo->image);
-                                Log::info("Old photo {$photo->image} deleted from storage.");
                             }
                             $photo->update(['image' => $photoPath]);
                         }
@@ -157,13 +160,13 @@ class AdminGalleryController extends Controller
                 }
             }
 
-
             return redirect()->route('admin.gallery')->with('success', 'Gallery berhasil diupdate.');
         } catch (\Exception $e) {
             // Log error jika terjadi exception
             return redirect()->back()->with('error', 'Gagal mengupdate gallery: ' . $e->getMessage());
         }
     }
+
 
 
 

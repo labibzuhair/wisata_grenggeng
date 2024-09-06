@@ -1,7 +1,7 @@
 <!-- resources/views/admin/login.blade.php -->
 @extends('layouts.admin.master.master')
 
-@section('title', 'Produk TTG')
+@section('title', 'Semua Produk TTG')
 
 @section('content')
 

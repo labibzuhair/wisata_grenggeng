@@ -33,7 +33,10 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="img_event" class="form-label">Gambar 1:</label>
+                            <label for="img_event" class="form-label">Gambar :</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img_event" id="img_event" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview1')">
                             @if ($event->img_event)

@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.master')
 
-@section('title', 'Edit Produk')
+@section('title', 'Edit Produk Terbaik')
 
 @section('content')
     @if (session('success'))
@@ -44,6 +44,9 @@
 
                         <div class="mb-3">
                             <label for="img1" class="form-label">Gambar 1:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img1" id="img1" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview1')">
                             @if ($produk->img1)
@@ -55,6 +58,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="img2" class="form-label">Gambar 2:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img2" id="img2" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview2')">
                             @if ($produk->img2)
@@ -66,6 +72,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="img3" class="form-label">Gambar 3:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img3" id="img3" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview3')">
                             @if ($produk->img3)
@@ -77,6 +86,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="img4" class="form-label">Gambar 4:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img4" id="img4" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview4')">
                             @if ($produk->img4)
@@ -88,6 +100,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="img5" class="form-label">Gambar 5:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img5" id="img5" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview5')">
                             @if ($produk->img5)

@@ -33,6 +33,9 @@
                             <label for="img1" class="form-label">Gambar Utama:</label>
                             <input type="file" name="img1" id="img1" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview1')" required>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
                         </div>
 
@@ -42,6 +45,9 @@
                                 <input type="file" name="additional_images[]" id="additional_images_1"
                                     class="form-control" accept="image/*"
                                     onchange="previewImage(event, 'preview_additional_1')">
+                                <small class="form-text text-muted">
+                                    pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                                </small>
                                 <img id="preview_additional_1" class="img-preview mt-2" style="max-width: 200px;">
                             </div>
                         </div>

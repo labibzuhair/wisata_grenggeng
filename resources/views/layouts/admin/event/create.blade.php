@@ -1,7 +1,7 @@
 <!-- resources/views/admin/login.blade.php -->
 @extends('layouts.admin.master.master')
 
-@section('title', 'Login Admin')
+@section('title', 'Tambah Event')
 
 @section('content')
     @if (session('success'))
@@ -35,6 +35,9 @@
                             <label for="img_event" class="form-label">Foto/Banner Event:</label>
                             <input type="file" name="img_event" id="img_event" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview1')">
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
                         </div>
 

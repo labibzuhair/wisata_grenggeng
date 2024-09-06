@@ -36,16 +36,12 @@ class AdminAnyamanPandanController extends Controller
                 'nama_produk' => 'required|string|max:255',
                 'kategori' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
-                'img1' => 'image|mimes:jpeg,png,jpg,gif,svg',
-                'img2' => 'image|mimes:jpeg,png,jpg,gif,svg',
-                'img3' => 'image|mimes:jpeg,png,jpg,gif,svg',
-                'img4' => 'image|mimes:jpeg,png,jpg,gif,svg',
-                'img5' => 'image|mimes:jpeg,png,jpg,gif,svg',
-//                 |max:2048
-// |max:2048
-// |max:2048
-// |max:2048
-// |max:2048
+                'img1' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img3' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img4' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img5' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
             ]);
 
             // Menyimpan gambar dan menyimpan link ke database
@@ -114,16 +110,11 @@ class AdminAnyamanPandanController extends Controller
                 'nama_produk' => 'required|string|max:255',
                 'kategori' => 'required|string|max:255',
                 'deskripsi' => 'required|string',
-                'img1' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-                'img2' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-                'img3' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-                'img4' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-                'img5' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-                // |max:2048
-                // |max:2048
-                // |max:2048
-                // |max:2048
-                // |max:2048
+                'img1' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img2' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img3' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img4' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'img5' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
             $produk->nama_produk = $request->nama_produk;

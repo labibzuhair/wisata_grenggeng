@@ -1,7 +1,7 @@
 <!-- resources/views/admin/login.blade.php -->
 @extends('layouts.admin.master.master')
 
-@section('title', 'Produk Makanan')
+@section('title', 'Semua Produk Makanan')
 
 @section('content')
 

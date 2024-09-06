@@ -1,6 +1,6 @@
 @extends('layouts.admin.master.master')
 
-@section('title', 'Edit Produk')
+@section('title', 'Edit Wisata')
 
 @section('content')
     @if (session('success'))
@@ -33,6 +33,9 @@
 
                         <div class="mb-3">
                             <label for="img_wisata" class="form-label">Gambar Utama:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img_wisata" id="img_wisata" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview1')">
                             @if ($sliders->img_wisata)

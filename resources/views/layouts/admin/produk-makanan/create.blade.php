@@ -1,7 +1,7 @@
 <!-- resources/views/admin/login.blade.php -->
 @extends('layouts.admin.master.master')
 
-@section('title', 'Login Admin')
+@section('title', 'Tambah Produk Makanan')
 
 @section('content')
     @if (session('success'))
@@ -43,6 +43,9 @@
 
                         <div class="mb-3">
                             <label for="img1" class="form-label">Gambar 1:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img1" id="img1" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview1')">
                             <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">

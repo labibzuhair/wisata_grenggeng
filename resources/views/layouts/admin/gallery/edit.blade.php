@@ -36,6 +36,9 @@
                         <!-- Gambar Utama dengan Preview -->
                         <div class="mb-3">
                             <label for="img1" class="form-label">Gambar Utama:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <input type="file" name="img1" id="img1" class="form-control" accept="image/*"
                                 onchange="previewImage(event, 'preview1')">
                             @if ($gallery->mainPhoto)
@@ -49,6 +52,9 @@
                         <!-- Gambar Tambahan dengan Preview -->
                         <div class="mb-3">
                             <label for="additional_images" class="form-label">Gambar Tambahan:</label>
+                            <small class="form-text text-muted">
+                                pastikan type gambar : jpeg, png, jpg, gif. dan Ukuran maksimal: 2 MB.
+                            </small>
                             <div id="additional_images_container">
                                 @foreach ($gallery->photos->where('is_main', false) as $photo)
                                     <div class="mb-2 d-flex align-items-center" id="image-container-{{ $photo->id }}">
