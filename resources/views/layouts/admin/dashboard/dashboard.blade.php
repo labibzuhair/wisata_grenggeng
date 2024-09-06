@@ -1,12 +1,19 @@
 <!-- resources/views/admin/login.blade.php -->
 @extends('layouts.admin.master.master')
 
-@section('title', 'Login Admin')
+@section('title', 'Dashboard Admin')
 
 @section('content')
     <div class="p-2 m-4 " style="background-color: rgb(246 246 246); border-radius: 10px;">
         <h1 class="m-2">Dashboard</h1>
     </div>
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="container-ad">
         <div class="row p-5 m-5" style="background-color: #ebebeb;">
             <div class="col-md-4 mb-md-0 pb-4">

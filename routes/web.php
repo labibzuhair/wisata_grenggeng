@@ -41,7 +41,7 @@ use App\Http\Controllers\WisataLembahPerengController;
 use App\Http\Controllers\WisataAnyamanPandanController;
 
 // storege link
-Route::get('/storage-link', function(){
+Route::get('/storage-link', function () {
     Artisan::call('storage:link');
     return 'Storage Link Berhasil';
 });
@@ -128,6 +128,13 @@ Route::post('admin/logout', [AuthController::class, 'logout'])->name('admin.logo
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
+    Route::get('/admin/tambah', [AdminController::class, 'create'])->name('admin.tambah');
+    Route::post('/admin/tambah', [AdminController::class, 'store'])->name('admin.store');
+
+    Route::get('/admin/password', [AdminController::class, 'editPassword'])->name('admin.editPassword');
+    Route::post('/admin/password', [AdminController::class, 'updatePassword'])->name('admin.updatePassword');
+
+
     Route::get('admin/produk/terbaik', [AdminProdukTerbaikController::class, 'index'])->name('admin.produk.terbaik');
     Route::get('/admin/produk/terbaik/create', [AdminProdukTerbaikController::class, 'create'])->name('admin.produk.terbaik.create');
     Route::post('/admin/produk/terbaik/store', [AdminProdukTerbaikController::class, 'store'])->name('admin.produk.terbaik.store');
@@ -185,6 +192,4 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/gallery/{id}/edit', [AdminGalleryController::class, 'edit'])->name('admin.gallery.edit');
     Route::put('/admin/gallery/{id}', [AdminGalleryController::class, 'update'])->name('admin.gallery.update');
     Route::delete('/admin/gallery/{id}', [AdminGalleryController::class, 'destroy'])->name('admin.gallery.hapus');
-
-
 });

@@ -42,19 +42,18 @@
                                 <img id="preview1" class="img-preview mt-2" style="max-width: 200px;">
                             @endif
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="kategori_wisata" class="form-label">Kategori Wisata:</label>
                             <select class="form-select form-select-lg mb-3" name="kategori_wisata" id="kategori_wisata"
                                 aria-label="Large select example">
                                 <option value="">pilih salah satu kategori</option>
                                 <option value="anyaman-pandan">Anyaman Pandan</option>
-                                {{-- <option value="TTG">TTG</option> --}}
                                 <option value="wisata-sejarah">Wisata Sejarah</option>
                                 <option value="makam">Makam</option>
                                 <option value="lembah-pereng">Lembah Pereng</option>
                                 <option value="pasar">Pasar</option>
                             </select>
-                        </div>
+                        </div> --}}
 
                         <div class="mb-3">
                             <label for="deskripsi_wisata" class="form-label">Deskripsi Wisata:</label>
